@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "motion/react"
-import { motionDuration, motionEase } from "@/lib/motion"
+import { motionEase } from "@/lib/motion"
 
 type FadeInProps = {
   children: React.ReactNode
@@ -14,9 +14,9 @@ export function FadeIn({ children, className }: FadeInProps) {
       className={className}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.35 }}
       transition={{
-        duration: motionDuration.enter,
+        duration: 0.65,
         ease: motionEase,
       }}
     >

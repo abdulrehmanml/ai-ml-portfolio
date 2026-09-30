@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# 🤖 AI/ML Portfolio
+**AI/ML Engineer building practical machine learning, AI, and data-driven applications.**
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-16-black.svg)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4.svg)](https://tailwindcss.com/)
+[![Motion](https://img.shields.io/badge/Motion-Animation-8B5CF6.svg)](https://motion.dev/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+[**🌐 View Portfolio**](YOUR_PORTFOLIO_URL)
+
+*Showcasing practical work across machine learning, AI, NLP, and data-driven solutions.*
+
+</div>
+
+## 💡 Overview
+
+This portfolio presents my work in **Artificial Intelligence, Machine Learning, Data Science, and application development**, with a focus on building practical solutions from data exploration and modeling to interactive applications and deployment.
+
+## ✨ Core Areas
+
+* **🧠 Machine Learning:** Predictive modeling and end-to-end ML workflows.
+* **📊 Data & Analytics:** Exploratory data analysis, visualization, and business insights.
+* **🤖 AI & NLP:** RAG-based applications, sentiment analysis, and generative AI solutions.
+* **🚀 Deployment:** Interactive ML applications and deployment workflows.
+
+## 🛠️ Tech Stack
+
+| Component | Technology |
+| :--- | :--- |
+| **Frontend** | Next.js, React, TypeScript |
+| **Styling** | Tailwind CSS |
+| **Animation** | Motion |
+| **Icons** | Lucide React, Simple Icons |
+| **AI/ML** | Python, Scikit-learn, NLP, Generative AI |
+| **Development** | Git, GitHub, VS Code |
+
+## 📂 Repository Structure
+
+```text
+ai-ml-portfolio/
+├── public/
+│   └── images/             # Portfolio and project assets
+├── src/
+│   ├── app/                # Next.js pages and routes
+│   ├── components/         # Reusable UI components
+│   ├── data/               # Project and portfolio data
+│   ├── lib/                # Utilities and shared logic
+│   └── types/              # TypeScript types
+├── components.json
+├── next.config.ts
+└── package.json
 ```
+----
+## Author
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Abdul Rehman**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**GitHub:** [View Profile](https://github.com/abdulrehmanml)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**LinkedIn:** [Connect with me](https://www.linkedin.com/in/abdul-rehmanmughal)

@@ -116,7 +116,7 @@ export function Hero() {
             <SlideUp>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="#projects"
+                  href="#featured-work"
                   className="group inline-flex h-11 items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 active:bg-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   View Projects

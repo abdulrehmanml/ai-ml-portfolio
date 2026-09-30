@@ -30,7 +30,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       >
         <Card className="group h-full overflow-hidden border-border/80 bg-card transition-colors duration-300 hover:border-primary/50 hover:bg-primary/[0.03]">
           {/* Project visual */}
-          <div className="relative aspect-[16/10] overflow-hidden border-b border-border/70 bg-muted">
+          <div className="relative h-52 overflow-hidden border-b border-border/70 bg-muted sm:h-56 lg:h-60">
             {project.image ? (
               <Image
                 src={project.image}
@@ -52,7 +52,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
 
           {/* Content */}
-          <div className="flex h-full flex-col p-6">
+          <div className="flex flex-col p-6">
             <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-primary">
               {project.category}
             </p>
@@ -85,7 +85,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </div>
 
             {/* Card action */}
-            <div className="mt-auto pt-6 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-primary">
+            <div className="mt-8 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-primary">
               View Case Study
             </div>
           </div>

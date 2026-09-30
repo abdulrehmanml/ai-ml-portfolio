@@ -9,10 +9,10 @@ import { ThemeToggle } from "@/components/layout/theme-toggle"
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Projects", href: "/projects" },
-  { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+    { label: "About", href: "/#about" }, 
+  { label: "Services", href: "/#services" },
+  { label: "Featured Work", href: "/#featured-work" },
+  { label: "Contact", href: "/#contact" },
 ]
 
 export function Navbar() {
@@ -43,7 +43,7 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-border/70 bg-background/85 backdrop-blur-xl"
+          ? "border-b border-border bg-background/85 backdrop-blur-xl shadow-[0_1px_0_0_var(--border)]"
           : "bg-transparent"
       )}
     >

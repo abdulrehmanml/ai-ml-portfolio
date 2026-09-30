@@ -83,7 +83,7 @@ function WorkflowItem({
 
 export function Hero() {
   return (
-    <Section className="relative flex min-h-0 items-center overflow-hidden border-b border-accent/30 pb-8 pt-20 md:pb-10 md:pt-24 lg:min-h-0 lg:pb-16 lg:pt-28 min-[1024px]:max-[1399px]:min-h-[760px] min-[1024px]:max-[1399px]:pb-12 min-[1400px]:min-h-[calc(100svh-6rem)] min-[1400px]:pb-0">
+    <Section className="relative flex min-h-0 items-center overflow-hidden border-b border-accent/30 pt-20 pb-24 md:pt-24 md:pb-24 lg:min-h-[calc(100svh-6rem)]">
       <Container>
         <div className="relative grid items-center gap-10 lg:gap-16 lg:grid-cols-[1fr_0.95fr]">
           {/* Main content */}
@@ -95,16 +95,19 @@ export function Hero() {
             </FadeIn>
 
             <SlideUp>
-              <h1 className="max-w-2xl text-balance text-5xl font-semibold leading-[1.08] tracking-tight sm:text-6xl md:text-6xl">
-                Building AI/ML systems
-                <span className="block text-muted-foreground">
+              <h1 className="max-w-2xl text-5xl font-semibold leading-[1.08] tracking-tight sm:text-6xl md:max-w-none md:text-5xl lg:max-w-2xl lg:text-6xl">
+                <span className="block md:whitespace-nowrap">
+                  Building AI/ML systems
+                </span>
+
+                <span className="block text-primary text-[0.94em] md:whitespace-nowrap">
                   from data to deployment.
                 </span>
               </h1>
             </SlideUp>
 
             <FadeIn>
-              <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
+              <p className="mt-6 max-w-xl text-base leading-7 text-foreground/70 sm:text-lg">
                 I build practical machine learning and AI applications, from
                 data analysis and model development to deployment.
               </p>
@@ -123,7 +126,7 @@ export function Hero() {
 
                 <Link
                   href="#contact"
-                  className="inline-flex h-11 items-center justify-center rounded-[10px] border border-foreground/20 bg-card/50 px-5 text-sm font-medium text-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/60 hover:bg-primary/5 active:translate-y-0 active:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="inline-flex h-11 items-center justify-center rounded-[10px] border border-primary/35 bg-card px-5 text-sm font-medium text-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/65 hover:bg-primary/5 hover:shadow-[0_4px_18px_-10px_var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   Contact Me
                 </Link>
@@ -134,7 +137,7 @@ export function Hero() {
           {/* AI / ML engineering visual */}
           <div
             aria-hidden="true"
-            className="relative mx-auto hidden h-[390px] w-[580px] max-w-full overflow-visible lg:block"
+            className="relative mx-auto hidden h-[390px] w-[580px] max-w-full overflow-visible lg:block lg:-translate-x-28"
           >
             {/* Ambient glow */}
             <div className="absolute inset-[22%] rounded-full bg-primary/[0.03] blur-3xl" />
@@ -187,7 +190,7 @@ export function Hero() {
 
             {/* Python — X only */}
             <Float
-              className="absolute left-0 top-[6%] z-20"
+              className="absolute left-[6%] top-[6%] z-20"
               duration={5.8}
               delay={0.2}
               x={[0, 10, -6, 5, 0]}
@@ -201,7 +204,7 @@ export function Hero() {
 
             {/* Scikit-learn — Y only */}
             <Float
-              className="absolute right-0 top-[10%] z-20"
+              className="absolute right-[6%] top-[10%] z-20"
               duration={6.4}
               delay={0.9}
               x={[0, 0, 0, 0, 0]}
@@ -215,7 +218,7 @@ export function Hero() {
 
             {/* RAG — 2D */}
             <Float
-              className="absolute left-0 top-[44%] z-20"
+              className="absolute left-[12%] top-[48%] z-20"
               duration={6.8}
               delay={1.2}
               x={[0, 5, -4, 3, 0]}
@@ -229,7 +232,7 @@ export function Hero() {
 
             {/* API — X only */}
             <Float
-              className="absolute right-0 top-[46%] z-20"
+              className="absolute right-[6%] top-[46%] z-20"
               duration={5.5}
               delay={1.7}
               x={[0, -7, 5, -4, 0]}
@@ -243,7 +246,7 @@ export function Hero() {
 
             {/* Git — 2D */}
             <Float
-              className="absolute bottom-[2%] left-[6%] z-20"
+              className="absolute bottom-[2%] left-[8%] z-20"
               duration={6.7}
               delay={0.6}
               x={[0, -6, 7, -4, 0]}
@@ -257,7 +260,7 @@ export function Hero() {
 
             {/* Cloud — Y only */}
             <Float
-              className="absolute bottom-[2%] right-[6%] z-20"
+              className="absolute bottom-[2%] right-[8%] z-20"
               duration={6}
               delay={1.5}
               x={[0, 0, 0, 0, 0]}

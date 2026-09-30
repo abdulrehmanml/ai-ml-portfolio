@@ -9,15 +9,38 @@ import { ThemeToggle } from "@/components/layout/theme-toggle"
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Projects", href: "/projects" },
-  { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Featured Work", href: "/#featured-work" },
+  { label: "Contact", href: "/#contact" },
 ]
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const handleSectionClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (!href.startsWith("/#") || window.location.pathname !== "/") {
+      return
+    }
+
+    event.preventDefault()
+
+    const sectionId = href.slice(2)
+    const section = document.getElementById(sectionId)
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    }
+
+    setMenuOpen(false)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +66,7 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-border/70 bg-background/85 backdrop-blur-xl"
+          ? "border-b border-border bg-background/85 backdrop-blur-xl shadow-[0_1px_0_0_var(--border)]"
           : "bg-transparent"
       )}
     >
@@ -64,6 +87,7 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={(event) => handleSectionClick(event, item.href)}
               className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors duration-200 hover:bg-primary/5 hover:text-foreground"
             >
               {item.label}
@@ -79,7 +103,9 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={
+              menuOpen ? "Close navigation menu" : "Open navigation menu"
+            }
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
             onClick={() => setMenuOpen((open) => !open)}
@@ -105,7 +131,7 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              onClick={() => setMenuOpen(false)}
+              onClick={(event) => handleSectionClick(event, item.href)}
               className="border-b border-border/50 px-1 py-4 text-sm font-medium transition-colors hover:text-primary last:border-b-0"
             >
               {item.label}

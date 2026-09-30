@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react"
 
 import { Container } from "@/components/layout/container"
 import { Section } from "@/components/layout/section"
-import { FadeIn } from "@/components/animations/fade-in"
 import { SlideUp } from "@/components/animations/slide-up"
 import { ProjectCard } from "@/components/projects/project-card"
 import { projects } from "@/data/projects"
@@ -17,7 +16,6 @@ export function FeaturedProjects() {
       className="border-y border-accent/30"
     >
       <Container>
-        <FadeIn>
           <div className="flex flex-col gap-10">
             {/* Section heading */}
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -72,7 +70,6 @@ export function FeaturedProjects() {
               })}
             </div>
           </div>
-        </FadeIn>
       </Container>
     </Section>
   )

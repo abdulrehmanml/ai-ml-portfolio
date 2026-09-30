@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react"
 
 import { Container } from "@/components/layout/container"
 import { Section } from "@/components/layout/section"
+import { FadeIn } from "@/components/animations/fade-in"
 import { SlideUp } from "@/components/animations/slide-up"
 import { ProjectCard } from "@/components/projects/project-card"
 import { projects } from "@/data/projects"
@@ -18,6 +19,7 @@ export function FeaturedProjects() {
       <Container>
           <div className="flex flex-col gap-10">
             {/* Section heading */}
+            <FadeIn>
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div className="w-full max-w-3xl">
                 <p className="mb-5 text-sm font-medium uppercase tracking-[0.18em] text-primary">
@@ -41,6 +43,7 @@ export function FeaturedProjects() {
                 <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </div>
+            </FadeIn>
 
             {/* Project grid */}
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

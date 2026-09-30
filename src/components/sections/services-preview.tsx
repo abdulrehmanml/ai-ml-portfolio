@@ -1,0 +1,95 @@
+import { ArrowRight, BarChart3, BrainCircuit, Cloud, Sparkles, } from "lucide-react"
+import { Container } from "@/components/layout/container"
+import { Section } from "@/components/layout/section"
+import { FadeIn } from "@/components/animations/fade-in"
+import { SlideUp } from "@/components/animations/slide-up"
+
+const services = [
+  {
+    number: "01",
+    icon: BrainCircuit,
+    title: "Machine Learning",
+    description:
+      "Build and evaluate practical predictive models for classification, regression, and real-world decision-making.",
+  },
+  {
+    number: "02",
+    icon: BarChart3,
+    title: "Data Analysis & Visualization",
+    description:
+      "Turn raw datasets into clear insights through data cleaning, exploratory analysis, visualization, and reporting.",
+  },
+  {
+    number: "03",
+    icon: Sparkles,
+    title: "Generative AI & RAG",
+    description:
+      "Build knowledge-based AI applications using retrieval, document processing, and generative AI workflows.",
+  },
+  {
+    number: "04",
+    icon: Cloud,
+    title: "Deployment & ML APIs",
+    description:
+      "Take machine learning solutions from notebooks to usable applications through APIs, Streamlit, and deployment workflows.",
+  },
+]
+
+export function ServicesPreview() {
+  return (
+    <Section id="services" className="border-y border-accent/30">
+      <Container>
+        <FadeIn>
+          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-20">
+            {/* Section introduction */}
+            <div className="lg:sticky lg:top-28">
+              <p className="mb-5 text-sm font-medium uppercase tracking-[0.18em] text-primary">
+                Services
+              </p>
+
+              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[42px] lg:leading-[1.1]">
+                AI/ML solutions built {" "}
+                <span className="text-primary">for practical use.</span>
+              </h2>
+
+              <p className="mt-4 w-full max-w-xl text-sm leading-6 text-foreground/70 sm:text-base md:w-[92%] md:max-w-none lg:w-full lg:max-w-md">
+                From data analysis and machine learning to generative AI and deployment, I build practical solutions designed to move beyond experimentation.
+              </p>
+            </div>
+
+            {/* Service list */}
+            <div className="border-t border-border/70">
+              {services.map(({ number, icon: Icon, title, description }) => (
+                <SlideUp key={number}>
+                  <div className="group grid gap-4 border-b border-border/70 py-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/35 hover:bg-primary/5 lg:grid-cols-[56px_1fr_auto] lg:items-start lg:gap-6">
+                    <span className="font-mono text-xs tracking-[0.12em] text-muted-foreground transition-colors duration-200 group-hover:text-primary">
+                      {number}
+                    </span>
+
+                    <div className="flex gap-4">
+                      <span className="mt-0.5 inline-flex size-10 shrink-0 items-center justify-center rounded-lg border border-border/70 bg-card/50 text-primary transition-all duration-200 group-hover:border-primary/50 group-hover:bg-primary/10 group-hover:shadow-[0_4px_18px_-10px_var(--primary)]">
+                        <Icon className="size-5" aria-hidden="true" />
+                      </span>
+
+                      <div>
+                        <h3 className="text-lg font-semibold tracking-tight text-foreground transition-colors duration-200 group-hover:text-primary">
+                          {title}
+                        </h3>
+
+                        <p className="mt-1.5 max-w-xl text-sm leading-6 text-muted-foreground transition-colors duration-200 group-hover:text-foreground/90">
+                          {description}
+                        </p>
+                      </div>
+                    </div>
+
+                    <ArrowRight className="mt-1 hidden size-5 text-muted-foreground transition-all duration-200 group-hover:translate-x-1 group-hover:text-primary lg:block" />
+                  </div>
+                </SlideUp>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+      </Container>
+    </Section>
+  )
+}

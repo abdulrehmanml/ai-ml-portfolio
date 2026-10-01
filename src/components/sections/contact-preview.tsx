@@ -52,42 +52,42 @@ export function ContactPreview() {
   } | null>(null)
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-  event.preventDefault()
+    event.preventDefault()
 
-  if (isSubmitting) return
+    if (isSubmitting) return
 
-  const form = event.currentTarget
-  const formData = new FormData(form)
+    const form = event.currentTarget
+    const formData = new FormData(form)
 
-  setIsSubmitting(true)
-  setStatus(null)
+    setIsSubmitting(true)
+    setStatus(null)
 
-  try {
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message"),
-        website: formData.get("website"),
-      }),
-    })
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+          website: formData.get("website"),
+        }),
+      })
 
-    const result = await response.json()
+      const result = await response.json()
 
-    if (!response.ok || !result.ok) {
-      throw new Error(result.error || "Unable to send message.")
-    }
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error || "Unable to send message.")
+      }
 
-    form.reset()
+      form.reset()
 
-    setStatus({
-      type: "success",
-      message: "Message sent successfully.",
-    })
+      setStatus({
+        type: "success",
+        message: "Message sent successfully.",
+      })
     } catch (error) {
       setStatus({
         type: "error",
@@ -218,7 +218,7 @@ export function ContactPreview() {
                       className="w-full resize-none rounded-lg border border-border bg-background px-3 py-3 text-sm leading-6 text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
                     />
                   </div>
-                  
+
                   <button
                     type="submit"
                     disabled={isSubmitting}

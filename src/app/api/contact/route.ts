@@ -21,7 +21,7 @@ export async function POST(request: Request) {
           ok: false,
           error: "Please complete all required fields.",
         },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
@@ -31,21 +31,17 @@ export async function POST(request: Request) {
           ok: false,
           error: "Please enter a valid email address.",
         },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
-    if (
-      name.length > 100 ||
-      email.length > 254 ||
-      message.length > 2000
-    ) {
+    if (name.length > 100 || email.length > 254 || message.length > 2000) {
       return NextResponse.json(
         {
           ok: false,
           error: "One or more fields are too long.",
         },
-        { status: 400 }
+        { status: 400 },
       )
     }
 
@@ -60,7 +56,7 @@ export async function POST(request: Request) {
           ok: false,
           error: "Contact service is not configured.",
         },
-        { status: 500 }
+        { status: 500 },
       )
     }
 
@@ -85,7 +81,7 @@ export async function POST(request: Request) {
           ok: false,
           error: "Unable to send your message right now.",
         },
-        { status: 502 }
+        { status: 502 },
       )
     }
 
@@ -97,7 +93,7 @@ export async function POST(request: Request) {
           ok: false,
           error: "Unable to save your message.",
         },
-        { status: 502 }
+        { status: 502 },
       )
     }
 
@@ -110,7 +106,7 @@ export async function POST(request: Request) {
         ok: false,
         error: "Something went wrong. Please try again.",
       },
-      { status: 500 }
+      { status: 500 },
     )
   }
 }

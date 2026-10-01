@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link"
+import { FormEvent, useState } from "react"
 import { ArrowUpRight, Mail, Send } from "lucide-react"
 import { SiGithub } from "@icons-pack/react-simple-icons"
 
@@ -42,6 +45,62 @@ const contactLinks = [
 ]
 
 export function ContactPreview() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [status, setStatus] = useState<{
+    type: "success" | "error"
+    message: string
+  } | null>(null)
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  event.preventDefault()
+
+  if (isSubmitting) return
+
+  const form = event.currentTarget
+  const formData = new FormData(form)
+
+  setIsSubmitting(true)
+  setStatus(null)
+
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+        website: formData.get("website"),
+      }),
+    })
+
+    const result = await response.json()
+
+    if (!response.ok || !result.ok) {
+      throw new Error(result.error || "Unable to send message.")
+    }
+
+    form.reset()
+
+    setStatus({
+      type: "success",
+      message: "Message sent successfully.",
+    })
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Unable to send your message.",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <Section id="contact" className="border-y border-accent/30 lg:pt-16">
       <Container>
@@ -91,8 +150,18 @@ export function ContactPreview() {
             <SlideUp>
               <form
                 className="rounded-xl border border-border/70 bg-card/40 p-5 sm:p-6"
-                action="#"
+                onSubmit={handleSubmit}
               >
+                <div className="hidden" aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input
+                    id="website"
+                    name="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
                 <div className="grid gap-5">
                   <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
                     <div className="grid gap-2">
@@ -152,11 +221,22 @@ export function ContactPreview() {
 
                   <button
                     type="submit"
+                    disabled={isSubmitting}
                     className="inline-flex h-11 w-fit items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
+                    {isSubmitting ? "Sending..." : "Send Message"}
                     Send Message
                     <Send className="size-4" aria-hidden="true" />
                   </button>
+                  {status && (
+                    <p
+                      role="status"
+                      aria-live="polite"
+                      className="text-sm text-muted-foreground"
+                    >
+                      {status.message}
+                    </p>
+                  )}
                 </div>
               </form>
             </SlideUp>

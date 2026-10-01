@@ -15,7 +15,7 @@ export function Hover({ children, className }: HoverProps) {
         "rounded-card border border-border bg-card text-card-foreground",
         "transition-colors duration-200",
         "hover:border-primary/50 hover:bg-primary/5",
-        className
+        className,
       )}
       whileHover={{
         y: -4,

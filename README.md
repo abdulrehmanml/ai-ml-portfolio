@@ -1,6 +1,7 @@
 <div align="center">
 
 # 🤖 AI/ML Portfolio
+
 **AI/ML Engineer building practical machine learning, AI, and data-driven applications.**
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-black.svg)](https://nextjs.org/)
@@ -10,7 +11,7 @@
 
 [**🌐 View Portfolio**](YOUR_PORTFOLIO_URL)
 
-*Showcasing practical work across machine learning, AI, NLP, and data-driven solutions.*
+_Showcasing practical work across machine learning, AI, NLP, and data-driven solutions._
 
 </div>
 
@@ -20,21 +21,21 @@ This portfolio presents my work in **Artificial Intelligence, Machine Learning, 
 
 ## ✨ Core Areas
 
-* **🧠 Machine Learning:** Predictive modeling and end-to-end ML workflows.
-* **📊 Data & Analytics:** Exploratory data analysis, visualization, and business insights.
-* **🤖 AI & NLP:** RAG-based applications, sentiment analysis, and generative AI solutions.
-* **🚀 Deployment:** Interactive ML applications and deployment workflows.
+- **🧠 Machine Learning:** Predictive modeling and end-to-end ML workflows.
+- **📊 Data & Analytics:** Exploratory data analysis, visualization, and business insights.
+- **🤖 AI & NLP:** RAG-based applications, sentiment analysis, and generative AI solutions.
+- **🚀 Deployment:** Interactive ML applications and deployment workflows.
 
 ## 🛠️ Tech Stack
 
-| Component | Technology |
-| :--- | :--- |
-| **Frontend** | Next.js, React, TypeScript |
-| **Styling** | Tailwind CSS |
-| **Animation** | Motion |
-| **Icons** | Lucide React, Simple Icons |
-| **AI/ML** | Python, Scikit-learn, NLP, Generative AI |
-| **Development** | Git, GitHub, VS Code |
+| Component       | Technology                               |
+| :-------------- | :--------------------------------------- |
+| **Frontend**    | Next.js, React, TypeScript               |
+| **Styling**     | Tailwind CSS                             |
+| **Animation**   | Motion                                   |
+| **Icons**       | Lucide React, Simple Icons               |
+| **AI/ML**       | Python, Scikit-learn, NLP, Generative AI |
+| **Development** | Git, GitHub, VS Code                     |
 
 ## 📂 Repository Structure
 
@@ -52,11 +53,12 @@ ai-ml-portfolio/
 ├── next.config.ts
 └── package.json
 ```
-----
+
+---
+
 ## Author
 
 **Abdul Rehman**
-
 
 **GitHub:** [View Profile](https://github.com/abdulrehmanml)
 

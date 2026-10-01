@@ -54,33 +54,29 @@ export function AboutPreview() {
   const [skillHover, setSkillHover] = useState<number | null>(null)
 
   return (
-    <Section
-      id="about"
-      className="border-y border-accent/30"
-    >
+    <Section id="about" className="border-y border-accent/30 lg:pt-16 lg:pb-16">
       <Container>
         <FadeIn>
           {/* Section heading */}
           <div className="w-full">
-            <p className="mb-5 text-sm font-medium uppercase tracking-[0.18em] text-primary">
+            <p className="mb-5 text-sm font-medium uppercase tracking-[0.14em] text-primary">
               About Me
             </p>
 
-            <h2 className="w-full pl-2 text-3xl font-semibold tracking-tight sm:text-4xl lg:pl-4 lg:text-[42px] lg:leading-[1.1]">
-              From machine learning to{" "}
-              <span className="text-primary">usable AI applications.</span>
+            <h2 className="w-full text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[42px] lg:leading-[1.1]">
+              I&apos;m Abdul Rehman.
             </h2>
-            
-            <p className="mx-auto mt-3 w-[92%] text-sm leading-6 text-foreground/70 lg:text-[15px]">
-              I&apos;m Abdul Rehman, an Artificial Intelligence undergraduate focused on
-              machine learning, data analysis, NLP, and generative AI. I build practical
-              projects that move from experimentation and evaluation to clean, usable,
-              deployable applications designed for real-world use.
+
+            <p className="mt-3 w-full max-w-6xl text-sm leading-6 text-foreground/70 lg:text-[15px]">
+              An Artificial Intelligence undergraduate focused on machine
+              learning, data analysis, NLP, and generative AI. I build practical
+              projects that move from experimentation and evaluation to clean,
+              usable, deployable applications designed for real-world use.
             </p>
           </div>
 
           {/* Profile + Technical Skills */}
-          <div className="mt-7 grid gap-8 lg:grid-cols-[260px_minmax(0,680px)] lg:items-center lg:justify-center lg:gap-16">
+          <div className="mt-7 grid gap-8 lg:grid-cols-[260px_minmax(0,680px)] lg:items-start lg:justify-center lg:gap-16">
             {/* Profile visual */}
             <SlideUp>
               <div className="mx-auto flex w-full max-w-[260px] flex-col justify-center lg:mx-0 lg:justify-self-center">
@@ -124,7 +120,7 @@ export function AboutPreview() {
                       />
                     ))}
                   </div>
-                  
+
                   <div className="group relative aspect-[4/5] overflow-hidden rounded-lg border border-border/70 bg-muted/10">
                     <Image
                       src="/images/abdul-rehman.png"
@@ -134,12 +130,12 @@ export function AboutPreview() {
                       sizes="280px"
                       className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
                     />
-            
+
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/10 via-transparent to-transparent" />
                   </div>
                 </div>
-                  
-                <div className="mt-5">
+
+                <div className="mt-4 flex justify-center">
                   <Link
                     href="/about"
                     className="group inline-flex h-11 items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 active:bg-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
@@ -158,13 +154,15 @@ export function AboutPreview() {
                 onMouseLeave={() => setSkillHover(null)}
               >
                 <div className="px-3 py-2.5">
-                  <h3 className="text-lg font-semibold text-primary">Technical Skills</h3>
+                  <h3 className="text-lg font-semibold text-primary">
+                    Technical Skills
+                  </h3>
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   {skillGroups.map(({ icon: Icon, title, skills }, index) => {
                     const isActive = skillHover === index
-                  
+
                     return (
                       <div
                         key={title}
@@ -189,11 +187,13 @@ export function AboutPreview() {
                             <Icon
                               className={[
                                 "size-4 transition-colors duration-200",
-                                isActive ? "text-primary" : "text-muted-foreground",
+                                isActive
+                                  ? "text-primary"
+                                  : "text-muted-foreground",
                               ].join(" ")}
                             />
                           </span>
-                            
+
                           <span
                             className={[
                               "text-sm font-medium transition-colors duration-200",
@@ -203,11 +203,13 @@ export function AboutPreview() {
                             {title}
                           </span>
                         </div>
-                          
+
                         <p
                           className={[
                             "text-sm leading-6 transition-colors duration-200",
-                            isActive ? "text-foreground/90" : "text-muted-foreground",
+                            isActive
+                              ? "text-foreground/90"
+                              : "text-muted-foreground",
                           ].join(" ")}
                         >
                           {skills}

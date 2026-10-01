@@ -10,11 +10,7 @@ import {
   Network,
   Server,
 } from "lucide-react"
-import {
-  SiGit,
-  SiPython,
-  SiScikitlearn,
-} from "@icons-pack/react-simple-icons"
+import { SiGit, SiPython, SiScikitlearn } from "@icons-pack/react-simple-icons"
 
 import { Container } from "@/components/layout/container"
 import { Section } from "@/components/layout/section"
@@ -28,11 +24,7 @@ type TechNodeProps = {
   className?: string
 }
 
-function TechNode({
-  label,
-  icon: Icon,
-  className,
-}: TechNodeProps) {
+function TechNode({ label, icon: Icon, className }: TechNodeProps) {
   return (
     <div
       className={`group flex w-fit items-center gap-2 rounded-xl border border-border/80 bg-card px-3 py-2 text-xs font-medium text-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/60 hover:bg-primary/10 hover:text-primary hover:shadow-[0_4px_18px_-8px_var(--primary)] dark:bg-card dark:hover:border-primary/70 dark:hover:bg-primary/15 dark:hover:text-primary dark:hover:shadow-[0_4px_20px_-8px_var(--primary)] ${className ?? ""}`}
@@ -44,9 +36,7 @@ function TechNode({
         />
       )}
 
-      <span className="whitespace-nowrap">
-        {label}
-      </span>
+      <span className="whitespace-nowrap">{label}</span>
     </div>
   )
 }
@@ -56,34 +46,25 @@ type WorkflowItemProps = {
   label: string
 }
 
-function WorkflowItem({
-  icon: Icon,
-  label,
-}: WorkflowItemProps) {
+function WorkflowItem({ icon: Icon, label }: WorkflowItemProps) {
   return (
     <div className="flex h-11 items-center gap-3 rounded-lg border border-border/30 bg-background/45 px-3">
       <div className="flex size-8 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
-        <Icon
-          className="size-4"
-          aria-hidden="true"
-        />
+        <Icon className="size-4" aria-hidden="true" />
       </div>
 
       <span className="text-sm font-medium leading-none text-foreground">
         {label}
       </span>
 
-      <span
-        className="ml-auto h-px w-10 bg-border/70"
-        aria-hidden="true"
-      />
+      <span className="ml-auto h-px w-10 bg-border/70" aria-hidden="true" />
     </div>
   )
 }
 
 export function Hero() {
   return (
-    <Section className="relative flex min-h-0 items-center overflow-hidden border-b border-accent/30 pt-20 pb-24 md:pt-24 md:pb-24 lg:min-h-[calc(100svh-6rem)]">
+    <Section className="relative flex min-h-0 items-center overflow-hidden border-b border-accent/30 pt-20 pb-20 md:pt-24 md:pb-24 lg:min-h-[calc(100svh-7rem)] lg:pb-16">
       <Container>
         <div className="relative grid items-center gap-10 lg:gap-16 lg:grid-cols-[1fr_0.95fr]">
           {/* Main content */}
@@ -95,7 +76,7 @@ export function Hero() {
             </FadeIn>
 
             <SlideUp>
-              <h1 className="max-w-2xl text-5xl font-semibold leading-[1.08] tracking-tight sm:text-6xl md:max-w-none md:text-5xl lg:max-w-2xl lg:text-6xl">
+              <h1 className="max-w-2xl text-5xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] sm:text-6xl md:max-w-none md:text-5xl lg:max-w-2xl lg:text-6xl">
                 <span className="block md:whitespace-nowrap">
                   Building AI/ML systems
                 </span>
@@ -107,9 +88,13 @@ export function Hero() {
             </SlideUp>
 
             <FadeIn>
-              <p className="mt-6 max-w-xl text-base leading-7 text-foreground/70 sm:text-lg">
-                I build practical machine learning and AI applications, from
-                data analysis and model development to deployment.
+              <p className="mt-6 w-full max-w-2xl text-base leading-7 text-foreground/70 sm:text-lg">
+                <span className="block lg:whitespace-nowrap">
+                  I build practical machine learning and AI applications, from
+                </span>
+                <span className="block lg:whitespace-nowrap">
+                  data analysis and model development to deployment.
+                </span>
               </p>
             </FadeIn>
 
@@ -120,7 +105,6 @@ export function Hero() {
                   className="group inline-flex h-11 items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 active:bg-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   View Projects
-
                   <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
 
@@ -143,14 +127,11 @@ export function Hero() {
             <div className="absolute inset-[22%] rounded-full bg-primary/[0.03] blur-3xl" />
 
             {/* Central engineering panel */}
-            <div className="absolute left-1/2 top-1/2 z-10 w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-card p-4 shadow-xl">
+            <div className="absolute left-1/2 top-1/2 z-10 w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-card p-5 shadow-[0_18px_45px_-18px_var(--primary)]">
               {/* Header */}
               <div className="flex items-center gap-3">
                 <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <BrainCircuit
-                    className="size-5"
-                    aria-hidden="true"
-                  />
+                  <BrainCircuit className="size-5" aria-hidden="true" />
                 </div>
 
                 <div className="w-[190px]">
@@ -166,25 +147,13 @@ export function Hero() {
 
               {/* Vertical workflow */}
               <div className="mt-4 space-y-1.5">
-                <WorkflowItem
-                  icon={Database}
-                  label="Data"
-                />
+                <WorkflowItem icon={Database} label="Data" />
 
-                <WorkflowItem
-                  icon={Network}
-                  label="Model"
-                />
+                <WorkflowItem icon={Network} label="Model" />
 
-                <WorkflowItem
-                  icon={Server}
-                  label="API"
-                />
+                <WorkflowItem icon={Server} label="API" />
 
-                <WorkflowItem
-                  icon={Cloud}
-                  label="Deploy"
-                />
+                <WorkflowItem icon={Cloud} label="Deploy" />
               </div>
             </div>
 
@@ -196,10 +165,7 @@ export function Hero() {
               x={[0, 10, -6, 5, 0]}
               y={[0, 0, 0, 0, 0]}
             >
-              <TechNode
-                label="Python"
-                icon={SiPython}
-              />
+              <TechNode label="Python" icon={SiPython} />
             </Float>
 
             {/* Scikit-learn — Y only */}
@@ -210,10 +176,7 @@ export function Hero() {
               x={[0, 0, 0, 0, 0]}
               y={[0, -8, 7, -5, 0]}
             >
-              <TechNode
-                label="Scikit-learn"
-                icon={SiScikitlearn}
-              />
+              <TechNode label="Scikit-learn" icon={SiScikitlearn} />
             </Float>
 
             {/* RAG — 2D */}
@@ -224,10 +187,7 @@ export function Hero() {
               x={[0, 5, -4, 3, 0]}
               y={[0, -6, 7, -4, 0]}
             >
-              <TechNode
-                label="RAG"
-                icon={Database}
-              />
+              <TechNode label="RAG" icon={Database} />
             </Float>
 
             {/* API — X only */}
@@ -238,10 +198,7 @@ export function Hero() {
               x={[0, -7, 5, -4, 0]}
               y={[0, 0, 0, 0, 0]}
             >
-              <TechNode
-                label="API"
-                icon={Server}
-              />
+              <TechNode label="API" icon={Server} />
             </Float>
 
             {/* Git — 2D */}
@@ -252,10 +209,7 @@ export function Hero() {
               x={[0, -6, 7, -4, 0]}
               y={[0, 5, -6, 4, 0]}
             >
-              <TechNode
-                label="Git"
-                icon={SiGit}
-              />
+              <TechNode label="Git" icon={SiGit} />
             </Float>
 
             {/* Cloud — Y only */}
@@ -266,59 +220,41 @@ export function Hero() {
               x={[0, 0, 0, 0, 0]}
               y={[0, 6, -7, 4, 0]}
             >
-              <TechNode
-                label="Cloud"
-                icon={Cloud}
-              />
+              <TechNode label="Cloud" icon={Cloud} />
             </Float>
           </div>
         </div>
 
         {/* Mobile / tablet AI / ML visual */}
         <div className="mt-6 md:mt-8 lg:hidden">
-            <div className="mx-auto w-full max-w-[390px] rounded-2xl border border-border bg-card p-4 shadow-lg">
-              <div className="flex items-center gap-3">
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <BrainCircuit
-                    className="size-5"
-                    aria-hidden="true"
-                  />
-                </div>
-
-                <div className="min-w-0">
-                  <p className="text-base font-semibold leading-5 tracking-tight text-foreground">
-                    AI / ML Engineering
-                  </p>
-
-                  <p className="mt-1 font-mono text-[9px] font-medium leading-4 tracking-[0.16em] text-muted-foreground">
-                    END-TO-END WORKFLOW
-                  </p>
-                </div>
+          <div className="mx-auto w-full max-w-[390px] rounded-2xl border border-border bg-card p-5 shadow-[0_16px_40px_-18px_var(--primary)]">
+            <div className="flex items-center gap-3">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <BrainCircuit className="size-5" aria-hidden="true" />
               </div>
 
-              <div className="mt-4 space-y-1.5">
-                <WorkflowItem
-                  icon={Database}
-                  label="Data"
-                />
+              <div className="min-w-0">
+                <p className="text-base font-semibold leading-5 tracking-tight text-foreground">
+                  AI / ML Engineering
+                </p>
 
-                <WorkflowItem
-                  icon={Network}
-                  label="Model"
-                />
-
-                <WorkflowItem
-                  icon={Server}
-                  label="API"
-                />
-
-                <WorkflowItem
-                  icon={Cloud}
-                  label="Deploy"
-                />
+                <p className="mt-1 font-mono text-[9px] font-medium leading-4 tracking-[0.16em] text-muted-foreground">
+                  END-TO-END WORKFLOW
+                </p>
               </div>
             </div>
+
+            <div className="mt-4 space-y-1.5">
+              <WorkflowItem icon={Database} label="Data" />
+
+              <WorkflowItem icon={Network} label="Model" />
+
+              <WorkflowItem icon={Server} label="API" />
+
+              <WorkflowItem icon={Cloud} label="Deploy" />
+            </div>
           </div>
+        </div>
       </Container>
     </Section>
   )

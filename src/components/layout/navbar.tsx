@@ -21,7 +21,7 @@ export function Navbar() {
 
   const handleSectionClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
   ) => {
     if (!href.startsWith("/#") || window.location.pathname !== "/") {
       return
@@ -67,7 +67,7 @@ export function Navbar() {
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
           ? "border-b border-border bg-background/85 backdrop-blur-xl shadow-[0_1px_0_0_var(--border)]"
-          : "bg-transparent"
+          : "bg-transparent",
       )}
     >
       <nav
@@ -88,7 +88,7 @@ export function Navbar() {
               key={item.href}
               href={item.href}
               onClick={(event) => handleSectionClick(event, item.href)}
-              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors duration-200 hover:bg-primary/5 hover:text-foreground"
+              className="rounded-md px-3 py-2 text-sm text-foreground/75 transition-colors duration-200 hover:bg-primary/5 hover:text-foreground"
             >
               {item.label}
             </Link>
@@ -110,11 +110,7 @@ export function Navbar() {
             aria-controls="mobile-navigation"
             onClick={() => setMenuOpen((open) => !open)}
           >
-            {menuOpen ? (
-              <X className="size-5" />
-            ) : (
-              <Menu className="size-5" />
-            )}
+            {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
           </Button>
         </div>
       </nav>
@@ -123,7 +119,7 @@ export function Navbar() {
         id="mobile-navigation"
         className={cn(
           "border-t border-border/70 bg-background/95 backdrop-blur-xl lg:hidden",
-          menuOpen ? "block" : "hidden"
+          menuOpen ? "block" : "hidden",
         )}
       >
         <div className="mx-auto flex max-w-[1200px] flex-col px-5 py-4">
@@ -132,7 +128,7 @@ export function Navbar() {
               key={item.href}
               href={item.href}
               onClick={(event) => handleSectionClick(event, item.href)}
-              className="border-b border-border/50 px-1 py-4 text-sm font-medium transition-colors hover:text-primary last:border-b-0"
+              className="border-b border-border/50 px-1 py-4 text-sm font-medium text-foreground/80 transition-colors hover:text-primary last:border-b-0"
             >
               {item.label}
             </Link>

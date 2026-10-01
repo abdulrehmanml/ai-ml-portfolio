@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowUpRight, FolderCode } from "lucide-react"
+import { FolderCode } from "lucide-react"
 import { motion } from "motion/react"
 
 import { Card } from "@/components/ui/card"
@@ -10,9 +10,10 @@ import type { Project } from "@/types"
 
 type ProjectCardProps = {
   project: Project
+  priority?: boolean
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, priority = false }: ProjectCardProps) {
   return (
     <Link
       href={project.href}
@@ -37,6 +38,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 alt={`${project.title} project preview`}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                loading={priority ? "eager" : "lazy"}
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
               />
             ) : (
@@ -57,15 +59,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
               {project.category}
             </p>
 
-            <div className="mt-3 flex items-start justify-between gap-4">
-              <h3 className="text-xl font-semibold tracking-tight">
+            <div className="mt-3">
+              <h3 className="text-lg font-semibold tracking-tight">
                 {project.title}
               </h3>
-
-              <ArrowUpRight
-                className="mt-0.5 size-5 shrink-0 text-muted-foreground transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary"
-                aria-hidden="true"
-              />
             </div>
 
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
@@ -82,11 +79,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
                   {technology}
                 </span>
               ))}
-            </div>
-
-            {/* Card action */}
-            <div className="mt-8 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-primary">
-              View Case Study
             </div>
           </div>
         </Card>

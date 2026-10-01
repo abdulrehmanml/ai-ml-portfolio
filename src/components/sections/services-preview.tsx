@@ -1,4 +1,10 @@
-import { ArrowRight, BarChart3, BrainCircuit, Cloud, Sparkles, } from "lucide-react"
+import {
+  ArrowRight,
+  BarChart3,
+  BrainCircuit,
+  Cloud,
+  Sparkles,
+} from "lucide-react"
 import { Container } from "@/components/layout/container"
 import { Section } from "@/components/layout/section"
 import { FadeIn } from "@/components/animations/fade-in"
@@ -9,51 +15,77 @@ const services = [
     number: "01",
     icon: BrainCircuit,
     title: "Machine Learning",
-    description:
-      "Build and evaluate practical predictive models for classification, regression, and real-world decision-making.",
+    description: (
+      <>
+        Build and evaluate predictive models for classification,{" "}
+        <br className="hidden lg:block" />
+        regression, and practical real-world decision-making.
+      </>
+    ),
   },
   {
     number: "02",
     icon: BarChart3,
     title: "Data Analysis & Visualization",
-    description:
-      "Turn raw datasets into clear insights through data cleaning, exploratory analysis, visualization, and reporting.",
+    description: (
+      <>
+        Turn raw datasets into clear insights through data cleaning,{" "}
+        <br className="hidden lg:block" />
+        exploratory analysis, visualization, and reporting.
+      </>
+    ),
   },
   {
     number: "03",
     icon: Sparkles,
     title: "Generative AI & RAG",
-    description:
-      "Build knowledge-based AI applications using retrieval, document processing, and generative AI workflows.",
+    description: (
+      <>
+        Turn raw datasets into clear insights through data cleaning,{" "}
+        <br className="hidden lg:block" />
+        exploratory analysis, visualization, and reporting.
+      </>
+    ),
   },
   {
     number: "04",
     icon: Cloud,
     title: "Deployment & ML APIs",
-    description:
-      "Take machine learning solutions from notebooks to usable applications through APIs, Streamlit, and deployment workflows.",
+    description: (
+      <>
+        Turn raw datasets into clear insights through data cleaning,{" "}
+        <br className="hidden lg:block" />
+        exploratory analysis, visualization, and reporting.
+      </>
+    ),
   },
 ]
 
 export function ServicesPreview() {
   return (
-    <Section id="services" className="border-y border-accent/30">
+    <Section id="services" className="border-y border-accent/30 lg:pt-16">
       <Container>
         <FadeIn>
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-20">
             {/* Section introduction */}
-            <div className="lg:sticky lg:top-28">
-              <p className="mb-5 text-sm font-medium uppercase tracking-[0.18em] text-primary">
+            <div className="lg:sticky lg:top-28 lg:pt-0">
+              <p className="mb-5 text-sm font-medium min-[560px]:text-base uppercase tracking-[0.14em] text-primary">
                 Services
               </p>
 
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[42px] lg:leading-[1.1]">
-                AI/ML solutions built {" "}
-                <span className="text-primary">for practical use.</span>
+              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:leading-[1.08]">
+                <span className="block lg:text-[44px] lg:whitespace-nowrap">
+                  AI/ML Solutions
+                </span>
+                <span className="block text-primary lg:text-[40px] lg:whitespace-nowrap">
+                  built for practical use.
+                </span>
               </h2>
 
               <p className="mt-4 w-full max-w-xl text-sm leading-6 text-foreground/70 sm:text-base md:w-[92%] md:max-w-none lg:w-full lg:max-w-md">
-                From data analysis and machine learning to generative AI and deployment, I build practical solutions designed to move beyond experimentation.
+                From data analysis and machine learning to generative AI and
+                deployment, I build practical solutions designed to move beyond
+                experimentation.
               </p>
             </div>
 
@@ -61,7 +93,7 @@ export function ServicesPreview() {
             <div className="border-t border-border/70">
               {services.map(({ number, icon: Icon, title, description }) => (
                 <SlideUp key={number}>
-                  <div className="group grid gap-4 border-b border-border/70 py-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/35 hover:bg-primary/5 lg:grid-cols-[56px_1fr_auto] lg:items-start lg:gap-6">
+                  <div className="group grid gap-4 border-b border-border/70 py-6 transition-all duration-200 min-[560px]:py-7 lg:py-6 hover:-translate-y-0.5 hover:border-primary/35 hover:bg-primary/5 lg:grid-cols-[56px_1fr_auto] lg:items-start lg:gap-6">
                     <span className="font-mono text-xs tracking-[0.12em] text-muted-foreground transition-colors duration-200 group-hover:text-primary">
                       {number}
                     </span>
@@ -72,11 +104,11 @@ export function ServicesPreview() {
                       </span>
 
                       <div>
-                        <h3 className="text-lg font-semibold tracking-tight text-foreground transition-colors duration-200 group-hover:text-primary">
+                        <h3 className="text-lg font-semibold tracking-tight text-foreground transition-colors duration-200 min-[560px]:text-xl lg:text-lg group-hover:text-primary">
                           {title}
                         </h3>
 
-                        <p className="mt-1.5 max-w-xl text-sm leading-6 text-muted-foreground transition-colors duration-200 group-hover:text-foreground/90">
+                        <p className="mt-1.5 w-full max-w-xl text-balance text-sm leading-6 text-muted-foreground transition-colors duration-200 min-[560px]:text-[15px] lg:text-sm group-hover:text-foreground/90">
                           {description}
                         </p>
                       </div>

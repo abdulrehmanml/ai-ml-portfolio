@@ -13,8 +13,8 @@ export const projects: Project[] = [
   },
 
   {
-    slug: "agrisense-ai",
-    title: "AgriSense AI",
+    slug: "agrofarm-ai",
+    title: "AgroFarm AI",
     category: "Generative AI",
     description:
       "RAG-based agronomy assistant designed to provide context-aware agricultural guidance.",

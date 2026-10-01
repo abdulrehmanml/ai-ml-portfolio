@@ -12,23 +12,15 @@ export function ThemeToggle() {
   const mounted = useSyncExternalStore(
     emptySubscribe,
     () => true,
-    () => false
+    () => false,
   )
 
   const { resolvedTheme, setTheme } = useTheme()
 
   if (!mounted) {
     return (
-      <Button
-        variant="ghost"
-        size="icon"
-        disabled
-        aria-label="Toggle theme"
-      >
-        <span
-          className="size-4"
-          aria-hidden="true"
-        />
+      <Button variant="ghost" size="icon" disabled aria-label="Toggle theme">
+        <span className="size-4" aria-hidden="true" />
       </Button>
     )
   }
@@ -40,20 +32,12 @@ export function ThemeToggle() {
       variant="ghost"
       size="icon"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      aria-label={
-        isDark ? "Switch to light mode" : "Switch to dark mode"
-      }
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
       {isDark ? (
-        <Sun
-          className="size-4"
-          aria-hidden="true"
-        />
+        <Sun className="size-4" aria-hidden="true" />
       ) : (
-        <Moon
-          className="size-4"
-          aria-hidden="true"
-        />
+        <Moon className="size-4" aria-hidden="true" />
       )}
     </Button>
   )

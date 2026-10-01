@@ -28,7 +28,8 @@ export function FeaturedProjects() {
                 </h2>
 
                 <p className="mt-3 w-full text-sm leading-6 text-foreground/70 sm:text-base lg:text-[15px] lg:whitespace-nowrap">
-                  A selection of practical projects spanning machine learning, NLP, generative AI, and data-driven applications.
+                  A selection of practical projects spanning machine learning,
+                  NLP, generative AI, and data-driven applications.
                 </p>
               </div>
 

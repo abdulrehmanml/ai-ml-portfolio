@@ -167,12 +167,12 @@ export default function AboutPage() {
                 },
               ].map((step) => (
                 <SlideUp key={step.number}>
-                  <div className="group relative h-full border-t border-border pt-5 transition-colors duration-200 hover:border-primary/50">
+                  <div className="group relative h-full border-t border-border pt-5 transition-colors duration-200 hover:border-primary">
                     <span className="font-mono text-xs font-medium tracking-[0.12em] text-primary">
                       {step.number}
                     </span>
 
-                    <h3 className="mt-3 text-lg font-semibold tracking-tight">
+                    <h3 className="mt-3 text-lg font-semibold tracking-tight transition-colors duration-200 group-hover:text-primary">
                       {step.title}
                     </h3>
 

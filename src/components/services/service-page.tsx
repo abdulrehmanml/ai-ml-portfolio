@@ -334,8 +334,7 @@ export function ServicePage({ service }: ServicePageProps) {
             ) : (
               <div className="mt-10 max-w-2xl border-t border-border pt-6">
                 <p className="text-sm leading-6 text-foreground/70">
-                  Relevant project work will be added here as the portfolio
-                  expands.
+                  Relevant project work will be added here as the portfolio expands.
                 </p>
               </div>
             )}

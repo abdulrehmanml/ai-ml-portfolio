@@ -171,11 +171,10 @@ export default function AboutPage() {
                     <span className="font-mono text-xs font-medium tracking-[0.12em] text-primary">
                       {step.number}
                     </span>
-
+                              
                     <h3 className="mt-3 text-lg font-semibold tracking-tight transition-colors duration-200 group-hover:text-primary">
                       {step.title}
                     </h3>
-
                     <p className="mt-3 text-sm leading-6 text-foreground/70">
                       {step.description}
                     </p>

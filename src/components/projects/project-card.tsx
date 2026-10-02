@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { FolderCode } from "lucide-react"
+import { ArrowRight, FolderCode } from "lucide-react"
 import { motion } from "motion/react"
 
 import { Card } from "@/components/ui/card"
@@ -11,9 +11,14 @@ import type { Project } from "@/types"
 type ProjectCardProps = {
   project: Project
   priority?: boolean
+  compact?: boolean
 }
 
-export function ProjectCard({ project, priority = false }: ProjectCardProps) {
+export function ProjectCard({
+  project,
+  priority = false,
+  compact = false,
+}: ProjectCardProps) {
   return (
     <Link
       href={project.href}
@@ -29,9 +34,13 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
         }}
         className="h-full"
       >
-        <Card className="group h-full overflow-hidden border-border/80 bg-card transition-colors duration-300 hover:border-primary/50 hover:bg-primary/[0.03]">
+        <Card className="group h-full overflow-hidden border-border/80 bg-card transition-colors duration-300 hover:border-primary/50 hover:bg-primary/5">
           {/* Project visual */}
-          <div className="relative h-52 overflow-hidden border-b border-border/70 bg-muted sm:h-56 lg:h-60">
+          <div
+            className={`relative overflow-hidden border-b border-border/70 bg-muted ${
+              compact ? "h-48 sm:h-52 lg:h-56" : "h-52 sm:h-56 lg:h-60"
+            }`}
+          >
             {project.image ? (
               <Image
                 src={project.image}
@@ -42,7 +51,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
               />
             ) : (
-              <div className="flex h-full items-center justify-center bg-gradient-to-br from-primary/10 via-card to-accent/10">
+              <div className="flex h-full items-center justify-center bg-linear-to-br from-primary/10 via-card to-accent/10">
                 <FolderCode
                   className="size-12 text-primary/70"
                   aria-hidden="true"
@@ -50,17 +59,19 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
               </div>
             )}
 
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </div>
 
           {/* Content */}
-          <div className="flex flex-col p-6">
+          <div
+            className={`flex h-full flex-col ${compact ? "p-5 sm:p-6" : "p-6"}`}
+          >
             <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-primary">
               {project.category}
             </p>
 
             <div className="mt-3">
-              <h3 className="text-lg font-semibold tracking-tight">
+              <h3 className="text-lg font-semibold tracking-tight transition-colors duration-200 group-hover:text-primary">
                 {project.title}
               </h3>
             </div>
@@ -79,6 +90,16 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
                   {technology}
                 </span>
               ))}
+            </div>
+
+            <div className="mt-auto pt-6">
+              <div className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-primary">
+                View Project
+                <ArrowRight
+                  className="size-4 transition-transform duration-200 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
+              </div>
             </div>
           </div>
         </Card>

@@ -3,7 +3,13 @@ export type Project = {
   title: string
   category: string
   description: string
+  problem: string
+  solution: string
+  workflow: string[]
   technologies: string[]
-  image?: string
+  keyWork: string[]
+  image: string
   href: string
+  githubUrl: string
+  liveDemoUrl?: string
 }

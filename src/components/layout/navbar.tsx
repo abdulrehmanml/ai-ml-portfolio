@@ -11,7 +11,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/#about" },
   { label: "Services", href: "/#services" },
-  { label: "Featured Work", href: "/#featured-work" },
+  { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/#contact" },
 ]
 
@@ -71,7 +71,7 @@ export function Navbar() {
       )}
     >
       <nav
-        className="mx-auto flex h-18 w-full max-w-[1200px] items-center justify-between px-5 md:px-8"
+        className="mx-auto flex h-18 w-full max-w-300 items-center justify-between px-5 md:px-8"
         aria-label="Main navigation"
       >
         <Link
@@ -85,7 +85,7 @@ export function Navbar() {
         <div className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
             <Link
-              key={item.href}
+              key={item.label}
               href={item.href}
               onClick={(event) => handleSectionClick(event, item.href)}
               className="rounded-md px-3 py-2 text-sm text-foreground/75 transition-colors duration-200 hover:bg-primary/5 hover:text-foreground"
@@ -122,10 +122,10 @@ export function Navbar() {
           menuOpen ? "block" : "hidden",
         )}
       >
-        <div className="mx-auto flex max-w-[1200px] flex-col px-5 py-4">
+        <div className="mx-auto flex max-w-300 flex-col px-5 py-4">
           {navItems.map((item) => (
             <Link
-              key={item.href}
+              key={item.label}
               href={item.href}
               onClick={(event) => handleSectionClick(event, item.href)}
               className="border-b border-border/50 px-1 py-4 text-sm font-medium text-foreground/80 transition-colors hover:text-primary last:border-b-0"

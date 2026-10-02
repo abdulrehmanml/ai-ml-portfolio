@@ -1,11 +1,11 @@
 import Link from "next/link"
-import { ArrowLeft, ArrowRight, FileQuestion } from "lucide-react"
+import { ArrowLeft, ArrowRight, Construction } from "lucide-react"
 
-import { Container } from "@/components/layout/container"
 import { FadeIn } from "@/components/animations/fade-in"
+import { Container } from "@/components/layout/container"
 import { Navbar } from "@/components/layout/navbar"
 
-export default function NotFound() {
+export default function UnderConstruction() {
   return (
     <>
       <Navbar />
@@ -16,20 +16,20 @@ export default function NotFound() {
             <FadeIn>
               <div className="mx-auto flex w-full max-w-4xl flex-col items-center px-1 text-center">
                 <div className="flex size-14 items-center justify-center rounded-2xl border border-border bg-card text-primary shadow-sm">
-                  <FileQuestion className="size-6" aria-hidden="true" />
+                  <Construction className="size-6" aria-hidden="true" />
                 </div>
 
                 <p className="mt-6 font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
-                  404
+                  Under Construction
                 </p>
 
                 <h1 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[56px] lg:leading-[1.05]">
-                  This page doesn&apos;t exist.
+                  This page is under construction.
                 </h1>
 
                 <p className="mt-4 w-full max-w-xl text-sm leading-6 text-foreground/70 min-[560px]:max-w-3xl min-[560px]:text-base lg:max-w-3xl lg:text-[15px]">
-                  The page you&apos;re looking for may have been moved, removed,
-                  or never existed in the first place.
+                  This part of the portfolio is currently being built. Check
+                  back soon for the completed experience.
                 </p>
 
                 <div className="mt-8 flex w-full flex-col items-center justify-center gap-3 min-[560px]:flex-row">

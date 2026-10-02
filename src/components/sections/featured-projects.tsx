@@ -34,7 +34,7 @@ export function FeaturedProjects() {
               </div>
 
               <Link
-                href="/under-construction"
+                href="/projects"
                 className="group inline-flex h-11 w-fit whitespace-nowrap items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
                 View all projects
@@ -58,13 +58,13 @@ export function FeaturedProjects() {
                   }
                 >
                   <div
-                    className={
-                      isThird
-                        ? "w-full md:w-[calc(50%_-_0.75rem)] lg:w-full"
-                        : "w-full"
-                    }
+                    className={isThird ? "w-full md:w-1/2 lg:w-full" : "w-full"}
                   >
-                    <ProjectCard project={project} priority={index === 0} />
+                    <ProjectCard
+                      project={project}
+                      priority={index === 0}
+                      compact
+                    />
                   </div>
                 </SlideUp>
               )

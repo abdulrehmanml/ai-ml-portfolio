@@ -3,6 +3,7 @@ import Image from "next/image"
 import { FadeIn } from "@/components/animations/fade-in"
 import { SlideUp } from "@/components/animations/slide-up"
 import { Container } from "@/components/layout/container"
+import { Footer } from "@/components/layout/footer"
 import { Navbar } from "@/components/layout/navbar"
 import { Section } from "@/components/layout/section"
 
@@ -171,7 +172,7 @@ export default function AboutPage() {
                     <span className="font-mono text-xs font-medium tracking-[0.12em] text-primary">
                       {step.number}
                     </span>
-                              
+
                     <h3 className="mt-3 text-lg font-semibold tracking-tight transition-colors duration-200 group-hover:text-primary">
                       {step.title}
                     </h3>
@@ -564,6 +565,7 @@ export default function AboutPage() {
           </Container>
         </Section>
       </main>
+      <Footer />
     </>
   )
 }

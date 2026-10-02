@@ -6,11 +6,21 @@ import { Container } from "@/components/layout/container"
 import { Footer } from "@/components/layout/footer"
 import { Navbar } from "@/components/layout/navbar"
 import { Section } from "@/components/layout/section"
+import { projects } from "@/data/projects"
 
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 export default function AboutPage() {
+  const selectedProjectSlugs = [
+    "customer-churn-prediction",
+    "sentiment-analysis",
+    "agrofarm-ai",
+  ]
+  const selectedProjects = selectedProjectSlugs.flatMap((slug) =>
+    projects.filter((project) => project.slug === slug),
+  )
+
   return (
     <>
       <Navbar />
@@ -400,65 +410,37 @@ export default function AboutPage() {
             </FadeIn>
 
             <div className="mt-12 grid gap-6 lg:grid-cols-3">
-              {[
-                {
-                  category: "Machine Learning",
-                  title: "Customer Churn Prediction",
-                  description:
-                    "A machine learning application that estimates customer churn likelihood from customer, service, contract, and billing information.",
-                  stack: "Python · Pandas · Scikit-learn · Joblib · Streamlit",
-                  href: "https://github.com/abdulrehmanml/customer-churn-prediction-ml",
-                },
-                {
-                  category: "NLP",
-                  title: "Social Media Sentiment Analysis",
-                  description:
-                    "A three-class sentiment analysis system that processes social-media text using NLP preprocessing, TF-IDF features, and machine learning.",
-                  stack: "Python · Scikit-learn · TF-IDF · Streamlit",
-                  href: "https://github.com/abdulrehmanml/sentiment-analysis-system",
-                },
-                {
-                  category: "Generative AI",
-                  title: "AgroFarm AI",
-                  description:
-                    "A RAG-based agriculture advisor that retrieves relevant knowledge and generates context-aware responses through a Streamlit application.",
-                  stack: "Python · Gemini · ChromaDB · RAG · Streamlit",
-                  href: "https://github.com/abdulrehmanml/agrofarm-ai",
-                },
-              ].map((project) => (
-                <SlideUp key={project.title}>
-                  <article className="group flex h-full flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-card hover:shadow-[0_12px_32px_-16px_var(--primary)] min-[560px]:p-7">
-                    <p className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-primary">
-                      {project.category}
-                    </p>
+              {selectedProjects.map((project) => (
+                <SlideUp key={project.slug}>
+                  <Link href={project.href} className="group block h-full">
+                    <article className="flex h-full flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-card hover:shadow-[0_12px_32px_-16px_var(--primary)] min-[560px]:p-7">
+                      <p className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-primary">
+                        {project.category}
+                      </p>
 
-                    <h3 className="mt-4 text-xl font-semibold tracking-tight">
-                      {project.title}
-                    </h3>
+                      <h3 className="mt-4 text-xl font-semibold tracking-tight">
+                        {project.title}
+                      </h3>
 
-                    <p className="mt-3 text-sm leading-6 text-foreground/70">
-                      {project.description}
-                    </p>
+                      <p className="mt-3 text-sm leading-6 text-foreground/70">
+                        {project.description}
+                      </p>
 
-                    <p className="mt-5 font-mono text-[11px] leading-5 text-muted-foreground">
-                      {project.stack}
-                    </p>
+                      <p className="mt-5 font-mono text-[11px] leading-5 text-muted-foreground">
+                        {project.technologies.join(" · ")}
+                      </p>
 
-                    <div className="mt-auto pt-6">
-                      <a
-                        href={project.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group/link inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 hover:text-primary"
-                      >
-                        View Project
-                        <ArrowRight
-                          className="size-4 transition-transform duration-200 group-hover/link:translate-x-1"
-                          aria-hidden="true"
-                        />
-                      </a>
-                    </div>
-                  </article>
+                      <div className="mt-auto pt-6">
+                        <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-primary">
+                          View Project
+                          <ArrowRight
+                            className="size-4 transition-transform duration-200 group-hover:translate-x-1"
+                            aria-hidden="true"
+                          />
+                        </span>
+                      </div>
+                    </article>
+                  </Link>
                 </SlideUp>
               ))}
             </div>

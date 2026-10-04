@@ -2,14 +2,7 @@
 
 import Link from "next/link"
 import type { ElementType } from "react"
-import {
-  ArrowRight,
-  BrainCircuit,
-  Cloud,
-  Database,
-  Network,
-  Server,
-} from "lucide-react"
+import {ArrowRight, BrainCircuit, Cloud, Database, Network, Server, } from "lucide-react"
 import { SiGit, SiPython, SiScikitlearn } from "@icons-pack/react-simple-icons"
 
 import { Container } from "@/components/layout/container"
@@ -17,6 +10,7 @@ import { Section } from "@/components/layout/section"
 import { FadeIn } from "@/components/animations/fade-in"
 import { SlideUp } from "@/components/animations/slide-up"
 import { Float } from "@/components/animations/float"
+import { scrollToSection } from "@/lib/scroll-to-section"
 
 type TechNodeProps = {
   label: string
@@ -64,7 +58,7 @@ function WorkflowItem({ icon: Icon, label }: WorkflowItemProps) {
 
 export function Hero() {
   return (
-    <Section className="relative flex min-h-0 items-center overflow-hidden border-b border-accent/30 pt-20 pb-20 md:pt-24 md:pb-24 lg:min-h-[calc(100svh-7rem)] lg:pb-16">
+    <Section className="relative flex min-h-0 items-center overflow-hidden border-b border-accent/30 pt-26 sm:pt-32 lg:pt-24 xl:pt-28 2xl:pt-36">
       <Container>
         <div className="relative grid items-center gap-10 lg:gap-16 lg:grid-cols-[1fr_0.95fr]">
           {/* Main content */}
@@ -76,32 +70,32 @@ export function Hero() {
             </FadeIn>
 
             <SlideUp>
-              <h1 className="max-w-2xl text-5xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] sm:text-6xl md:max-w-none md:text-5xl lg:max-w-2xl lg:text-6xl">
-                <span className="block md:whitespace-nowrap">
-                  Building AI/ML systems
+              <h1 className="w-full max-w-none text-[30px] font-semibold leading-[1.08] tracking-tight text-justify [text-align-last:justify] min-[380px]:text-[32px] min-[420px]:text-[34px] min-[560px]:max-w-2xl min-[560px]:text-[40px] sm:text-6xl md:max-w-none md:text-5xl lg:max-w-2xl lg:text-6xl lg:text-left lg:[text-align-last:auto] md:max-lg:text-left md:max-lg:[text-align-last:auto]">
+                <span className="block whitespace-nowrap md:inline lg:block lg:whitespace-nowrap min-[560px]:whitespace-normal">
+                  Building AI/ML systems{" "}
                 </span>
 
-                <span className="block text-primary text-[0.94em] md:whitespace-nowrap">
+                <span className="inline whitespace-nowrap text-primary text-[0.94em] lg:block lg:whitespace-nowrap min-[560px]:whitespace-normal">
                   from data to deployment.
                 </span>
               </h1>
             </SlideUp>
 
             <FadeIn>
-              <p className="mt-6 w-full max-w-2xl text-base leading-7 text-foreground/70 sm:text-lg">
-                <span className="block lg:whitespace-nowrap">
-                  I build practical machine learning and AI applications, from
-                </span>
-                <span className="block lg:whitespace-nowrap">
-                  data analysis and model development to deployment.
-                </span>
+              <p className="mt-6 w-full max-w-none text-justify text-base leading-7 text-foreground/70 min-[560px]:max-w-2xl min-[560px]:text-justify sm:text-lg md:max-lg:max-w-none lg:max-w-none lg:text-left">
+                I build practical machine learning and AI applications, from
+                data analysis and model development to deployment.
               </p>
             </FadeIn>
 
             <SlideUp>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex w-fit max-w-full flex-row flex-wrap gap-3">
                 <Link
                   href="#featured-work"
+                  onClick={(event) => {
+                    event.preventDefault()
+                    scrollToSection("featured-work")
+                  }}
                   className="group inline-flex h-11 items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 active:bg-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   View Projects
@@ -110,6 +104,10 @@ export function Hero() {
 
                 <Link
                   href="#contact"
+                  onClick={(event) => {
+                    event.preventDefault()
+                    scrollToSection("contact")
+                  }}
                   className="inline-flex h-11 items-center justify-center rounded-[10px] border border-primary/35 bg-card px-5 text-sm font-medium text-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/65 hover:bg-primary/5 hover:shadow-[0_4px_18px_-10px_var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   Contact Me
@@ -121,20 +119,20 @@ export function Hero() {
           {/* AI / ML engineering visual */}
           <div
             aria-hidden="true"
-            className="relative mx-auto hidden h-[390px] w-[580px] max-w-full overflow-visible lg:block lg:-translate-x-28"
+            className="relative mx-auto hidden h-97.5 w-145 max-w-full overflow-visible lg:block lg:-translate-x-28"
           >
             {/* Ambient glow */}
-            <div className="absolute inset-[22%] rounded-full bg-primary/[0.03] blur-3xl" />
+            <div className="absolute inset-[22%] rounded-full bg-primary/3 blur-3xl" />
 
             {/* Central engineering panel */}
-            <div className="absolute left-1/2 top-1/2 z-10 w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-card p-5 shadow-[0_18px_45px_-18px_var(--primary)]">
+            <div className="absolute left-1/2 top-1/2 z-10 w-70 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-card p-5 shadow-[0_18px_45px_-18px_var(--primary)]">
               {/* Header */}
               <div className="flex items-center gap-3">
                 <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <BrainCircuit className="size-5" aria-hidden="true" />
                 </div>
 
-                <div className="w-[190px]">
+                <div className="w-47.5">
                   <p className="whitespace-nowrap text-[21px] font-semibold leading-5 tracking-tight text-foreground">
                     AI / ML Engineering
                   </p>
@@ -170,7 +168,7 @@ export function Hero() {
 
             {/* Scikit-learn — Y only */}
             <Float
-              className="absolute right-[6%] top-[10%] z-20"
+              className="absolute right-[2%] top-[10%] z-20"
               duration={6.4}
               delay={0.9}
               x={[0, 0, 0, 0, 0]}
@@ -181,7 +179,7 @@ export function Hero() {
 
             {/* RAG — 2D */}
             <Float
-              className="absolute left-[12%] top-[48%] z-20"
+              className="absolute left-[10%] top-[48%] z-20"
               duration={6.8}
               delay={1.2}
               x={[0, 5, -4, 3, 0]}
@@ -227,7 +225,7 @@ export function Hero() {
 
         {/* Mobile / tablet AI / ML visual */}
         <div className="mt-6 md:mt-8 lg:hidden">
-          <div className="mx-auto w-full max-w-[390px] rounded-2xl border border-border bg-card p-5 shadow-[0_16px_40px_-18px_var(--primary)]">
+          <div className="mx-auto w-70 rounded-2xl border border-border bg-card p-5 shadow-[0_16px_40px_-18px_var(--primary)]">
             <div className="flex items-center gap-3">
               <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <BrainCircuit className="size-5" aria-hidden="true" />

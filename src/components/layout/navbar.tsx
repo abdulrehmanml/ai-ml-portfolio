@@ -1,9 +1,11 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, type MouseEvent } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
+import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
+
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/layout/theme-toggle"
 
@@ -15,15 +17,60 @@ const navItems = [
   { label: "Contact", href: "/#contact" },
 ]
 
+type ActiveNav = "Home" | "About" | "Services" | "Projects" | "Contact"
+
+const sectionToNav: Record<string, ActiveNav> = {
+  about: "About",
+  services: "Services",
+  "featured-work": "Projects",
+  contact: "Contact",
+}
+
+function getRouteActiveNav(pathname: string): ActiveNav {
+  if (pathname === "/about") {
+    return "About"
+  }
+
+  if (pathname.startsWith("/services")) {
+    return "Services"
+  }
+
+  if (pathname.startsWith("/projects")) {
+    return "Projects"
+  }
+
+  return "Home"
+}
+
 export function Navbar() {
+  const pathname = usePathname()
+
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeNav, setActiveNav] = useState<ActiveNav>("Home")
+
+  const displayedActiveNav =
+    pathname === "/" ? activeNav : getRouteActiveNav(pathname)
 
   const handleSectionClick = (
-    event: React.MouseEvent<HTMLAnchorElement>,
+    event: MouseEvent<HTMLAnchorElement>,
     href: string,
   ) => {
-    if (!href.startsWith("/#") || window.location.pathname !== "/") {
+    if (href === "/" && pathname === "/") {
+      event.preventDefault()
+
+      setActiveNav("Home")
+      setMenuOpen(false)
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      })
+
+      return
+    }
+
+    if (!href.startsWith("/#") || pathname !== "/") {
       return
     }
 
@@ -33,6 +80,8 @@ export function Navbar() {
     const section = document.getElementById(sectionId)
 
     if (section) {
+      setActiveNav(sectionToNav[sectionId] ?? "Home")
+
       section.scrollIntoView({
         behavior: "smooth",
         block: "start",
@@ -50,8 +99,46 @@ export function Navbar() {
     handleScroll()
     window.addEventListener("scroll", handleScroll)
 
-    return () => window.removeEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
   }, [])
+
+  useEffect(() => {
+    if (pathname !== "/") {
+      return
+    }
+
+    const sectionIds = ["about", "services", "featured-work", "contact"]
+
+    const updateActiveSection = () => {
+      if (window.scrollY < 120) {
+        setActiveNav("Home")
+        return
+      }
+
+      const scrollPosition = window.scrollY + 140
+      let currentSection: ActiveNav = "Home"
+
+      for (const sectionId of sectionIds) {
+        const section = document.getElementById(sectionId)
+
+        if (section && section.offsetTop <= scrollPosition) {
+          currentSection = sectionToNav[sectionId]
+        }
+      }
+
+      setActiveNav(currentSection)
+    }
+
+    window.addEventListener("scroll", updateActiveSection, {
+      passive: true,
+    })
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection)
+    }
+  }, [pathname])
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : ""
@@ -76,23 +163,41 @@ export function Navbar() {
       >
         <Link
           href="/"
-          className="text-base font-semibold tracking-tight transition-colors hover:text-primary"
-          onClick={() => setMenuOpen(false)}
+          className={cn(
+            "rounded-md text-base font-semibold tracking-tight transition-colors duration-200",
+            displayedActiveNav === "Home"
+              ? "text-primary"
+              : "hover:text-primary",
+          )}
+          onClick={(event) => handleSectionClick(event, "/")}
+          aria-current={
+            displayedActiveNav === "Home" ? "location" : undefined
+          }
         >
           Abdul Rehman
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={(event) => handleSectionClick(event, item.href)}
-              className="rounded-md px-3 py-2 text-sm text-foreground/75 transition-colors duration-200 hover:bg-primary/5 hover:text-foreground"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isActive = displayedActiveNav === item.label
+
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={(event) => handleSectionClick(event, item.href)}
+                className={cn(
+                  "rounded-md px-3 py-2 text-sm transition-colors duration-200",
+                  isActive
+                    ? "bg-primary/5 text-primary"
+                    : "text-foreground/75 hover:bg-primary/5 hover:text-foreground",
+                )}
+                aria-current={isActive ? "location" : undefined}
+              >
+                {item.label}
+              </Link>
+            )
+          })}
 
           <ThemeToggle />
         </div>
@@ -123,16 +228,26 @@ export function Navbar() {
         )}
       >
         <div className="mx-auto flex max-w-300 flex-col px-5 py-4">
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={(event) => handleSectionClick(event, item.href)}
-              className="border-b border-border/50 px-1 py-4 text-sm font-medium text-foreground/80 transition-colors hover:text-primary last:border-b-0"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isActive = displayedActiveNav === item.label
+
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={(event) => handleSectionClick(event, item.href)}
+                className={cn(
+                  "border-b border-border/50 px-1 py-4 text-sm font-medium transition-colors last:border-b-0",
+                  isActive
+                    ? "bg-primary/5 text-primary"
+                    : "text-foreground/80 hover:text-primary",
+                )}
+                aria-current={isActive ? "location" : undefined}
+              >
+                {item.label}
+              </Link>
+            )
+          })}
         </div>
       </div>
     </header>

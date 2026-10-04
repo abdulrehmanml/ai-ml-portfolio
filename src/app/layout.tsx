@@ -33,7 +33,7 @@ export default function RootLayout({
         <MotionProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >

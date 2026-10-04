@@ -28,7 +28,7 @@ export default function AboutPage() {
       <main className="bg-background">
         <Section
           id="about-introduction"
-          className="pt-24 pb-16 min-[560px]:pt-31 min-[560px]:pb-20 lg:pt-32 lg:pb-16"
+          className="pt-26 sm:pt-32 lg:pt-24 xl:pt-28 2xl:pt-36"
         >
           <Container>
             <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
@@ -43,19 +43,10 @@ export default function AboutPage() {
                     I&apos;m Abdul Rehman.
                   </h1>
 
-                  <div className="mt-6 space-y-4 text-sm leading-7 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
-                    <p>
-                      I&apos;m an AI/ML engineer focused on building practical
-                      solutions that turn data, machine learning, and AI
-                      technologies into useful applications.
+                    <p className="mt-6 text-justify text-sm leading-7 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                      I&apos;m an AI/ML engineer focused on building practical solutions that turn data, machine learning, and AI technologies into useful applications. My work spans data analysis, predictive modeling, NLP, generative AI, and the development of interactive machine learning applications. 
                     </p>
 
-                    <p>
-                      My work spans data analysis, predictive modeling, NLP,
-                      generative AI, and the development of interactive machine
-                      learning applications.
-                    </p>
-                  </div>
                   <div className="mt-7 ml-2">
                     <Link
                       href="https://abdulrehmanml.github.io/abdul-rehman-cv/"
@@ -74,7 +65,7 @@ export default function AboutPage() {
               </SlideUp>
 
               <FadeIn>
-                <div className="relative mx-auto w-full max-w-md pb-8 pr-8 min-[560px]:pb-10 min-[560px]:pr-10">
+                <div className="relative mx-auto w-full max-w-md px-4 pb-8 min-[560px]:px-6 min-[560px]:pb-10 lg:px-0 lg:pr-8">
                   <div
                     className="pointer-events-none absolute -right-1 -top-1 z-10 h-10 w-10 border-r border-t border-primary/50"
                     aria-hidden="true"
@@ -100,7 +91,7 @@ export default function AboutPage() {
                     aria-hidden="true"
                   />
 
-                  <div className="group relative overflow-hidden rounded-2xl border border-border bg-card">
+                  <div className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-[0_12px_32px_-16px_var(--primary)]">
                     <Image
                       src="/images/abdul-rehman.png"
                       alt="Abdul Rehman"
@@ -141,11 +132,8 @@ export default function AboutPage() {
                   <span className="text-primary">deployable solution.</span>
                 </h2>
 
-                <p className="mt-4 w-full text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
-                  I approach AI/ML projects as complete workflows, starting with
-                  a clear understanding of the problem and the data, then
-                  building and evaluating the right solution before turning it
-                  into a practical, usable application.
+                <p className="mt-4 w-full text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                  I approach AI/ML projects as complete workflows, starting with a clear understanding of the problem and the data, then building and evaluating the right solution before turning it into a practical, usable application.
                 </p>
               </div>
             </FadeIn>
@@ -178,7 +166,7 @@ export default function AboutPage() {
                 },
               ].map((step) => (
                 <SlideUp key={step.number}>
-                  <div className="group relative h-full border-t border-border pt-5 transition-colors duration-200 hover:border-primary">
+                  <div className="group relative h-full last:border-b-2 border-border/80 px-4 pt-5 transition-colors duration-200 hover:border-primary">
                     <span className="font-mono text-xs font-medium tracking-[0.12em] text-primary">
                       {step.number}
                     </span>
@@ -186,7 +174,7 @@ export default function AboutPage() {
                     <h3 className="mt-3 text-lg font-semibold tracking-tight transition-colors duration-200 group-hover:text-primary">
                       {step.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-6 text-foreground/70">
+                    <p className="mt-3 text-justify text-sm leading-6 text-foreground/70">
                       {step.description}
                     </p>
                   </div>
@@ -216,15 +204,13 @@ export default function AboutPage() {
                   <span className="text-primary">practical AI/ML systems.</span>
                 </h2>
 
-                <p className="mt-4 w-full text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
-                  I work across the data and machine learning lifecycle,
-                  combining analytical thinking, model development, AI
-                  techniques, and deployment to build usable solutions.
+                <p className="mt-4 w-full text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                  I work across the data and machine learning lifecycle, combining analytical thinking, model development, AI techniques, and deployment to build usable solutions.
                 </p>
               </div>
             </FadeIn>
 
-            <div className="mt-12 grid gap-6 min-[560px]:grid-cols-2 lg:gap-7">
+            <div className="mx-auto mt-12 grid w-full max-w-md gap-6 px-4 min-[560px]:max-w-none min-[560px]:px-0 min-[560px]:grid-cols-2 lg:gap-7">
               {[
                 {
                   number: "01",
@@ -260,33 +246,35 @@ export default function AboutPage() {
                   skills: ["Streamlit", "APIs", "Joblib", "Git & GitHub"],
                 },
               ].map((item) => (
-                <SlideUp key={item.number}>
-                  <div className="group relative h-full rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-card hover:shadow-[0_12px_32px_-16px_var(--primary)] min-[560px]:p-7">
-                    <div className="flex items-start justify-between gap-4">
-                      <span className="font-mono text-xs font-medium tracking-[0.12em] text-primary">
-                        {item.number}
-                      </span>
-
-                      <span className="size-2 rounded-full bg-primary/40 transition-all duration-300 group-hover:scale-125 group-hover:bg-primary" />
-                    </div>
-
-                    <h3 className="mt-5 text-xl font-semibold tracking-tight">
-                      {item.title}
-                    </h3>
-
-                    <p className="mt-3 text-sm leading-6 text-foreground/70">
-                      {item.description}
-                    </p>
-
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {item.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="rounded-md border border-border bg-card px-2.5 py-1 font-mono text-[11px] text-muted-foreground transition-all duration-300 group-hover:border-primary/20 group-hover:text-foreground"
-                        >
-                          {skill}
+                <SlideUp key={item.number} className="min-w-0">
+                  <div className="project-card-shadow min-w-0 h-full rounded-2xl">
+                    <div className="group relative h-full rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-card hover:shadow-[0_12px_32px_-16px_var(--primary)] min-[560px]:p-7">
+                      <div className="flex items-start justify-between gap-4">
+                        <span className="font-mono text-xs font-medium tracking-[0.12em] text-primary">
+                          {item.number}
                         </span>
-                      ))}
+
+                        <span className="size-2 rounded-full bg-primary/40 transition-all duration-300 group-hover:scale-125 group-hover:bg-primary" />
+                      </div>
+
+                      <h3 className="mt-5 text-xl font-semibold tracking-tight">
+                        {item.title}
+                      </h3>
+
+                      <p className="mt-3 text-justify text-sm leading-6 text-foreground/70">
+                        {item.description}
+                      </p>
+
+                      <div className="mt-5 flex flex-nowrap gap-1 overflow-x-auto min-[560px]:gap-2">
+                        {item.skills.map((skill) => (
+                          <span
+                            key={skill}
+                            className="shrink-0 rounded-md border border-border bg-card px-2 py-1 font-mono text-[10px] text-muted-foreground transition-all duration-300 group-hover:border-primary/20 group-hover:text-foreground min-[560px]:px-2.5 min-[560px]:text-[11px]"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </SlideUp>
@@ -310,23 +298,22 @@ export default function AboutPage() {
                   Technical Toolkit
                 </p>
 
-                <h2 className="mt-4 max-w-5xl text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
+                <h2 className="mt-4 w-full text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
                   Tools I use to build and{" "}
                   <span className="text-primary">ship AI/ML solutions.</span>
                 </h2>
 
-                <p className="mt-4 w-full text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
-                  A focused set of technologies I use across data preparation,
-                  machine learning, AI applications, and deployment.
+                <p className="mt-4 w-full text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                  A focused set of technologies I use across data preparation, machine learning, AI applications, and deployment.
                 </p>
               </div>
             </FadeIn>
 
-            <div className="mx-auto mt-12 w-full max-w-3xl">
+            <div className="mx-auto mt-12 w-fit max-w-full">
               {[
                 {
                   category: "Programming",
-                  tools: ["Python", "SQL", "TypeScript"],
+                  tools: ["Python", "C++", "SQL"],
                 },
                 {
                   category: "Data",
@@ -334,19 +321,15 @@ export default function AboutPage() {
                 },
                 {
                   category: "Machine Learning",
-                  tools: [
-                    "Scikit-learn",
-                    "Model Evaluation",
-                    "Predictive Modeling",
-                  ],
+                  tools: ["Scikit-learn", "Joblib"],
                 },
                 {
-                  category: "AI & NLP",
-                  tools: ["NLP", "TF-IDF", "RAG", "Generative AI"],
+                  category: "AI & GenAI",
+                  tools: ["Gemini", "ChromaDB"],
                 },
                 {
                   category: "Applications",
-                  tools: ["Streamlit", "APIs", "Joblib"],
+                  tools: ["Streamlit", "FastAPI"],
                 },
                 {
                   category: "Development",
@@ -354,7 +337,7 @@ export default function AboutPage() {
                 },
               ].map((item) => (
                 <SlideUp key={item.category}>
-                  <div className="group relative border-t border-border px-4 py-5 transition-colors duration-200 min-[560px]:grid min-[560px]:min-h-18 min-[560px]:grid-cols-[160px_1fr] min-[560px]:items-center min-[560px]:gap-6 min-[560px]:px-5 min-[560px]:hover:border-primary/40 lg:grid-cols-[180px_1fr] lg:gap-8">
+                  <div className="group relative border-t border-border px-4 py-5 transition-colors duration-200 last:border-b min-[560px]:grid min-[560px]:min-h-18 min-[560px]:grid-cols-[160px_1fr] min-[560px]:items-center min-[560px]:gap-6 min-[560px]:px-5 min-[560px]:hover:border-primary/40 lg:grid-cols-[180px_1fr] lg:gap-8">
                     {/* Desktop / Tablet hover accent */}
                     <span
                       className="pointer-events-none absolute inset-y-0 left-0 hidden w-px origin-top bg-primary transition-transform duration-300 ease-out min-[560px]:block min-[560px]:scale-y-0 min-[560px]:group-hover:scale-y-100"
@@ -387,6 +370,7 @@ export default function AboutPage() {
           className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent"
           aria-hidden="true"
         />
+
         {/* Selected Work */}
         <Section id="selected-work">
           <Container>
@@ -401,45 +385,45 @@ export default function AboutPage() {
                   <span className="text-primary">working solutions.</span>
                 </h2>
 
-                <p className="mt-4 w-full text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
-                  A selection of practical projects covering predictive machine
-                  learning, NLP, and retrieval-augmented generative AI
-                  applications.
+                <p className="mt-4 w-full text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                  A selection of practical projects covering predictive machine learning, NLP, and retrieval-augmented generative AI applications.
                 </p>
               </div>
             </FadeIn>
 
-            <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            <div className="mx-auto mt-12 grid w-full max-w-md gap-6 px-4 md:max-lg:max-w-xl md:max-lg:px-4 lg:max-w-none lg:px-0 lg:grid-cols-3 lg:gap-7">
               {selectedProjects.map((project) => (
                 <SlideUp key={project.slug}>
                   <Link href={project.href} className="group block h-full">
-                    <article className="flex h-full flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-card hover:shadow-[0_12px_32px_-16px_var(--primary)] min-[560px]:p-7">
-                      <p className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-primary">
-                        {project.category}
-                      </p>
+                    <div className="project-card-shadow h-full rounded-2xl">
+                      <article className="flex h-full flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-card hover:shadow-[0_12px_32px_-16px_var(--primary)] min-[560px]:p-7">
+                        <p className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-primary">
+                          {project.category}
+                        </p>
 
-                      <h3 className="mt-4 text-xl font-semibold tracking-tight">
-                        {project.title}
-                      </h3>
+                        <h3 className="mt-4 text-xl font-semibold tracking-tight">
+                          {project.title}
+                        </h3>
 
-                      <p className="mt-3 text-sm leading-6 text-foreground/70">
-                        {project.description}
-                      </p>
+                        <p className="mt-3 px-1 text-justify text-sm leading-6 text-foreground/70">
+                          {project.description}
+                        </p>
 
-                      <p className="mt-5 font-mono text-[11px] leading-5 text-muted-foreground">
-                        {project.technologies.join(" · ")}
-                      </p>
+                        <p className="mt-5 px-1 text-justify font-mono text-[11px] leading-5 text-muted-foreground">
+                          {project.technologies.join(" · ")}
+                        </p>
 
-                      <div className="mt-auto pt-6">
-                        <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-primary">
-                          View Project
-                          <ArrowRight
-                            className="size-4 transition-transform duration-200 group-hover:translate-x-1"
-                            aria-hidden="true"
-                          />
-                        </span>
-                      </div>
-                    </article>
+                        <div className="mt-auto pt-6">
+                          <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-primary">
+                            View Project
+                            <ArrowRight
+                              className="size-4 transition-transform duration-200 group-hover:translate-x-1"
+                              aria-hidden="true"
+                            />
+                          </span>
+                        </div>
+                      </article>
+                    </div>
                   </Link>
                 </SlideUp>
               ))}
@@ -468,15 +452,14 @@ export default function AboutPage() {
                     <span className="text-primary">production AI systems.</span>
                   </h2>
 
-                  <p className="mt-4 text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
-                    Building stronger skills in production machine learning, AI
-                    applications, APIs, cloud deployment, and agentic systems.
+                  <p className="mt-4 text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                    Building stronger skills in production machine learning, AI applications, APIs, cloud deployment, and agentic systems.
                   </p>
                 </div>
               </FadeIn>
 
-              <div className="mx-auto w-full max-w-2xl">
-                <div className="grid gap-0 min-[560px]:grid-cols-2">
+              <div className="mx-auto w-fit max-w-full px-4">
+                <div className="grid w-fit grid-cols-1 min-[560px]:grid-cols-2 min-[560px]:gap-x-10">
                   {[
                     "Production ML",
                     "AI Applications",
@@ -484,14 +467,19 @@ export default function AboutPage() {
                     "Cloud Deployment",
                     "Agentic AI",
                     "MLOps Workflows",
-                  ].map((focus, index) => (
+                  ].map((focus, index, array) => (
                     <SlideUp key={focus}>
-                      <div className="group flex items-center gap-4 border-t border-border py-5 transition-colors duration-200 hover:border-primary/40">
+                      <div className={`group flex w-full items-center justify-start gap-4 border-t-2 border-border/80 px-4 py-5 transition-colors duration-200 hover:border-primary ${
+                          index === array.length - 1 ? "border-b-2" : ""
+                        } ${
+                          index === array.length - 2 ? "min-[560px]:border-b-2" : ""
+                        }`}
+                      >
                         <span className="font-mono text-xs text-primary">
                           {String(index + 1).padStart(2, "0")}
                         </span>
-
-                        <span className="text-sm font-medium transition-colors duration-200 group-hover:text-primary">
+                      
+                        <span className="shrink-0 whitespace-nowrap text-sm font-medium transition-colors duration-200 group-hover:text-primary">
                           {focus}
                         </span>
                       </div>
@@ -513,7 +501,7 @@ export default function AboutPage() {
         <Section id="about-cta">
           <Container>
             <FadeIn>
-              <div className="mx-auto flex w-full flex-col gap-6 rounded-2xl border border-border bg-card p-6 min-[560px]:p-7 lg:w-fit lg:max-w-full lg:flex-row lg:items-center lg:justify-center lg:gap-7 lg:px-8 lg:py-7">
+              <div className="project-card-shadow mx-auto flex w-[calc(100%-2rem)] flex-col gap-6 rounded-2xl border border-border bg-card p-6 min-[560px]:w-fit min-[560px]:p-7 lg:w-fit lg:max-w-full lg:flex-row lg:items-center lg:justify-center lg:gap-7 lg:px-8 lg:py-7">
                 <div>
                   <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
                     Let&apos;s Work Together
@@ -526,15 +514,14 @@ export default function AboutPage() {
                     </span>
                   </h2>
 
-                  <p className="mt-4 max-w-2xl text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
-                    Looking to turn an idea, dataset, or AI concept into a
-                    practical solution? Let&apos;s talk.
+                  <p className="mt-4 max-w-2xl text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                    Looking to turn an idea, dataset, or AI concept into a practical solution? Let&apos;s talk.
                   </p>
                 </div>
 
                 <Link
                   href="/#contact"
-                  className="group inline-flex h-11 w-fit items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="group mx-auto inline-flex h-11 w-fit items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 lg:mx-0"
                 >
                   Get in touch
                   <ArrowRight

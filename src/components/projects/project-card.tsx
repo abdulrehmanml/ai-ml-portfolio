@@ -32,7 +32,7 @@ export function ProjectCard({
           duration: 0.18,
           ease: "easeOut",
         }}
-        className="h-full"
+        className="project-card-shadow h-full"
       >
         <Card className="group h-full overflow-hidden border-border/80 bg-card transition-colors duration-300 hover:border-primary/50 hover:bg-primary/5">
           {/* Project visual */}

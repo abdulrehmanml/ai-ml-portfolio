@@ -97,7 +97,7 @@ export default function ProjectsPage() {
                 </h2>
               </div>
             </FadeIn>
-            
+
             <div className="mt-12 grid gap-6 min-[560px]:grid-cols-2 lg:grid-cols-3 lg:gap-7">
               {projects.map((project) => (
                 <SlideUp key={project.slug}>
@@ -105,7 +105,6 @@ export default function ProjectsPage() {
                 </SlideUp>
               ))}
             </div>
-
           </Container>
         </Section>
       </main>

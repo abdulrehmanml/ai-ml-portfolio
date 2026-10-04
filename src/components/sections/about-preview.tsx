@@ -3,13 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
-import {
-  ArrowRight,
-  BarChart3,
-  BrainCircuit,
-  Cloud,
-  MessageSquareText,
-} from "lucide-react"
+import { ArrowRight, BarChart3, BrainCircuit, Cloud, MessageSquareText, } from "lucide-react"
 import { motion } from "motion/react"
 
 import { Container } from "@/components/layout/container"
@@ -54,7 +48,7 @@ export function AboutPreview() {
   const [skillHover, setSkillHover] = useState<number | null>(null)
 
   return (
-    <Section id="about" className="border-y border-accent/30 lg:pt-16 lg:pb-16">
+    <Section id="about" className="border-y border-accent/30">
       <Container>
         <FadeIn>
           {/* Section heading */}
@@ -67,11 +61,8 @@ export function AboutPreview() {
               I&apos;m Abdul Rehman.
             </h2>
 
-            <p className="mt-3 w-full max-w-6xl text-sm leading-6 text-foreground/70 lg:text-[15px]">
-              An Artificial Intelligence undergraduate focused on machine
-              learning, data analysis, NLP, and generative AI. I build practical
-              projects that move from experimentation and evaluation to clean,
-              usable, deployable applications designed for real-world use.
+            <p className="mt-3 w-full max-w-6xl text-justify text-sm leading-6 text-foreground/70 lg:text-[15px]">
+              An Artificial Intelligence undergraduate focused on machine learning, data analysis, NLP, and generative AI. I build practical projects that move from experimentation and evaluation to clean, usable, deployable applications designed for real-world use.
             </p>
           </div>
 
@@ -79,29 +70,23 @@ export function AboutPreview() {
           <div className="mt-7 grid gap-8 lg:grid-cols-[260px_minmax(0,680px)] lg:items-start lg:justify-center lg:gap-16">
             {/* Profile visual */}
             <SlideUp>
-              <div className="mx-auto flex w-full max-w-[260px] flex-col justify-center lg:mx-0 lg:justify-self-center">
+              <div className="mx-auto flex w-full max-w-65 flex-col justify-center lg:mx-0 lg:justify-self-center">
                 <div className="relative pt-1 lg:pt-2">
-                  <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -inset-5 hidden rounded-2xl bg-primary/10 blur-2xl lg:block"
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -inset-8 z-10 overflow-visible opacity-90 lg:overflow-visible"
-                  >
+                  <div aria-hidden="true" className="pointer-events-none absolute -inset-5 hidden rounded-2xl bg-primary/10 blur-2xl lg:block"/>
+                  <div aria-hidden="true" className="pointer-events-none absolute -inset-8 z-10 overflow-visible opacity-90 lg:overflow-visible">
                     {/* Soft ambient field */}
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,theme(colors.primary/12),transparent_62%)]" />
+                    <div className="absolute inset-0 about-particle-field" />
 
                     {/* Subtle connection lines */}
-                    <div className="absolute left-[16%] top-[20%] h-px w-[68%] rotate-[16deg] bg-primary/15" />
-                    <div className="absolute left-[10%] top-[48%] h-px w-[76%] -rotate-[12deg] bg-primary/15" />
-                    <div className="absolute left-[26%] top-[74%] h-px w-[56%] rotate-[7deg] bg-primary/15" />
+                    <div className="absolute left-[16%] top-[20%] h-px w-[68%] rotate-16 bg-primary/15" />
+                    <div className="absolute left-[10%] top-[48%] h-px w-[76%] rotate-minus-12 bg-primary/15" />
+                    <div className="absolute left-[26%] top-[74%] h-px w-[56%] rotate-7 bg-primary/15" />
 
                     {/* Moving particles */}
                     {particles.map((particle, index) => (
                       <motion.span
                         key={index}
-                        className="absolute size-2 rounded-full bg-primary/70 shadow-[0_0_14px_theme(colors.primary/45)]"
+                        className="about-particle absolute size-2 rounded-full bg-primary/70"
                         style={{
                           left: particle.left,
                           top: particle.top,
@@ -121,25 +106,15 @@ export function AboutPreview() {
                     ))}
                   </div>
 
-                  <div className="group relative aspect-[4/5] overflow-hidden rounded-lg border border-border/70 bg-muted/10">
-                    <Image
-                      src="/images/abdul-rehman.png"
-                      alt="Abdul Rehman"
-                      fill
-                      loading="eager"
-                      sizes="280px"
-                      className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
-                    />
+                  <div className="group relative aspect-portrait overflow-hidden rounded-lg border border-border/70 bg-muted/10">
+                    <Image src="/images/abdul-rehman.png" alt="Abdul Rehman" fill loading="eager" sizes="280px" className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]" />
 
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/10 via-transparent to-transparent" />
+                    <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background/10 via-transparent to-transparent" />
                   </div>
                 </div>
 
                 <div className="mt-4 flex justify-center">
-                  <Link
-                    href="/about"
-                    className="group inline-flex h-11 items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 active:bg-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                  >
+                  <Link href="/about" className="group inline-flex h-11 items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 active:bg-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
                     More About Me
                     <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
                   </Link>

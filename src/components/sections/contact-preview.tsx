@@ -102,7 +102,7 @@ export function ContactPreview() {
   }
 
   return (
-    <Section id="contact" className="border-y border-accent/30 lg:pt-16">
+    <Section id="contact" className="border-y border-accent/30">
       <Container>
         <FadeIn>
           <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-16">
@@ -114,14 +114,11 @@ export function ContactPreview() {
 
               <h2 className="text-3xl font-semibold tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
                 <span>Have a project?</span>{" "}
-                <span className="text-primary min-[560px]:whitespace-nowrap">
-                  Let&apos;s make it real.
-                </span>
+                <span className="text-primary">Let&apos;s make it real.</span>
               </h2>
 
-              <p className="mt-4 w-full max-w-lg text-sm leading-6 text-foreground/70 min-[560px]:max-w-none lg:max-w-lg lg:text-[15px]">
-                Have an idea, project, or problem to solve? Send the details and
-                let&apos;s discuss how I can help.
+              <p className="mt-4 w-full max-w-lg text-justify text-sm leading-6 text-foreground/70 min-[560px]:max-w-none lg:max-w-lg lg:text-[15px]">
+                Have an idea, project, or problem to solve? Send the details and let&apos;s discuss how I can help.
               </p>
 
               <div className="mt-7 flex flex-col gap-3">
@@ -148,97 +145,52 @@ export function ContactPreview() {
 
             {/* Contact form */}
             <SlideUp>
-              <form
-                className="rounded-xl border border-border/70 bg-card/40 p-5 sm:p-6"
-                onSubmit={handleSubmit}
-              >
-                <div className="hidden" aria-hidden="true">
-                  <label htmlFor="website">Website</label>
-                  <input
-                    id="website"
-                    name="website"
-                    type="text"
-                    tabIndex={-1}
-                    autoComplete="off"
-                  />
-                </div>
-                <div className="grid gap-5">
-                  <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
-                    <div className="grid gap-2">
-                      <label
-                        htmlFor="name"
-                        className="text-sm font-medium text-foreground"
-                      >
-                        Name
-                      </label>
+              <div className="mx-auto w-full px-3 sm:px-0">
+                <form className="mx-auto w-full max-w-md rounded-xl border border-border/70 bg-card/40 p-5 sm:p-6 lg:mx-0 lg:max-w-none" onSubmit={handleSubmit}>
+                  <div className="hidden" aria-hidden="true">
+                    <label htmlFor="website">Website</label>
+                    <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off"/>
+                  </div>
+                  <div className="grid gap-5">
+                    <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
+                      <div className="grid gap-2">
+                        <label htmlFor="name" className="text-sm font-medium text-foreground">
+                          Name
+                        </label>
 
-                      <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        placeholder="Your name"
-                        required
-                        className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
-                      />
+                        <input id="name" name="name" type="text" placeholder="Your name" required className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"/>
+                      </div>
+
+                      <div className="grid gap-2">
+                        <label htmlFor="email" className="text-sm font-medium text-foreground">
+                          Email
+                        </label>
+
+                        <input id="email" name="email" type="email" placeholder="you@example.com" required className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"/>
+                      </div>
                     </div>
 
                     <div className="grid gap-2">
-                      <label
-                        htmlFor="email"
-                        className="text-sm font-medium text-foreground"
-                      >
-                        Email
+                      <label htmlFor="message" className="text-sm font-medium text-foreground">
+                        Message
                       </label>
 
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="you@example.com"
-                        required
-                        className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
-                      />
+                      <textarea id="message" name="message" rows={5} placeholder="Tell me about the project..." required className="w-full resize-none rounded-lg border border-border bg-background px-3 py-3 text-sm leading-6 text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"/>
                     </div>
+
+                    <button type="submit" disabled={isSubmitting} className="inline-flex h-11 w-fit items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                      {isSubmitting ? "Sending..." : "Send Message"}
+                      <Send className="size-4" aria-hidden="true" />
+                    </button>
+
+                    {status && (
+                      <p role="status" aria-live="polite" className="text-sm text-muted-foreground">
+                        {status.message}
+                      </p>
+                    )}
                   </div>
-
-                  <div className="grid gap-2">
-                    <label
-                      htmlFor="message"
-                      className="text-sm font-medium text-foreground"
-                    >
-                      Message
-                    </label>
-
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      placeholder="Tell me about the project..."
-                      required
-                      className="w-full resize-none rounded-lg border border-border bg-background px-3 py-3 text-sm leading-6 text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="inline-flex h-11 w-fit items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                  >
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                    <Send className="size-4" aria-hidden="true" />
-                  </button>
-
-                  {status && (
-                    <p
-                      role="status"
-                      aria-live="polite"
-                      className="text-sm text-muted-foreground"
-                    >
-                      {status.message}
-                    </p>
-                  )}
-                </div>
-              </form>
+                </form>
+              </div>
             </SlideUp>
           </div>
         </FadeIn>

@@ -128,6 +128,43 @@ body {
   color: var(--foreground);
 }
 
+.about-particle-field {
+  background: radial-gradient(
+    circle at center,
+    color-mix(in oklab, var(--primary) 12%, transparent),
+    transparent 62%
+  );
+}
+
+.about-particle {
+  box-shadow: 0 0 14px
+    color-mix(in oklab, var(--primary) 45%, transparent);
+}
+
+.rotate-16 {
+  transform: rotate(16deg);
+}
+
+.rotate-minus-12 {
+  transform: rotate(-12deg);
+}
+
+.aspect-portrait {
+  aspect-ratio: 4 / 5;
+}
+
+.rotate-7 {
+  transform: rotate(7deg);
+}
+
+.project-card-shadow {
+  box-shadow: 0 12px 30px -16px rgba(0, 0, 0, 0.35);
+}
+
+.dark .project-card-shadow {
+  box-shadow: 0 12px 30px -16px rgba(255, 255, 255, 0.18);
+}
+
 /* Accessibility */
 :focus-visible {
   outline: 2px solid var(--ring);

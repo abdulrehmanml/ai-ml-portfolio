@@ -7,7 +7,7 @@ export function Section({ className, children, ...props }: SectionProps) {
   return (
     <section
       className={cn(
-        "scroll-mt-24 pt-16 pb-16 sm:pt-20 sm:pb-20 lg:pt-24 lg:pb-16",
+        "scroll-mt-24 pt-16 pb-16 sm:pt-20 sm:pb-20 lg:pt-16 lg:pb-16",
         className,
       )}
       {...props}

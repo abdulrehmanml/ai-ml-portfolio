@@ -39,7 +39,7 @@ export function ServicePage({ service }: ServicePageProps) {
 
             <div className="mt-6 grid gap-10 min-[560px]:mt-8 lg:mt-4 lg:pt-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-start lg:gap-16">
               <SlideUp>
-                <div className="lg:min-h-[242px]">
+                <div className="lg:flex lg:h-full lg:items-center">
                 <div className="w-full">
                   <div className="flex items-center gap-4">
                     <span className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
@@ -129,7 +129,7 @@ export function ServicePage({ service }: ServicePageProps) {
             <div className="mx-auto mt-10 grid w-fit gap-x-12 gap-y-8 min-[560px]:grid-cols-2 lg:grid-cols-3">
               {service.capabilities.map((capability, index) => (
                 <SlideUp key={capability}>
-                  <div className={`group relative mx-auto h-full w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary lg:w-[260px] lg:px-4 ${
+                  <div className={`group relative mx-auto h-full w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary lg:w-64 lg:px-4 ${
                       index === service.capabilities.length - 1
                         ? "border-b-2 pb-5"
                         : ""
@@ -264,7 +264,7 @@ export function ServicePage({ service }: ServicePageProps) {
                       <p className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-primary">
                         {project.category}
                       </p>
-                
+
                       <h3 className="mt-4 text-xl font-semibold tracking-tight">
                         {project.title}
                       </h3>
@@ -285,7 +285,7 @@ export function ServicePage({ service }: ServicePageProps) {
                           </span>
                         ))}
                       </div>
-                      
+
                       <div className="mt-auto pt-6">
                         <span className="inline-flex items-center gap-2 text-sm font-medium text-primary">
                           View Project

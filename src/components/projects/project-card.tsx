@@ -23,7 +23,7 @@ export function ProjectCard({
     <Link
       href={project.href}
       aria-label={`View case study: ${project.title}`}
-      className="block h-full"
+      className="mx-auto block h-full w-full max-w-sm"
     >
       <motion.div
         whileHover={{ y: -4, scale: 1.01 }}
@@ -38,7 +38,7 @@ export function ProjectCard({
           {/* Project visual */}
           <div
             className={`relative overflow-hidden border-b border-border/70 bg-muted ${
-              compact ? "h-48 sm:h-52 lg:h-56" : "h-52 sm:h-56 lg:h-60"
+              compact ? "h-40 sm:h-44 lg:h-48" : "h-52 sm:h-56 lg:h-60"
             }`}
           >
             {project.image ? (
@@ -64,7 +64,7 @@ export function ProjectCard({
 
           {/* Content */}
           <div
-            className={`flex h-full flex-col ${compact ? "p-5 sm:p-6" : "p-6"}`}
+            className={`flex h-full flex-col ${compact ? "p-4 sm:p-4" : "p-6"}`}
           >
             <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-primary">
               {project.category}
@@ -76,7 +76,7 @@ export function ProjectCard({
               </h3>
             </div>
 
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+            <p className="mt-3 text-justify text-sm leading-6 text-muted-foreground">
               {project.description}
             </p>
 

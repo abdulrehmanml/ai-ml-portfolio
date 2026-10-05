@@ -4,13 +4,11 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 import { ArrowRight, BarChart3, BrainCircuit, Cloud, MessageSquareText, } from "lucide-react"
-import { motion } from "motion/react"
 
 import { Container } from "@/components/layout/container"
 import { Section } from "@/components/layout/section"
 import { FadeIn } from "@/components/animations/fade-in"
 import { SlideUp } from "@/components/animations/slide-up"
-import { motionEase } from "@/lib/motion"
 
 const skillGroups = [
   {
@@ -33,15 +31,6 @@ const skillGroups = [
     title: "Deployment",
     skills: "Streamlit · Joblib · Git · GitHub",
   },
-]
-
-const particles = [
-  { left: "8%", top: "18%", delay: 0 },
-  { left: "82%", top: "12%", delay: 0.8 },
-  { left: "88%", top: "42%", delay: 1.6 },
-  { left: "12%", top: "58%", delay: 2.4 },
-  { left: "76%", top: "76%", delay: 1.2 },
-  { left: "24%", top: "84%", delay: 2 },
 ]
 
 export function AboutPreview() {
@@ -73,38 +62,7 @@ export function AboutPreview() {
               <div className="mx-auto flex w-full max-w-65 flex-col justify-center lg:mx-0 lg:justify-self-center">
                 <div className="relative pt-1 lg:pt-2">
                   <div aria-hidden="true" className="pointer-events-none absolute -inset-5 hidden rounded-2xl bg-primary/10 blur-2xl lg:block"/>
-                  <div aria-hidden="true" className="pointer-events-none absolute -inset-8 z-10 overflow-visible opacity-90 lg:overflow-visible">
-                    {/* Soft ambient field */}
-                    <div className="absolute inset-0 about-particle-field" />
 
-                    {/* Subtle connection lines */}
-                    <div className="absolute left-[16%] top-[20%] h-px w-[68%] rotate-16 bg-primary/15" />
-                    <div className="absolute left-[10%] top-[48%] h-px w-[76%] rotate-minus-12 bg-primary/15" />
-                    <div className="absolute left-[26%] top-[74%] h-px w-[56%] rotate-7 bg-primary/15" />
-
-                    {/* Moving particles */}
-                    {particles.map((particle, index) => (
-                      <motion.span
-                        key={index}
-                        className="about-particle absolute size-2 rounded-full bg-primary/70"
-                        style={{
-                          left: particle.left,
-                          top: particle.top,
-                        }}
-                        animate={{
-                          y: [0, -7, 0],
-                          x: [0, index % 2 === 0 ? 4 : -4, 0],
-                          opacity: [0.35, 0.8, 0.35],
-                        }}
-                        transition={{
-                          duration: 4.5,
-                          delay: particle.delay,
-                          repeat: Infinity,
-                          ease: motionEase,
-                        }}
-                      />
-                    ))}
-                  </div>
 
                   <div className="group relative aspect-portrait overflow-hidden rounded-lg border border-border/70 bg-muted/10">
                     <Image src="/images/abdul-rehman.png" alt="Abdul Rehman" fill loading="eager" sizes="280px" className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]" />

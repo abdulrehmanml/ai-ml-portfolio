@@ -66,7 +66,7 @@ export function ServicePage({ service }: ServicePageProps) {
 
               <FadeIn>
                 <div className="mx-auto w-[calc(100%-2rem)] max-w-sm min-[560px]:w-full lg:mx-0 lg:ml-auto lg:mr-0">
-                  <div className="project-card-shadow group relative w-full max-w-sm overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 min-[560px]:p-7">
+                  <div className="project-card-shadow group relative w-full max-w-sm overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-primary/50 hover:bg-primary/5 min-[560px]:p-7">
                     <div className="pointer-events-none absolute right-0 top-0 h-8 w-8 border-r border-t border-primary/35 transition-all duration-300 group-hover:h-10 group-hover:w-10 group-hover:border-primary/60" aria-hidden="true" />
                       <div className="pointer-events-none absolute bottom-0 left-0 h-8 w-8 border-b border-l border-accent/30 transition-all duration-300 group-hover:h-10 group-hover:w-10 group-hover:border-accent/50"
                         aria-hidden="true" />
@@ -91,13 +91,18 @@ export function ServicePage({ service }: ServicePageProps) {
                       {service.shortDescription}
                     </p>
                     <div className="mt-6 border-t border-border pt-4">
-                      <div className="flex flex-wrap gap-x-4 gap-y-1.5">
-                        {service.technologies.slice(0, 3).map((technology) => (
-                          <span key={technology} className="font-mono text-[10px] uppercase tracking-[0.08em] text-muted-foreground transition-colors duration-300 group-hover:text-foreground/80">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.08em] text-muted-foreground transition-colors duration-300 group-hover:text-foreground/80">
+                        {service.technologies.slice(0, 3).map((technology, index) => (
+                          <span key={technology}>
+                            {index > 0 && (
+                              <span className="mx-2 text-primary" aria-hidden="true">
+                                ·
+                              </span>
+                            )}
                             {technology}
                           </span>
                         ))}
-                      </div>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -257,7 +262,7 @@ export function ServicePage({ service }: ServicePageProps) {
                 <SlideUp key={project.slug}>
                   <Link href={project.href} className="group block h-full">
                     <article
-                      className={`project-card-shadow mx-auto flex h-full w-full max-w-md flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-card hover:shadow-[0_12px_32px_-16px_var(--primary)] min-[560px]:p-7 ${
+                      className={`project-card-shadow mx-auto flex h-full w-full max-w-md flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-primary/50 hover:bg-primary/5 hover:shadow-[0_12px_32px_-16px_var(--primary)] active:scale-[0.995] min-[560px]:p-7 ${
                         relatedProjects.length === 1 ? "min-[560px]:col-span-2" : ""
                       }`}
                     >

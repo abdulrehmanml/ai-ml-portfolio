@@ -25,10 +25,7 @@ export default function ProjectsPage() {
 
       <main className="bg-background">
         {/* Hero */}
-        <Section
-          id="projects-hero"
-          className="pt-24 pb-16 min-[560px]:pt-28 min-[560px]:pb-20 lg:pt-32 lg:pb-20"
-        >
+        <Section id="projects-hero" className="pt-28 min-[560px]:pt-32 lg:pt-28">
           <Container>
             <FadeIn>
               <Link
@@ -43,7 +40,7 @@ export default function ProjectsPage() {
               </Link>
             </FadeIn>
 
-            <div className="mt-10">
+            <div className="mt-6 min-[560px]:mt-8 lg:mt-4 lg:pt-12">
               <FadeIn>
                 <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
                   Projects
@@ -58,7 +55,7 @@ export default function ProjectsPage() {
               </FadeIn>
 
               <SlideUp>
-                <h1 className="mt-4 max-w-none text-4xl font-semibold leading-[1.05] tracking-tight min-[560px]:text-[48px] lg:text-[60px]">
+                <h1 className="mt-5 w-full text-4xl font-semibold leading-[1.05] tracking-tight min-[560px]:text-[48px] lg:text-[60px]">
                   Practical projects across{" "}
                   <span className="text-primary">
                     AI, machine learning, and data.
@@ -67,9 +64,8 @@ export default function ProjectsPage() {
               </SlideUp>
 
               <FadeIn>
-                <p className="mt-6 max-w-3xl text-sm leading-7 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
-                  A collection of projects covering predictive modeling, NLP,
-                  generative AI, retrieval workflows, and data analysis.
+                <p className="mt-6 w-full text-justify text-sm leading-7 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                  A collection of projects covering predictive modeling, NLP, generative AI, retrieval workflows, and data analysis.
                 </p>
               </FadeIn>
             </div>
@@ -77,10 +73,7 @@ export default function ProjectsPage() {
         </Section>
 
         {/* Divider */}
-        <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent"
-          aria-hidden="true"
-        />
+        <div className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent" aria-hidden="true"/>
 
         {/* All Projects */}
         <Section id="all-projects">
@@ -98,10 +91,10 @@ export default function ProjectsPage() {
               </div>
             </FadeIn>
 
-            <div className="mt-12 grid gap-6 min-[560px]:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+            <div className="mt-12 grid items-start gap-6 px-4 min-[560px]:grid-cols-2 min-[560px]:px-6 lg:grid-cols-3 lg:gap-7 lg:px-0">
               {projects.map((project) => (
                 <SlideUp key={project.slug}>
-                  <ProjectCard project={project} />
+                  <ProjectCard project={project} compact />
                 </SlideUp>
               ))}
             </div>

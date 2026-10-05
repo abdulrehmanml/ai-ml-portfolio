@@ -466,14 +466,9 @@ export default function AboutPage() {
                     "Cloud Deployment",
                     "Agentic AI",
                     "MLOps Workflows",
-                  ].map((focus, index, array) => (
+                  ].map((focus, index) => (
                     <SlideUp key={focus}>
-                      <div className={`group flex w-full items-center justify-start gap-4 border-t-2 border-border/80 px-4 py-5 transition-colors duration-200 hover:border-primary ${
-                          index === array.length - 1 ? "border-b-2" : ""
-                        } ${
-                          index === array.length - 2 ? "min-[560px]:border-b-2" : ""
-                        }`}
-                      >
+                      <div className="group flex w-full items-center justify-start gap-4 border-t-2 border-border/80 px-4 py-5 transition-colors duration-200 hover:border-primary">
                         <span className="font-mono text-xs text-primary">
                           {String(index + 1).padStart(2, "0")}
                         </span>

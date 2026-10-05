@@ -134,12 +134,7 @@ export function ServicePage({ service }: ServicePageProps) {
             <div className="mx-auto mt-10 grid w-fit gap-x-12 gap-y-8 min-[560px]:grid-cols-2 lg:grid-cols-3">
               {service.capabilities.map((capability, index) => (
                 <SlideUp key={capability}>
-                  <div className={`group relative mx-auto h-full w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary lg:w-64 lg:px-4 ${
-                      index === service.capabilities.length - 1
-                        ? "border-b-2 pb-5"
-                        : ""
-                    }`}
-                  >
+                  <div className="group relative mx-auto h-full w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary lg:w-64 lg:px-4">
                     <div className="pl-4 min-[560px]:pl-6 lg:pl-0">
                       <span className="font-mono text-xs font-medium text-primary">
                         {String(index + 1).padStart(2, "0")}
@@ -193,7 +188,6 @@ export function ServicePage({ service }: ServicePageProps) {
                       </div>                      
                     </SlideUp>
                   ))}
-                  <div className="mx-4 border-t-2 border-border/80 min-[560px]:mx-6 lg:mx-0" aria-hidden="true" />
                 </div>
               </div>
             </div>

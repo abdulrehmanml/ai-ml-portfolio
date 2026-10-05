@@ -403,8 +403,8 @@ export function ProjectPage({ project }: ProjectPageProps) {
                   </p>
 
                   <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
-                    Let&apos;s build something{" "}
-                    <span className="text-primary">useful.</span>
+                    Let&apos;s build{" "}
+                    <span className="text-primary">something useful.</span>
                   </h2>
 
                   <p className="mt-4 max-w-3xl text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">

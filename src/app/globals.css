@@ -14,7 +14,7 @@
   --popover: #ffffff;
   --popover-foreground: #111318;
 
-  --primary: #6d28d9;
+  --primary: #1e40af;
   --primary-foreground: #ffffff;
 
   --secondary: #f3f4f6;
@@ -23,15 +23,15 @@
   --muted: #f3f4f6;
   --muted-foreground: #626a76;
 
-  --accent: #0891b2;
-  --accent-foreground: #ffffff;
+  --accent: #3b82f6;
+  --accent-foreground: #08111f;
 
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
 
   --border: #e5e7eb;
   --input: #e5e7eb;
-  --ring: #6d28d9;
+  --ring: #1e40af;
 
   /* Custom design tokens */
   --radius-control: 10px;
@@ -52,8 +52,8 @@
   --popover: #101216;
   --popover-foreground: #f5f7fa;
 
-  --primary: #7c3aed;
-  --primary-foreground: #ffffff;
+  --primary: #3b82f6;
+  --primary-foreground: #08111f;
 
   --secondary: #181b21;
   --secondary-foreground: #f5f7fa;
@@ -61,15 +61,15 @@
   --muted: #181b21;
   --muted-foreground: #9aa1ac;
 
-  --accent: #22d3ee;
-  --accent-foreground: #081015;
+  --accent: #2563eb;
+  --accent-foreground: #081115;
 
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
 
   --border: #242832;
   --input: #242832;
-  --ring: #7c3aed;
+  --ring: #3b82f6;
 }
 
 @theme inline {

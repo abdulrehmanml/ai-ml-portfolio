@@ -24,8 +24,8 @@ export function FeaturedProjects() {
                 </p>
 
                 <h2 className="w-full text-justify text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[40px] lg:leading-[1.1] lg:whitespace-nowrap">
-                  Projects built with data, AI, and{" "}
-                  <span className="text-primary">machine learning.</span>
+                  Projects built with{" "}
+                  <span className="text-primary">data, AI, and machine learning.</span>
                 </h2>
 
                 <p className="mt-3 w-full text-justify text-sm leading-6 text-foreground/70 sm:text-base lg:text-[15px]">

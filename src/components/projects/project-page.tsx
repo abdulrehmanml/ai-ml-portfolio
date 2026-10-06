@@ -148,30 +148,38 @@ export function ProjectPage({ project }: ProjectPageProps) {
             </FadeIn>
 
             {/* Desktop workflow */}
-            <div className="mt-14 hidden lg:flex lg:items-start lg:gap-4">
+            <div className="mx-auto mt-14 hidden w-full max-w-6xl lg:flex lg:items-start lg:gap-4">
               {project.workflow.map((step, index) => (
                 <React.Fragment key={`${step}-${index}`}>
                   {/* Workflow step */}
-                  <SlideUp>
-                    <div className="group min-w-0 flex-1 text-center transition-transform duration-300 hover:-translate-y-1">
-                      {/* Node */}
-                      <div className="flex justify-center">
-                        <div className="flex size-12 items-center justify-center rounded-full border border-border bg-background font-mono text-xs font-medium text-primary transition-all duration-300 group-hover:border-primary group-hover:bg-primary/10 group-hover:shadow-[0_0_20px_-8px_var(--primary)]">
-                          {String(index + 1).padStart(2, "0")}
+                  <div className="min-w-0 flex-1">
+                    <SlideUp>
+                      <div className="group w-full text-center transition-transform duration-300 hover:-translate-y-1">
+                        {/* Node */}
+                        <div className="flex justify-center">
+                          <div className="flex size-12 items-center justify-center rounded-full border border-border bg-background font-mono text-xs font-medium text-primary transition-all duration-300 group-hover:border-primary group-hover:bg-primary/10 group-hover:shadow-[0_0_20px_-8px_var(--primary)]">
+                            {String(index + 1).padStart(2, "0")}
+                          </div>
                         </div>
+              
+                        {/* Step */}
+                        <h3 className="mt-6 px-2 text-base font-semibold leading-6 tracking-tight transition-colors duration-300 group-hover:text-primary">
+                          {step}
+                        </h3>
                       </div>
-
-                      {/* Step */}
-                      <h3 className="mt-6 px-2 text-base font-semibold leading-6 tracking-tight transition-colors duration-300 group-hover:text-primary">
-                        {step}
-                      </h3>
-                    </div>
-                  </SlideUp>
-
+                    </SlideUp>
+                  </div>
+              
                   {/* Desktop arrow */}
                   {index < project.workflow.length - 1 && (
-                    <div className="flex w-12 shrink-0 items-center justify-center pt-4 xl:w-16" aria-hidden="true">
-                      <MoveRight className="h-7 w-14 text-muted-foreground transition-all duration-300 hover:translate-x-1 hover:text-primary" strokeWidth={1.5} />
+                    <div
+                      className="flex w-12 shrink-0 items-center justify-center pt-4 xl:w-16"
+                      aria-hidden="true"
+                    >
+                      <MoveRight
+                        className="h-7 w-14 text-muted-foreground transition-all duration-300 hover:translate-x-1 hover:text-primary"
+                        strokeWidth={1.5}
+                      />
                     </div>
                   )}
                 </React.Fragment>
@@ -231,7 +239,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
             </FadeIn>
               <SlideUp>
                 <div className="mx-auto mt-10 w-full max-w-3xl px-4 min-[560px]:px-6 lg:px-0">
-                  <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
+                  <div className="flex flex-wrap justify-center gap-3">
                     {project.technologies.map((technology) => (
                       <span key={technology} className="rounded-lg border border-border bg-card px-4 py-2.5 font-mono text-xs text-muted-foreground shadow-[0_2px_8px_-6px_var(--primary)] transition-colors duration-200 hover:border-primary/40 hover:text-primary">
                         {technology}
@@ -256,8 +264,8 @@ export function ProjectPage({ project }: ProjectPageProps) {
                 </p>
 
                 <h2 className="mt-4 max-w-5xl text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
-                  What went into building the{" "}
-                  <span className="text-primary">project.</span>
+                  What went into{" "}
+                  <span className="text-primary">building the project.</span>
                 </h2>
               </div>
             </FadeIn>
@@ -286,18 +294,18 @@ export function ProjectPage({ project }: ProjectPageProps) {
           aria-hidden="true"
         />
 
-        {/* Screenshots / Demo */}
+        {/* Project Preview */}
         <Section id="project-preview">
           <Container>
             <FadeIn>
               <div className="w-full">
                 <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
-                  Screenshots / Demo
+                  Project Preview
                 </p>
 
                 <h2 className="mt-4 max-w-5xl text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
                   A closer look{" "}
-                  <span className="text-primary">at the project.</span>
+                  <span className="text-primary">at the application.</span>
                 </h2>
               </div>
             </FadeIn>
@@ -334,20 +342,20 @@ export function ProjectPage({ project }: ProjectPageProps) {
                 </p>
 
                 <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
-                  Explore the project.
+                  Explore the source code and live application.
                 </h2>
               </div>
             </FadeIn> 
             <div className="mt-8 grid w-fit gap-x-4 gap-y-6 min-[560px]:grid-cols-2">
               <SlideUp>
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="group block w-48 border-t border-border py-4 pl-3 transition-colors duration-200 hover:border-primary">
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="group block w-48 border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary">
                   <div className="inline-flex items-center">
                     <div>
                       <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-primary transition-colors duration-200 group-hover:text-primary">
                         Repository
                       </p>  
                       <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground transition-colors duration-200 group-hover:text-primary">
-                        View on GitHub
+                        View Repository
                       </h3>
                     </div>  
                     <ArrowUpRight
@@ -364,7 +372,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                     href={project.liveDemoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group block w-48 border-t border-border py-4 pl-3 transition-colors duration-200 hover:border-primary"
+                    className="group block w-48 border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary"
                   >
                     <div className="inline-flex items-center">
                       <div>
@@ -372,7 +380,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                           Live Application
                         </p>  
                         <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground transition-colors duration-200 group-hover:text-primary">
-                          Open Live Demo
+                          Open Application
                         </h3>
                       </div>  
                       <ArrowUpRight className="ml-1 size-5 shrink-0 text-muted-foreground transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" strokeWidth={1.7}

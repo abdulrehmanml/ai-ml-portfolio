@@ -62,12 +62,6 @@ export default function ProjectsPage() {
                   </span>
                 </h1>
               </SlideUp>
-
-              <FadeIn>
-                <p className="mt-6 w-full text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                  A collection of projects covering predictive modeling, NLP, generative AI, retrieval workflows, and data analysis.
-                </p>
-              </FadeIn>
             </div>
           </Container>
         </Section>
@@ -84,8 +78,8 @@ export default function ProjectsPage() {
                   All Projects
                 </p>
 
-                <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:whitespace-nowrap lg:text-[44px]">
-                  Selected work built from{" "}
+                <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
+                  Projects built from{" "}
                   <span className="text-primary">problem to solution.</span>
                 </h2>
               </div>

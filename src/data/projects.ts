@@ -8,21 +8,21 @@ export const projects: Project[] = [
     description:
       "A machine learning application that estimates customer churn likelihood from customer, service, contract, and billing information.",
     problem:
-      "Identify customers at risk of churning from customer, service, contract, and billing information.",
+      "Customer churn needed to be identified from customer, service, contract, and billing information to determine which customers were at risk.",
     solution:
-      "Built a machine learning application that prepares the data, trains and evaluates predictive models, and delivers churn predictions through Streamlit.",
+      "Built a machine learning application that preprocesses the data, trains and evaluates classification models, and delivers churn predictions through Streamlit.",
     workflow: [
       "Data Preprocessing",
       "Feature Engineering",
       "Model Training",
       "Evaluation",
       "Prediction",
-      "Streamlit",
+      "Streamlit Deployment",
     ],
     keyWork: [
       "Data preprocessing",
       "Exploratory analysis",
-      "Feature preparation",
+      "Feature engineering",
       "Classification modeling",
       "Model evaluation",
       "Model serialization",
@@ -44,31 +44,64 @@ export const projects: Project[] = [
   },
 
   {
+    slug: "sentiment-analysis",
+    title: "Sentiment Analysis App",
+    category: "NLP",
+    description:
+      "A three-class sentiment analysis application that classifies text into positive, negative, and neutral sentiment using NLP and machine learning.",
+    problem:
+      "The goal was to classify social-media text into positive, negative, and neutral sentiment for clearer understanding of text feedback.",
+    solution:
+      "Built a three-class NLP application that preprocesses text, extracts TF-IDF features, evaluates classification models, and delivers predictions through Streamlit.",
+    workflow: [
+      "Text Preprocessing",
+      "TF-IDF",
+      "Model Training",
+      "Evaluation",
+      "Streamlit Deployment",
+    ],
+    keyWork: [
+      "Text preprocessing",
+      "Data preparation",
+      "TF-IDF feature extraction",
+      "Sentiment classification",
+      "Model evaluation",
+      "Prediction workflow",
+      "Streamlit deployment",
+    ],
+    technologies: ["Python", "Scikit-learn", "TF-IDF", "NLP", "Streamlit"],
+    image: "/images/projects/sentiment-analysis.png",
+    href: "/projects/sentiment-analysis",
+    githubUrl: "https://github.com/abdulrehmanml/sentiment-analysis-system",
+    liveDemoUrl: "https://sentiment-analysis-system-nlp.streamlit.app/",
+  },
+
+  {
     slug: "agrofarm-ai",
     title: "AgroFarm AI",
     category: "Generative AI",
     description:
       "A RAG-based agriculture advisor that retrieves relevant knowledge and generates context-aware responses through a Streamlit application.",
     problem:
-      "Provide agricultural guidance using relevant domain knowledge while keeping responses specific to the user's context.",
+      "The goal was to provide agricultural guidance using relevant domain knowledge while keeping responses specific to the user's context.",
     solution:
-      "Built a RAG-based agronomy assistant that retrieves relevant knowledge and generates context-aware responses through a Streamlit application.",
+      "built a RAG-based agronomy assistant that retrieves relevant knowledge and generates context-aware responses through a Streamlit application.",
     workflow: [
       "Knowledge Preparation",
       "Information Retrieval",
-      "Relevant Agronomy Context",
-      "Gemini Generation",
+      "Context Assembly",
+      "Response Generation",
       "Streamlit Application",
     ],
     keyWork: [
       "Knowledge preparation",
       "Text processing",
-      "Information retrieval",
       "Vector storage",
-      "Context retrieval",
+      "Information retrieval",
+      "Context assembly",
       "LLM integration",
       "RAG pipeline",
-      "Streamlit application development",
+      "Streamlit application",
     ],
     technologies: [
       "Python",
@@ -81,38 +114,5 @@ export const projects: Project[] = [
     href: "/projects/agrofarm-ai",
     githubUrl: "https://github.com/abdulrehmanml/agrofarm-ai",
     liveDemoUrl: "https://agrofarm-ai.streamlit.app/",
-  },
-
-  {
-    slug: "sentiment-analysis",
-    title: "Sentiment Analysis App",
-    category: "NLP",
-    description:
-      "A three-class sentiment analysis application that classifies text into positive, negative, and neutral sentiment using NLP and machine learning.",
-    problem:
-      "Classify social-media text into positive, negative, or neutral sentiment.",
-    solution:
-      "Built a three-class NLP system using text preprocessing, TF-IDF features, machine learning, evaluation, and Streamlit deployment.",
-    workflow: [
-      "Text Preprocessing",
-      "TF-IDF",
-      "Model Training",
-      "Evaluation",
-      "Streamlit Deployment",
-    ],
-    keyWork: [
-      "Text preprocessing",
-      "Data preparation",
-      "Feature extraction",
-      "Sentiment classification",
-      "Model evaluation",
-      "Application integration",
-      "Deployment",
-    ],
-    technologies: ["Python", "Scikit-learn", "TF-IDF", "NLP", "Streamlit"],
-    image: "/images/projects/sentiment-analysis.png",
-    href: "/projects/sentiment-analysis",
-    githubUrl: "https://github.com/abdulrehmanml/sentiment-analysis-system",
-    liveDemoUrl: "https://sentiment-analysis-system-nlp.streamlit.app/",
   },
 ]

@@ -27,9 +27,8 @@ export default function UnderConstruction() {
                   This page is under construction.
                 </h1>
 
-                <p className="mt-4 w-full max-w-xl text-sm leading-6 text-foreground/70 min-[560px]:max-w-3xl min-[560px]:text-base lg:max-w-3xl lg:text-[15px]">
-                  This part of the portfolio is currently being built. Check
-                  back soon for the completed experience.
+                <p className="mt-4 w-full max-w-xl text-sm leading-6 text-muted-foreground min-[560px]:max-w-3xl min-[560px]:text-base lg:max-w-3xl lg:text-[15px]">
+                  This part of the portfolio is currently being built. Check back soon for the completed experience.
                 </p>
 
                 <div className="mt-8 flex w-full flex-col items-center justify-center gap-3 min-[560px]:flex-row">

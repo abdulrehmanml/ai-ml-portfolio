@@ -67,7 +67,7 @@ export function ServicesPreview() {
                 </span>
               </h2>
 
-              <p className="mt-4 w-full max-w-xl text-justify text-sm leading-6 text-foreground/70 sm:text-base md:w-[92%] md:max-w-none lg:w-full lg:max-w-md">
+              <p className="mt-4 w-full max-w-xl text-justify text-sm leading-6 text-muted-foreground sm:text-base md:w-[92%] md:max-w-none lg:w-full lg:max-w-md">
                 From data analysis and machine learning to generative AI and deployment, I build practical solutions that move beyond experimentation into usable applications.
               </p>
             </div>
@@ -93,7 +93,7 @@ export function ServicesPreview() {
                               {title}
                             </h3>
 
-                            <p className="mt-1.5 w-full max-w-xl text-justify text-sm leading-6 text-muted-foreground transition-colors duration-200 min-[560px]:text-[15px] lg:text-left lg:text-sm group-hover:text-foreground/90">
+                            <p className="mt-1.5 w-full max-w-xl text-justify text-sm leading-6 text-muted-foreground transition-colors duration-200 min-[560px]:text-[15px] lg:text-left lg:text-sm group-hover:text-muted-foreground">
                               {description}
                             </p>
                           </div>

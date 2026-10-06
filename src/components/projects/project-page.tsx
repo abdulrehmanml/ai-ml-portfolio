@@ -50,7 +50,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                     {project.title}
                   </h1>
 
-                  <p className="mt-6 max-w-2xl text-sm leading-7 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                  <p className="mt-6 max-w-2xl text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                     {project.description}
                   </p>
                 </div>
@@ -103,7 +103,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                     What needed to be solved?
                   </h3>
 
-                  <p className="mt-4 max-w-xl text-justify text-sm leading-7 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                  <p className="mt-4 max-w-xl text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                     {project.problem}
                   </p>
                 </article>
@@ -119,7 +119,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                     What was built?
                   </h3>
 
-                  <p className="mt-4 max-w-xl text-sm leading-7 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                  <p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                     {project.solution}
                   </p>
                 </article>
@@ -407,7 +407,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                     <span className="text-primary">something useful.</span>
                   </h2>
 
-                  <p className="mt-4 max-w-3xl text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                  <p className="mt-4 max-w-3xl text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                     Have a problem, dataset, or application idea? Let&apos;s discuss the right approach.
                   </p>
                 </div>

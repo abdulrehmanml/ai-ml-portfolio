@@ -27,9 +27,8 @@ export default function NotFound() {
                   This page doesn&apos;t exist.
                 </h1>
 
-                <p className="mt-4 w-full max-w-xl text-sm leading-6 text-foreground/70 min-[560px]:max-w-3xl min-[560px]:text-base lg:max-w-3xl lg:text-[15px]">
-                  The page you&apos;re looking for may have been moved, removed,
-                  or never existed in the first place.
+                <p className="mt-4 w-full max-w-xl text-sm leading-6 text-muted-foreground min-[560px]:max-w-3xl min-[560px]:text-base lg:max-w-3xl lg:text-[15px]">
+                  The page you&apos;re looking for may have been moved, removed, or never existed in the first place.
                 </p>
 
                 <div className="mt-8 flex w-full flex-col items-center justify-center gap-3 min-[560px]:flex-row">

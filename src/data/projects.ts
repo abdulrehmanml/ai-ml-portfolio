@@ -6,7 +6,7 @@ export const projects: Project[] = [
     title: "Customer Churn Prediction",
     category: "Machine Learning",
     description:
-      "End-to-end machine learning application for predicting customer churn.",
+      "A machine learning application that estimates customer churn likelihood from customer, service, contract, and billing information.",
     problem:
       "Identify customers at risk of churning from customer, service, contract, and billing information.",
     solution:
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     title: "AgroFarm AI",
     category: "Generative AI",
     description:
-      "RAG-based agronomy assistant designed to provide context-aware agricultural guidance.",
+      "A RAG-based agriculture advisor that retrieves relevant knowledge and generates context-aware responses through a Streamlit application.",
     problem:
       "Provide agricultural guidance using relevant domain knowledge while keeping responses specific to the user's context.",
     solution:
@@ -70,7 +70,13 @@ export const projects: Project[] = [
       "RAG pipeline",
       "Streamlit application development",
     ],
-    technologies: ["Python", "Gemini", "ChromaDB", "RAG", "Streamlit"],
+    technologies: [
+      "Python",
+      "Gemini",
+      "ChromaDB",
+      "RAG",
+      "Streamlit"
+    ],
     image: "/images/projects/agrofarm-ai.png",
     href: "/projects/agrofarm-ai",
     githubUrl: "https://github.com/abdulrehmanml/agrofarm-ai",
@@ -82,7 +88,7 @@ export const projects: Project[] = [
     title: "Sentiment Analysis App",
     category: "NLP",
     description:
-      "Three-class sentiment analysis application with an interactive Streamlit interface.",
+      "A three-class sentiment analysis application that classifies text into positive, negative, and neutral sentiment using NLP and machine learning.",
     problem:
       "Classify social-media text into positive, negative, or neutral sentiment.",
     solution:

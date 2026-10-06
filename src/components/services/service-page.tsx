@@ -8,6 +8,8 @@ import { Footer } from "@/components/layout/footer"
 import { Navbar } from "@/components/layout/navbar"
 import { Section } from "@/components/layout/section"
 import { projects } from "@/data/projects"
+import { ProjectCard } from "@/components/projects/project-card"
+
 import type { Project } from "@/types"
 import type { Service } from "@/data/services"
 
@@ -17,8 +19,8 @@ export function ServicePage({ service }: ServicePageProps) {
   const Icon = service.icon
 
   const relatedProjects = service.projectSlugs
-    .map((slug) => projects.find((project: Project) => project.slug === slug))
-    .filter((project): project is Project => project !== undefined)
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter((project): project is Project => project !== undefined)
 
   return (
     <>
@@ -57,7 +59,7 @@ export function ServicePage({ service }: ServicePageProps) {
                     {service.title}
                   </h1>
 
-                  <p className="mt-6 max-w-2xl text-justify text-sm leading-7 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                  <p className="mt-6 max-w-2xl text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                     {service.description}
                   </p>
                 </div>
@@ -87,11 +89,11 @@ export function ServicePage({ service }: ServicePageProps) {
                       </div>
                     <div className="mt-5 h-px w-12 bg-accent/40 transition-all duration-300 group-hover:w-16 group-hover:bg-primary/60"
                       aria-hidden="true"/>
-                    <p className="mt-4 text-justify text-sm leading-6 text-foreground/70">
+                    <p className="mt-4 text-justify text-sm leading-6 text-muted-foreground">
                       {service.shortDescription}
                     </p>
                     <div className="mt-6 border-t border-border pt-4">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.08em] text-muted-foreground transition-colors duration-300 group-hover:text-foreground/80">
+                      <p className="text-center font-mono text-[10px] uppercase tracking-[0.08em] text-muted-foreground transition-colors duration-300 group-hover:text-muted-foreground">
                         {service.technologies.slice(0, 3).map((technology, index) => (
                           <span key={technology}>
                             {index > 0 && (
@@ -215,7 +217,7 @@ export function ServicePage({ service }: ServicePageProps) {
             </FadeIn>
 
             <div className="mx-auto mt-10 w-full max-w-3xl px-4 min-[560px]:px-6 lg:px-0">
-              <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
+              <div className="flex flex-wrap justify-center gap-3">
                 {service.technologies.map((technology) => (
                   <span
                     key={technology}
@@ -242,66 +244,22 @@ export function ServicePage({ service }: ServicePageProps) {
                 </p>
 
                 <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
-                  Related projects from{" "}
-                  <span className="text-primary">
-                    my portfolio.
-                  </span>
+                  Related projects {" "}
+                  <span className="text-primary">from my portfolio.</span>
                 </h2>
               </div>
             </FadeIn>
-
             {relatedProjects.length > 0 ? (
               <div className="mx-auto mt-10 grid w-full max-w-4xl grid-cols-1 gap-6 px-4 min-[560px]:grid-cols-2 min-[560px]:px-0">
                 {relatedProjects.map((project) => (
-                <SlideUp key={project.slug}>
-                  <Link href={project.href} className="group block h-full">
-                    <article
-                      className={`project-card-shadow mx-auto flex h-full w-full max-w-md flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-primary/50 hover:bg-primary/5 hover:shadow-[0_12px_32px_-16px_var(--primary)] active:scale-[0.995] min-[560px]:p-7 ${
-                        relatedProjects.length === 1 ? "min-[560px]:col-span-2" : ""
-                      }`}
-                    >
-                      <p className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-primary">
-                        {project.category}
-                      </p>
-
-                      <h3 className="mt-4 text-xl font-semibold tracking-tight">
-                        {project.title}
-                      </h3>
-                    
-                      <p className="mt-3 px-1 text-justify text-sm leading-6 text-foreground/70">
-                        {project.description}
-                      </p>
-                    
-                      <div className="mt-5 flex w-full max-w-full flex-wrap items-center gap-x-2 gap-y-1 px-1 font-mono text-[11px] leading-5 text-muted-foreground">
-                        {project.technologies.map((technology, index) => (
-                          <span key={technology} className="whitespace-nowrap">
-                            {index > 0 && (
-                              <span className="mr-2 text-primary" aria-hidden="true">
-                                ·
-                              </span>
-                            )}
-                            {technology}
-                          </span>
-                        ))}
-                      </div>
-
-                      <div className="mt-auto pt-6">
-                        <span className="inline-flex items-center gap-2 text-sm font-medium text-primary">
-                          View Project
-                          <ArrowRight
-                            className="size-4 transition-transform duration-200 group-hover:translate-x-1"
-                            aria-hidden="true"
-                          />
-                        </span>
-                      </div>
-                    </article>
-                  </Link>
-                </SlideUp>
+                  <SlideUp key={project.slug}>
+                    <ProjectCard project={project} showImage={false} />
+                  </SlideUp>
                 ))}
               </div>
             ) : (
               <div className="mt-10 max-w-2xl border-t border-border pt-6">
-                <p className="text-sm leading-6 text-foreground/70">
+                <p className="text-sm leading-6 text-muted-foreground">
                   Relevant project work will be added here as the portfolio expands.
                 </p>
               </div>
@@ -325,12 +283,12 @@ export function ServicePage({ service }: ServicePageProps) {
                   <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
                     Need help with{" "}
                     <span className="text-primary">
-                      {service.title.toLowerCase()}?
+                      {service.title}?
                     </span>
                   </h2>
 
-                  <p className="mt-4 max-w-2xl text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
-                    Share the problem, requirements, or dataset and we can discuss the right approach.
+                  <p className="mt-4 max-w-2xl text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                    Share the problem, requirements, or project details and we can discuss the right approach.
                   </p>
                 </div>
 

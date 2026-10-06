@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/footer"
 import { Navbar } from "@/components/layout/navbar"
 import { Section } from "@/components/layout/section"
 import { projects } from "@/data/projects"
+import { ProjectCard } from "@/components/projects/project-card"
 
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
@@ -14,8 +15,8 @@ import { ArrowRight } from "lucide-react"
 export default function AboutPage() {
   const selectedProjectSlugs = [
     "customer-churn-prediction",
-    "sentiment-analysis",
     "agrofarm-ai",
+    "sentiment-analysis",
   ]
   const selectedProjects = selectedProjectSlugs.flatMap((slug) =>
     projects.filter((project) => project.slug === slug),
@@ -44,7 +45,7 @@ export default function AboutPage() {
                   </h1>
 
                     <p className="mt-6 text-justify text-sm leading-7 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
-                      I&apos;m an AI/ML engineer focused on building practical solutions that turn data, machine learning, and AI technologies into useful applications. My work spans data analysis, predictive modeling, NLP, generative AI, and the development of interactive machine learning applications. 
+                      I&apos;m an Artificial Intelligence undergraduate focused on building practical AI/ML solutions that turn data, machine learning, and AI technologies into useful applications. My work spans data analysis, predictive modeling, NLP, generative AI, and the development of interactive machine learning applications.
                     </p>
 
                   <div className="mt-7 ml-2">
@@ -132,7 +133,7 @@ export default function AboutPage() {
                   <span className="text-primary">deployable solution.</span>
                 </h2>
 
-                <p className="mt-4 w-full text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                <p className="mt-4 w-full text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                   I approach AI/ML projects as complete workflows, starting with a clear understanding of the problem and the data, then building and evaluating the right solution before turning it into a practical, usable application.
                 </p>
               </div>
@@ -200,11 +201,11 @@ export default function AboutPage() {
 
                 <h2 className="mt-4 max-w-5xl text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
                   Technical capabilities for{" "}
-                  <span className="text-primary">practical AI/ML systems.</span>
+                  <span className="text-primary">building AI/ML solutions.</span>
                 </h2>
 
-                <p className="mt-4 w-full text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
-                  I work across the data and machine learning lifecycle, combining analytical thinking, model development, AI techniques, and deployment to build usable solutions.
+                <p className="mt-4 w-full text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                  I combine data analysis, machine learning, language technologies, and deployment skills to develop solutions across different stages of the AI/ML lifecycle.
                 </p>
               </div>
             </FadeIn>
@@ -215,14 +216,14 @@ export default function AboutPage() {
                   number: "01",
                   title: "Machine Learning",
                   description:
-                    "Build and evaluate predictive models for classification, regression, and practical decision-making.",
+                    "Apply supervised learning techniques to transform structured data into predictive models, with attention to preprocessing, evaluation, and model performance.",
                   skills: ["Python", "NumPy", "Pandas", "Scikit-learn"],
                 },
                 {
                   number: "02",
                   title: "Data & Analytics",
                   description:
-                    "Turn raw datasets into useful insights through cleaning, exploration, visualization, and analysis.",
+                    "Work with structured datasets through preprocessing, exploratory analysis, statistical inspection, and visualization to understand patterns and prepare data for modeling.",
                   skills: [
                     "EDA",
                     "Matplotlib",
@@ -234,15 +235,15 @@ export default function AboutPage() {
                   number: "03",
                   title: "AI & NLP",
                   description:
-                    "Develop knowledge-based and language-focused applications using retrieval, NLP, and generative AI techniques.",
+                    "Work with text and knowledge-based systems using NLP, feature extraction, retrieval techniques, and generative AI to develop language-focused applications.",
                   skills: ["NLP", "TF-IDF", "RAG", "Generative AI"],
                 },
                 {
                   number: "04",
                   title: "Deployment",
                   description:
-                    "Move machine learning solutions from notebooks into usable applications through APIs, interfaces, and deployment workflows.",
-                  skills: ["Streamlit", "APIs", "Joblib", "Git & GitHub"],
+                    "Connect trained models and AI workflows to usable applications through APIs, model serialization, interactive interfaces, and practical deployment workflows.",
+                  skills: ["Streamlit", "APIs", "Joblib", "Git & GitHub", "AWS"],
                 },
               ].map((item) => (
                 <SlideUp key={item.number} className="min-w-0">
@@ -263,8 +264,7 @@ export default function AboutPage() {
                       <p className="mt-3 text-justify text-sm leading-6 text-foreground/70">
                         {item.description}
                       </p>
-
-                      <div className="mt-5 flex flex-nowrap gap-1 overflow-x-auto min-[560px]:gap-2">
+                      <div className="mt-5 flex flex-nowrap justify-start gap-1 overflow-x-auto min-[560px]:gap-2 lg:justify-center">
                         {item.skills.map((skill) => (
                           <span
                             key={skill}
@@ -298,11 +298,11 @@ export default function AboutPage() {
                 </p>
 
                 <h2 className="mt-4 w-full text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
-                  Tools I use to build and{" "}
-                  <span className="text-primary">ship AI/ML solutions.</span>
+                  Tools I use to build{" "}
+                  <span className="text-primary">and ship AI/ML solutions.</span>
                 </h2>
 
-                <p className="mt-4 w-full text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                <p className="mt-4 w-full text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                   A focused set of technologies I use across data preparation, machine learning, AI applications, and deployment.
                 </p>
               </div>
@@ -312,27 +312,27 @@ export default function AboutPage() {
               {[
                 {
                   category: "Programming",
-                  tools: ["Python", "C++", "SQL"],
+                  tools: ["Python · C++ · SQL"],
                 },
                 {
                   category: "Data",
-                  tools: ["NumPy", "Pandas", "Matplotlib", "Seaborn"],
+                  tools: ["NumPy · Pandas · Matplotlib · Seaborn"],
                 },
                 {
                   category: "Machine Learning",
-                  tools: ["Scikit-learn", "Joblib"],
+                  tools: ["Scikit-learn · Joblib"],
                 },
                 {
                   category: "AI & GenAI",
-                  tools: ["Gemini", "ChromaDB"],
+                  tools: ["Gemini · ChromaDB"],
                 },
                 {
                   category: "Applications",
-                  tools: ["Streamlit", "FastAPI"],
+                  tools: ["Streamlit · FastAPI"],
                 },
                 {
-                  category: "Development",
-                  tools: ["Git", "GitHub", "VS Code"],
+                  category: "Development & Cloud",
+                  tools: ["Git · GitHub · VS Code · AWS"],
                 },
               ].map((item) => (
                 <SlideUp key={item.category}>
@@ -380,11 +380,11 @@ export default function AboutPage() {
                 </p>
 
                 <h2 className="mt-4 max-w-5xl text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
-                  Projects that turn ideas into{" "}
-                  <span className="text-primary">working solutions.</span>
+                  Projects that turn {" "}
+                  <span className="text-primary">ideas into working solutions.</span>
                 </h2>
 
-                <p className="mt-4 w-full text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                <p className="mt-4 w-full text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                   A selection of practical projects covering predictive machine learning, NLP, and retrieval-augmented generative AI applications.
                 </p>
               </div>
@@ -393,37 +393,7 @@ export default function AboutPage() {
             <div className="mx-auto mt-12 grid w-full max-w-md gap-6 px-4 md:max-lg:max-w-xl md:max-lg:px-4 lg:max-w-none lg:px-0 lg:grid-cols-3 lg:gap-7">
               {selectedProjects.map((project) => (
                 <SlideUp key={project.slug}>
-                  <Link href={project.href} className="group block h-full">
-                    <div className="project-card-shadow h-full rounded-2xl">
-                      <article className="flex h-full flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-card hover:shadow-[0_12px_32px_-16px_var(--primary)] min-[560px]:p-7">
-                        <p className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-primary">
-                          {project.category}
-                        </p>
-
-                        <h3 className="mt-4 text-xl font-semibold tracking-tight">
-                          {project.title}
-                        </h3>
-
-                        <p className="mt-3 px-1 text-justify text-sm leading-6 text-foreground/70">
-                          {project.description}
-                        </p>
-
-                        <p className="mt-5 px-1 text-justify font-mono text-[11px] leading-5 text-muted-foreground">
-                          {project.technologies.join(" · ")}
-                        </p>
-
-                        <div className="mt-auto pt-6">
-                          <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-primary">
-                            View Project
-                            <ArrowRight
-                              className="size-4 transition-transform duration-200 group-hover:translate-x-1"
-                              aria-hidden="true"
-                            />
-                          </span>
-                        </div>
-                      </article>
-                    </div>
-                  </Link>
+                  <ProjectCard project={project} showImage={false} />
                 </SlideUp>
               ))}
             </div>
@@ -452,7 +422,7 @@ export default function AboutPage() {
                   </h2>
 
                   <p className="mt-4 text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
-                    Building stronger skills in production machine learning, AI applications, APIs, cloud deployment, and agentic systems.
+                    Currently strengthening my skills in production machine learning, AI applications, APIs, cloud deployment, and agentic systems.
                   </p>
                 </div>
               </FadeIn>
@@ -509,7 +479,7 @@ export default function AboutPage() {
                   </h2>
 
                   <p className="mt-4 max-w-2xl text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
-                    Looking to turn an idea, dataset, or AI concept into a practical solution? Let&apos;s talk.
+                    Have a project in mind or looking for an AI/ML solution? Let&apos;s discuss the problem, explore the right approach, and see how I can help.
                   </p>
                 </div>
 

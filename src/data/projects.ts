@@ -8,7 +8,7 @@ export const projects: Project[] = [
     description:
       "A machine learning application that estimates customer churn likelihood from customer, service, contract, and billing information.",
     problem:
-      "Customer churn needed to be identified from customer, service, contract, and billing information to determine which customers were at risk.",
+      "The goal was to identify customers at risk of churning from customer, service, contract, and billing information.",
     solution:
       "Built a machine learning application that preprocesses the data, trains and evaluates classification models, and delivers churn predictions through Streamlit.",
     workflow: [
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     problem:
       "The goal was to provide agricultural guidance using relevant domain knowledge while keeping responses specific to the user's context.",
     solution:
-      "built a RAG-based agronomy assistant that retrieves relevant knowledge and generates context-aware responses through a Streamlit application.",
+      "Built a RAG-based agronomy assistant that retrieves relevant knowledge and generates context-aware responses through a Streamlit application.",
     workflow: [
       "Knowledge Preparation",
       "Information Retrieval",

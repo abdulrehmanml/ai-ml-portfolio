@@ -12,12 +12,14 @@ type ProjectCardProps = {
   project: Project
   priority?: boolean
   compact?: boolean
+  showImage?: boolean
 }
 
 export function ProjectCard({
   project,
   priority = false,
   compact = false,
+  showImage = true,
 }: ProjectCardProps) {
   return (
     <Link
@@ -36,31 +38,33 @@ export function ProjectCard({
       >
         <Card className="group h-full overflow-hidden border-border/80 bg-card transition-colors duration-300 hover:border-primary/50 hover:bg-primary/5">
           {/* Project visual */}
-          <div
-            className={`relative overflow-hidden border-b border-border/70 bg-muted ${
-              compact ? "h-40 sm:h-44 lg:h-48" : "h-52 sm:h-56 lg:h-60"
-            }`}
-          >
-            {project.image ? (
-              <Image
-                src={project.image}
-                alt={`${project.title} project preview`}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                loading={priority ? "eager" : "lazy"}
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-              />
-            ) : (
-              <div className="flex h-full items-center justify-center bg-linear-to-br from-primary/10 via-card to-accent/10">
-                <FolderCode
-                  className="size-12 text-primary/70"
-                  aria-hidden="true"
+          {showImage && (
+            <div
+              className={`relative overflow-hidden border-b border-border/70 bg-muted ${
+                compact ? "h-40 sm:h-44 lg:h-48" : "h-52 sm:h-56 lg:h-60"
+              }`}
+            >
+              {project.image ? (
+                <Image
+                  src={project.image}
+                  alt={`${project.title} project preview`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  loading={priority ? "eager" : "lazy"}
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                 />
-              </div>
-            )}
+              ) : (
+                <div className="flex h-full items-center justify-center bg-linear-to-br from-primary/10 via-card to-accent/10">
+                  <FolderCode
+                    className="size-12 text-primary/70"
+                    aria-hidden="true"
+                  />
+                </div>
+              )}
 
-            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          </div>
+              <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            </div>
+          )}
 
           {/* Content */}
           <div

@@ -18,7 +18,7 @@ const services = [
     icon: BrainCircuit,
     title: "Machine Learning",
     description:
-      "Build and evaluate predictive models for classification, regression, and practical real-world decision-making.",
+      "Build and evaluate predictive models for classification, regression, and practical decision-making.",
   },
   {
     number: "02",
@@ -34,7 +34,7 @@ const services = [
     icon: Sparkles,
     title: "Generative AI & RAG",
     description:
-      "Build retrieval-augmented AI systems that combine generative models with reliable knowledge sources for grounded answers.",
+      "Build retrieval-augmented AI systems that combine generative models with relevant knowledge sources to provide grounded answers.",
   },
   {
     number: "04",
@@ -42,7 +42,7 @@ const services = [
     icon: Cloud,
     title: "Deployment & ML APIs",
     description:
-      "Deploy machine learning models through APIs and production-ready applications with reliable, maintainable workflows.",
+      "Deploy machine learning models through APIs and applications with reliable, maintainable workflows.",
   },
 ]
 
@@ -62,13 +62,13 @@ export function ServicesPreview() {
                 <span>
                   AI/ML Solutions{" "}
                 </span>
-                <span className="text-primary lg:text-[40px]">
+                <span className="text-primary">
                   built for practical use.
                 </span>
               </h2>
 
               <p className="mt-4 w-full max-w-xl text-justify text-sm leading-6 text-foreground/70 sm:text-base md:w-[92%] md:max-w-none lg:w-full lg:max-w-md">
-                From data analysis and machine learning to generative AI and deployment, I build practical solutions designed to move beyond experimentation.
+                From data analysis and machine learning to generative AI and deployment, I build practical solutions that move beyond experimentation into usable applications.
               </p>
             </div>
 

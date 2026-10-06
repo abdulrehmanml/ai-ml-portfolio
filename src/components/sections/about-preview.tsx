@@ -29,7 +29,7 @@ const skillGroups = [
   {
     icon: Cloud,
     title: "Deployment",
-    skills: "Streamlit · Joblib · Git · GitHub",
+    skills: "Streamlit · Joblib · Git · GitHub · AWS",
   },
 ]
 
@@ -51,7 +51,7 @@ export function AboutPreview() {
             </h2>
 
             <p className="mt-3 w-full max-w-6xl text-justify text-sm leading-6 text-foreground/70 lg:text-[15px]">
-              An Artificial Intelligence undergraduate focused on machine learning, data analysis, NLP, and generative AI. I build practical projects that move from experimentation and evaluation to clean, usable, deployable applications designed for real-world use.
+              An Artificial Intelligence undergraduate focused on machine learning, data analysis, NLP, and generative AI. I build practical AI solutions that turn ideas and data into useful, deployable applications.
             </p>
           </div>
 

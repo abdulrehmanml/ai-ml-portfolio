@@ -1,10 +1,12 @@
 "use client"
 
 import Link from "next/link"
-import { FormEvent, useState } from "react"
+import type { FormEvent } from "react" 
+import { useEffect, useState } from "react"
 import { ArrowUpRight, Mail, Send } from "lucide-react"
 import { SiGithub } from "@icons-pack/react-simple-icons"
 
+import { cn } from "@/lib/utils"
 import { Container } from "@/components/layout/container"
 import { Section } from "@/components/layout/section"
 import { FadeIn } from "@/components/animations/fade-in"
@@ -29,18 +31,21 @@ const contactLinks = [
     value: "hello.arehmanmughal@gmail.com",
     href: "mailto:hello.arehmanmughal@gmail.com",
     icon: Mail,
+    iconClassName: "text-foreground",
   },
   {
     label: "LinkedIn",
     value: "LinkedIn",
     href: "https://www.linkedin.com/in/abdul-rehmanmughal",
     icon: LinkedinIcon,
+    iconClassName: "text-[#0A66C2]",
   },
   {
     label: "GitHub",
     value: "GitHub",
     href: "https://github.com/abdulrehmanml",
     icon: SiGithub,
+    iconClassName: "text-[#181717] dark:text-white",
   },
 ]
 
@@ -50,6 +55,16 @@ export function ContactPreview() {
     type: "success" | "error"
     message: string
   } | null>(null)
+
+  useEffect(() => {
+    if (!status) return
+
+    const timer = setTimeout(() => {
+      setStatus(null)
+    }, 5000)
+
+    return () => clearTimeout(timer)
+  }, [status])
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -118,21 +133,21 @@ export function ContactPreview() {
               </h2>
 
               <p className="mt-4 w-full max-w-lg text-justify text-sm leading-6 text-foreground/70 min-[560px]:max-w-none lg:max-w-lg lg:text-[15px]">
-                Have an idea, project, or problem to solve? Send the details and let&apos;s discuss how I can help.
+                Have an idea, project, or problem to solve? Share the details and let&apos;s discuss how I can help.
               </p>
 
-              <div className="mt-7 flex flex-col gap-3">
-                {contactLinks.map(({ label, value, href, icon: Icon }) => (
+              <div className="mt-7 flex flex-col gap-1">
+                {contactLinks.map(({ label, value, href, icon: Icon, iconClassName }) => (
                   <Link
                     key={label}
                     href={href}
-                    className="group flex w-fit items-center gap-3 rounded-lg px-2 py-1.5 text-sm text-muted-foreground transition-all duration-200 hover:bg-primary/5 hover:text-primary"
+                    className="group flex w-fit items-center gap-3 rounded-lg px-2 py-1.5 text-[15px] font-medium text-foreground/80 transition-all duration-200 hover:bg-primary/5 hover:text-primary"
                   >
-                    <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border/70 bg-card/50 text-primary transition-all duration-200 group-hover:-translate-y-0.5 group-hover:border-primary/40 group-hover:bg-primary/5">
-                      <Icon className="size-4" aria-hidden="true" />
+                    <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border/70 bg-card/50 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:border-primary/40 group-hover:bg-primary/5">
+                      <Icon className={cn("size-4", iconClassName)} aria-hidden="true" />
                     </span>
 
-                    <span className="font-medium">{value}</span>
+                    <span>{value}</span>
 
                     <ArrowUpRight
                       className="size-4 opacity-60 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
@@ -184,7 +199,7 @@ export function ContactPreview() {
                     </button>
 
                     {status && (
-                      <p role="status" aria-live="polite" className="text-sm text-muted-foreground">
+                      <p role="status" aria-live="polite" className={cn("text-sm", status.type === "success" ? "text-green-600 dark:text-green-400" : "text-destructive")}>
                         {status.message}
                       </p>
                     )}

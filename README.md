@@ -9,7 +9,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4.svg)](https://tailwindcss.com/)
 [![Motion](https://img.shields.io/badge/Motion-Animation-8B5CF6.svg)](https://motion.dev/)
 
-[**🌐 View Portfolio**](YOUR_PORTFOLIO_URL)
+[**🌐 View Portfolio**](https://abdulrehmanmughal.vercel.app)
 
 _Showcasing practical work across machine learning, AI, NLP, and data-driven solutions._
 

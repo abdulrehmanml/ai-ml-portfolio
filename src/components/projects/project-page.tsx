@@ -92,36 +92,40 @@ export function ProjectPage({ project }: ProjectPageProps) {
               </div>
             </FadeIn>
 
-            <div className="mx-auto mt-10 grid w-full max-w-2xl gap-10 px-4 min-[560px]:px-6 lg:max-w-none lg:px-8 lg:grid-cols-2 lg:gap-16">
+            <div className="mx-auto mt-10 grid w-full max-w-2xl grid-cols-1 gap-10 min-[560px]:px-6 lg:max-w-none lg:grid-cols-2 lg:gap-16 lg:px-8">
               <SlideUp>
-                <article className="group h-full border-t-2 border-border/80 px-3 pt-5 transition-colors duration-200 hover:border-primary">
-                  <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
-                    01 — Problem
-                  </p>
-
-                  <h3 className="mt-4 text-2xl font-semibold tracking-tight">
-                    What needed to be solved?
-                  </h3>
-
-                  <p className="mt-4 max-w-xl text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                    {project.problem}
-                  </p>
+                <article className="group h-full w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary">
+                  <div className="px-4 min-[560px]:px-5 lg:px-6">
+                    <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
+                      01 — Problem
+                    </p>
+              
+                    <h3 className="mt-4 text-2xl font-semibold tracking-tight">
+                      What was the objective?
+                    </h3>
+              
+                    <p className="mt-4 text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                      {project.problem}
+                    </p>
+                  </div>
                 </article>
               </SlideUp>
-
+              
               <SlideUp>
-                <article className="group h-full border-t-2 border-border/80 px-3 pt-5 transition-colors duration-200 hover:border-primary">
-                  <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
-                    02 — Solution
-                  </p>
-
-                  <h3 className="mt-4 text-2xl font-semibold tracking-tight">
-                    What was built?
-                  </h3>
-
-                  <p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                    {project.solution}
-                  </p>
+                <article className="group h-full w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary">
+                  <div className="px-4 min-[560px]:px-5 lg:px-6">
+                    <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
+                      02 — Solution
+                    </p>
+              
+                    <h3 className="mt-4 text-2xl font-semibold tracking-tight">
+                      What was built?
+                    </h3>
+              
+                    <p className="mt-4 text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                      {project.solution}
+                    </p>
+                  </div>
                 </article>
               </SlideUp>
             </div>

@@ -190,7 +190,7 @@ export function Navbar() {
                   "rounded-md px-3 py-2 text-sm transition-colors duration-200",
                   isActive
                     ? "bg-primary/5 text-primary"
-                    : "text-foreground/75 hover:bg-primary/5 hover:text-foreground",
+                    : "text-muted-foreground hover:bg-primary/5 hover:text-foreground",
                 )}
                 aria-current={isActive ? "location" : undefined}
               >
@@ -240,7 +240,7 @@ export function Navbar() {
                   "border-b border-border/50 px-1 py-4 text-sm font-medium transition-colors last:border-b-0",
                   isActive
                     ? "bg-primary/5 text-primary"
-                    : "text-foreground/80 hover:text-primary",
+                    : "text-muted-foreground hover:text-primary",
                 )}
                 aria-current={isActive ? "location" : undefined}
               >

@@ -28,7 +28,7 @@ export function FeaturedProjects() {
                   <span className="text-primary">data, machine learning, and AI.</span>
                 </h2>
 
-                <p className="mt-3 w-full text-justify text-sm leading-6 text-foreground/70 sm:text-base lg:text-[15px]">
+                <p className="mt-3 w-full text-justify text-sm leading-6 text-muted-foreground sm:text-base lg:text-[15px]">
                   A selection of practical projects spanning machine learning, NLP, generative AI, and data-driven applications.
                 </p>
               </div>

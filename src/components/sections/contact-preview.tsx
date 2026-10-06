@@ -132,7 +132,7 @@ export function ContactPreview() {
                 <span className="text-primary">Let&apos;s make it real.</span>
               </h2>
 
-              <p className="mt-4 w-full max-w-lg text-justify text-sm leading-6 text-foreground/70 min-[560px]:max-w-none lg:max-w-lg lg:text-[15px]">
+              <p className="mt-4 w-full max-w-lg text-justify text-sm leading-6 text-muted-foreground min-[560px]:max-w-none lg:max-w-lg lg:text-[15px]">
                 Have an idea, project, or problem to solve? Share the details and let&apos;s discuss how I can help.
               </p>
 
@@ -141,7 +141,7 @@ export function ContactPreview() {
                   <Link
                     key={label}
                     href={href}
-                    className="group flex w-fit items-center gap-3 rounded-lg px-2 py-1.5 text-[15px] font-medium text-foreground/80 transition-all duration-200 hover:bg-primary/5 hover:text-primary"
+                    className="group flex w-fit items-center gap-3 rounded-lg px-2 py-1.5 text-[15px] font-medium text-muted-foreground transition-all duration-200 hover:bg-primary/5 hover:text-primary"
                   >
                     <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border/70 bg-card/50 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:border-primary/40 group-hover:bg-primary/5">
                       <Icon className={cn("size-4", iconClassName)} aria-hidden="true" />

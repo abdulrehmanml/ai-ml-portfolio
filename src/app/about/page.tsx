@@ -44,7 +44,7 @@ export default function AboutPage() {
                     I&apos;m Abdul Rehman.
                   </h1>
 
-                    <p className="mt-6 text-justify text-sm leading-7 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                    <p className="mt-6 text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                       I&apos;m an Artificial Intelligence undergraduate focused on building practical AI/ML solutions that turn data, machine learning, and AI technologies into useful applications. My work spans data analysis, predictive modeling, NLP, generative AI, and the development of interactive machine learning applications.
                     </p>
 
@@ -174,7 +174,7 @@ export default function AboutPage() {
                     <h3 className="mt-3 text-lg font-semibold tracking-tight transition-colors duration-200 group-hover:text-primary">
                       {step.title}
                     </h3>
-                    <p className="mt-3 text-justify text-sm leading-6 text-foreground/70">
+                    <p className="mt-3 text-justify text-sm leading-6 text-muted-foreground">
                       {step.description}
                     </p>
                   </div>
@@ -261,7 +261,7 @@ export default function AboutPage() {
                         {item.title}
                       </h3>
 
-                      <p className="mt-3 text-justify text-sm leading-6 text-foreground/70">
+                      <p className="mt-3 text-justify text-sm leading-6 text-muted-foreground">
                         {item.description}
                       </p>
                       <div className="mt-5 flex flex-nowrap justify-start gap-1 overflow-x-auto min-[560px]:gap-2 lg:justify-center">
@@ -421,7 +421,7 @@ export default function AboutPage() {
                     <span className="text-primary">production AI systems.</span>
                   </h2>
 
-                  <p className="mt-4 text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                  <p className="mt-4 text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                     Currently strengthening my skills in production machine learning, AI applications, APIs, cloud deployment, and agentic systems.
                   </p>
                 </div>
@@ -478,7 +478,7 @@ export default function AboutPage() {
                     </span>
                   </h2>
 
-                  <p className="mt-4 max-w-2xl text-justify text-sm leading-6 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                  <p className="mt-4 max-w-2xl text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                     Have a project in mind or looking for an AI/ML solution? Let&apos;s discuss the problem, explore the right approach, and see how I can help.
                   </p>
                 </div>

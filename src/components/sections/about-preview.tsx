@@ -50,7 +50,7 @@ export function AboutPreview() {
               I&apos;m Abdul Rehman.
             </h2>
 
-            <p className="mt-3 w-full max-w-6xl text-justify text-sm leading-6 text-foreground/70 lg:text-[15px]">
+            <p className="mt-3 w-full max-w-6xl text-justify text-sm leading-6 text-muted-foreground lg:text-[15px]">
               An Artificial Intelligence undergraduate focused on machine learning, data analysis, NLP, and generative AI. I build practical AI solutions that turn ideas and data into useful, deployable applications.
             </p>
           </div>
@@ -141,7 +141,7 @@ export function AboutPreview() {
                           className={[
                             "text-sm leading-6 transition-colors duration-200",
                             isActive
-                              ? "text-foreground/90"
+                              ? "text-muted-foreground"
                               : "text-muted-foreground",
                           ].join(" ")}
                         >

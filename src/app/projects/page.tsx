@@ -64,7 +64,7 @@ export default function ProjectsPage() {
               </SlideUp>
 
               <FadeIn>
-                <p className="mt-6 w-full text-justify text-sm leading-7 text-foreground/70 min-[560px]:text-base lg:text-[15px]">
+                <p className="mt-6 w-full text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                   A collection of projects covering predictive modeling, NLP, generative AI, retrieval workflows, and data analysis.
                 </p>
               </FadeIn>

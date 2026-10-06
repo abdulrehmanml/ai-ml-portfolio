@@ -83,8 +83,7 @@ export function Hero() {
 
             <FadeIn>
               <p className="mt-6 w-full max-w-none text-justify text-base leading-7 text-foreground/70 min-[560px]:max-w-2xl min-[560px]:text-justify sm:text-lg md:max-lg:max-w-none lg:max-w-none lg:text-left">
-                I build practical machine learning and AI applications, from
-                data analysis and model development to deployment.
+                I build practical machine learning and AI applications, turning data and AI models into usable solutions.
               </p>
             </FadeIn>
 

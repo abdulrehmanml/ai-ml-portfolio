@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Construction } from "lucide-react"
 import { FadeIn } from "@/components/animations/fade-in"
 import { Container } from "@/components/layout/container"
 import { Navbar } from "@/components/layout/navbar"
+import { Section } from "@/components/layout/section"
 
 export default function UnderConstruction() {
   return (
@@ -11,7 +12,7 @@ export default function UnderConstruction() {
       <Navbar />
 
       <main className="bg-background">
-        <div className="flex min-h-[calc(100svh-4.5rem)] items-center">
+        <Section id="under-construction" className="flex min-h-[calc(100svh-4.5rem)] items-center">
           <Container>
             <FadeIn>
               <div className="mx-auto flex w-full max-w-4xl flex-col items-center px-1 text-center">
@@ -45,7 +46,7 @@ export default function UnderConstruction() {
               </div>
             </FadeIn>
           </Container>
-        </div>
+        </Section>
       </main>
     </>
   )

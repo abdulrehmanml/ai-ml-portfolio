@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, FileQuestion } from "lucide-react"
 import { Container } from "@/components/layout/container"
 import { FadeIn } from "@/components/animations/fade-in"
 import { Navbar } from "@/components/layout/navbar"
+import { Section } from "@/components/layout/section"
 
 export default function NotFound() {
   return (
@@ -11,7 +12,7 @@ export default function NotFound() {
       <Navbar />
 
       <main className="bg-background">
-        <div className="flex min-h-[calc(100svh-4.5rem)] items-center">
+        <Section id="not-found" className="flex min-h-[calc(100svh-4.5rem)] items-center">
           <Container>
             <FadeIn>
               <div className="mx-auto flex w-full max-w-4xl flex-col items-center px-1 text-center">
@@ -45,7 +46,7 @@ export default function NotFound() {
               </div>
             </FadeIn>
           </Container>
-        </div>
+        </Section>
       </main>
     </>
   )

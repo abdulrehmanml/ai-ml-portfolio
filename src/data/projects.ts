@@ -41,6 +41,7 @@ export const projects: Project[] = [
     href: "/projects/customer-churn-prediction",
     githubUrl: "https://github.com/abdulrehmanml/customer-churn-prediction-ml",
     liveDemoUrl: "https://customer-churn-prediction-engine.streamlit.app/",
+    projectLinksDescription: "Explore the source code and live application.",
   },
 
   {
@@ -74,6 +75,7 @@ export const projects: Project[] = [
     href: "/projects/sentiment-analysis",
     githubUrl: "https://github.com/abdulrehmanml/sentiment-analysis-system",
     liveDemoUrl: "https://sentiment-analysis-system-nlp.streamlit.app/",
+    projectLinksDescription: "Explore the source code and live application.",
   },
 
   {
@@ -114,5 +116,92 @@ export const projects: Project[] = [
     href: "/projects/agrofarm-ai",
     githubUrl: "https://github.com/abdulrehmanml/agrofarm-ai",
     liveDemoUrl: "https://agrofarm-ai.streamlit.app/",
+    projectLinksDescription: "Explore the source code and live application.",
+  },
+  
+  {
+    slug: "ecommerce-sales-profitability-analysis",
+    title: "E-Commerce Sales & Profitability Analysis",
+    category: "Data Analysis",
+    description:
+      "A data analysis project that explores e-commerce sales, profitability, customer segments, products, regions, and discount patterns.",
+    problem:
+      "The goal was to understand sales and profitability patterns across products, customers, regions, and discounts to support clearer business decisions.",
+    solution:
+      "Built a data analysis workflow that cleans and transforms transaction data, performs exploratory analysis, visualizes patterns, and derives business insights.",
+    workflow: [
+      "Data Understanding",
+      "Data Quality Assessment",
+      "Feature Engineering",
+      "Exploratory Data Analysis",
+      "Business Analysis",
+      "Insights & Recommendations",
+    ],
+    keyWork: [
+      "Data quality assessment",
+      "Data preprocessing",
+      "Feature engineering",
+      "Exploratory analysis",
+      "Sales trend analysis",
+      "Product and regional analysis",
+      "Customer and discount analysis",
+      "Business insights",
+    ],
+    technologies: [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Seaborn",
+      "Jupyter",
+    ],
+    image: "/images/projects/ecommerce-sales-profitability-analysis.png",
+    href: "/projects/ecommerce-sales-profitability-analysis",
+    githubUrl: "https://github.com/abdulrehman-02/ecommerce-sales-profitability-analysis",
+    documentationUrl: "https://github.com/abdulrehmanml/aws-secure-web-hosting-infrastructure/blob/main/documentation/AWSProjectDocumentation.pdf",
+    projectLinksDescription: "Explore the source code and documentation.",
+  },
+
+  {
+    slug: "aws-secure-web-hosting-infrastructure",
+    title: "AWS Secure Web Hosting Infrastructure",
+    category: "Cloud Computing",
+    description:
+      "A hands-on AWS infrastructure project covering secure web hosting, identity and access management, private storage, backup, cost monitoring, and network troubleshooting.",
+    problem:
+      "The goal was to build a small-business cloud infrastructure combining secure web hosting, storage, access control, backup, and basic cost management.",
+    solution:
+      "Built and configured an AWS environment using EC2, Nginx, IAM, Security Groups, S3, and an EC2 IAM role for secure infrastructure and storage workflows.",
+    workflow: [
+      "IAM & Access Control",
+      "EC2 & Security Groups",
+      "Nginx Web Hosting",
+      "Private S3 Storage",
+      "EC2-S3 Integration",
+      "Backup & Validation",
+    ],
+    keyWork: [
+      "IAM user and group management",
+      "MFA and permission validation",
+      "EC2 server configuration",
+      "Security Group configuration",
+      "Nginx web hosting",
+      "Private S3 configuration",
+      "EC2 IAM role integration",
+      "Infrastructure troubleshooting",
+    ],
+    technologies: [
+      "AWS",
+      "EC2",
+      "S3",
+      "IAM",
+      "Linux",
+      "Nginx",
+    ],
+    image: "/images/projects/aws-secure-web-hosting.png",
+    href: "/projects/aws-secure-web-hosting-infrastructure",
+    githubUrl: "https://github.com/abdulrehmanml/aws-secure-web-hosting-infrastructure",
+    documentationUrl: "https://github.com/abdulrehmanml/ecommerce-sales-profitability-analysis/blob/main/ecommerce-sales-analysis-report.pdf",
+    projectLinksDescription: "Explore the AWS implementation and documentation.",
   },
 ]

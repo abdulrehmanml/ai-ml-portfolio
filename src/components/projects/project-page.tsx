@@ -46,7 +46,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                     </span>
                   </div>
 
-                  <h1 className="mt-5 text-4xl font-semibold leading-[1.05] tracking-tight text-primary min-[560px]:text-[48px] lg:text-[60px] lg:whitespace-nowrap">
+                  <h1 className="mt-5 text-4xl font-semibold leading-[1.05] tracking-tight text-primary min-[560px]:text-[48px] lg:text-[60px]">
                     {project.title}
                   </h1>
 
@@ -346,7 +346,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                 </p>
 
                 <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
-                  Explore the source code and live application.
+                  {project.projectLinksDescription}
                 </h2>
               </div>
             </FadeIn> 
@@ -370,30 +370,45 @@ export function ProjectPage({ project }: ProjectPageProps) {
                   </div>
                 </a>
               </SlideUp>  
-              {project.liveDemoUrl && (
+
+              {project.documentationUrl ? (
                 <SlideUp>
-                  <a
-                    href={project.liveDemoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block w-48 border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary"
-                  >
+                  <a href={project.documentationUrl} target="_blank" rel="noopener noreferrer" className="group block w-48 border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary">
+                    <div className="inline-flex items-center">
+                      <div>
+                        <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-primary transition-colors duration-200 group-hover:text-primary">
+                          Documentation
+                        </p>
+              
+                        <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground transition-colors duration-200 group-hover:text-primary">
+                          View Documentation
+                        </h3>
+                      </div>
+              
+                      <ArrowUpRight className="ml-1 size-5 shrink-0 text-muted-foreground transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" strokeWidth={1.7}aria-hidden="true"/>
+                    </div>
+                  </a>
+                </SlideUp>
+              ) : project.liveDemoUrl ? (
+                <SlideUp>
+                  <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" className="group block w-48 border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary">
                     <div className="inline-flex items-center">
                       <div>
                         <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-primary transition-colors duration-200 group-hover:text-primary">
                           Live Application
-                        </p>  
+                        </p>
+              
                         <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground transition-colors duration-200 group-hover:text-primary">
                           Open Application
                         </h3>
-                      </div>  
-                      <ArrowUpRight className="ml-1 size-5 shrink-0 text-muted-foreground transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" strokeWidth={1.7}
-                        aria-hidden="true"
-                      />
+                      </div>
+              
+                      <ArrowUpRight className="ml-1 size-5 shrink-0 text-muted-foreground transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" strokeWidth={1.7} aria-hidden="true"/>
                     </div>
                   </a>
                 </SlideUp>
-              )}
+              ) : null}              
+
             </div>
           </Container>
         </Section>

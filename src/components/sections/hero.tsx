@@ -11,6 +11,7 @@ import { FadeIn } from "@/components/animations/fade-in"
 import { SlideUp } from "@/components/animations/slide-up"
 import { Float } from "@/components/animations/float"
 import { scrollToSection } from "@/lib/scroll-to-section"
+import { sendGAEvent } from "@next/third-parties/google"
 
 type TechNodeProps = {
   label: string
@@ -105,6 +106,10 @@ export function Hero() {
                   href="#contact"
                   onClick={(event) => {
                     event.preventDefault()
+                    sendGAEvent("event", "contact_cta_click", {
+                        cta_location: "hero",
+                      })
+
                     scrollToSection("contact")
                   }}
                   className="inline-flex h-11 items-center justify-center rounded-[10px] border border-primary/35 bg-card px-5 text-sm font-medium text-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/65 hover:bg-primary/5 hover:shadow-[0_4px_18px_-10px_var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"

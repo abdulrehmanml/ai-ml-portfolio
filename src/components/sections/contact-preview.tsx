@@ -1,16 +1,16 @@
 "use client"
 
 import Link from "next/link"
-import type { FormEvent } from "react" 
+import type { FormEvent } from "react"
 import { useEffect, useState } from "react"
 import { ArrowUpRight, Mail, Send } from "lucide-react"
 import { SiGithub } from "@icons-pack/react-simple-icons"
-
 import { cn } from "@/lib/utils"
 import { Container } from "@/components/layout/container"
 import { Section } from "@/components/layout/section"
 import { FadeIn } from "@/components/animations/fade-in"
 import { SlideUp } from "@/components/animations/slide-up"
+import { sendGAEvent } from "@next/third-parties/google"
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
@@ -97,6 +97,10 @@ export function ContactPreview() {
         throw new Error(result.error || "Unable to send message.")
       }
 
+      sendGAEvent("event", "contact_form_submit", {
+        form_name: "portfolio_contact",
+      })
+
       form.reset()
 
       setStatus({
@@ -133,73 +137,132 @@ export function ContactPreview() {
               </h2>
 
               <p className="mt-4 w-full max-w-lg text-justify text-sm leading-6 text-muted-foreground min-[560px]:max-w-none lg:max-w-lg lg:text-[15px]">
-                Have an idea, project, or problem to solve? Share the details and let&apos;s discuss how I can help.
+                Have an idea, project, or problem to solve? Share the details
+                and let&apos;s discuss how I can help.
               </p>
 
               <div className="mt-7 flex flex-col gap-1">
-                {contactLinks.map(({ label, value, href, icon: Icon, iconClassName }) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    className="group flex w-fit items-center gap-3 rounded-lg px-2 py-1.5 text-[15px] font-medium text-muted-foreground transition-all duration-200 hover:bg-primary/5 hover:text-primary"
-                  >
-                    <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border/70 bg-card/50 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:border-primary/40 group-hover:bg-primary/5">
-                      <Icon className={cn("size-4", iconClassName)} aria-hidden="true" />
-                    </span>
+                {contactLinks.map(
+                  ({ label, value, href, icon: Icon, iconClassName }) => (
+                    <Link
+                      key={label}
+                      href={href}
+                      onClick={() => { if (href.startsWith("mailto:")) { sendGAEvent("event", "contact_email_click", { link_location: "contact_section", }) } }}
+                      className="group flex w-fit items-center gap-3 rounded-lg px-2 py-1.5 text-[15px] font-medium text-muted-foreground transition-all duration-200 hover:bg-primary/5 hover:text-primary"
+                    >
+                      <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border/70 bg-card/50 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:border-primary/40 group-hover:bg-primary/5">
+                        <Icon
+                          className={cn("size-4", iconClassName)}
+                          aria-hidden="true"
+                        />
+                      </span>
 
-                    <span>{value}</span>
+                      <span>{value}</span>
 
-                    <ArrowUpRight
-                      className="size-4 opacity-60 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
-                      aria-hidden="true"
-                    />
-                  </Link>
-                ))}
+                      <ArrowUpRight
+                        className="size-4 opacity-60 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
+                        aria-hidden="true"
+                      />
+                    </Link>
+                  ),
+                )}
               </div>
             </div>
 
             {/* Contact form */}
             <SlideUp>
               <div className="mx-auto w-full px-3 sm:px-0">
-                <form className="mx-auto w-full max-w-md rounded-xl border border-border/70 bg-card/40 p-5 sm:p-6 lg:mx-0 lg:max-w-none" onSubmit={handleSubmit}>
+                <form
+                  className="mx-auto w-full max-w-md rounded-xl border border-border/70 bg-card/40 p-5 sm:p-6 lg:mx-0 lg:max-w-none"
+                  onSubmit={handleSubmit}
+                >
                   <div className="hidden" aria-hidden="true">
                     <label htmlFor="website">Website</label>
-                    <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off"/>
+                    <input
+                      id="website"
+                      name="website"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
                   </div>
                   <div className="grid gap-5">
                     <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
                       <div className="grid gap-2">
-                        <label htmlFor="name" className="text-sm font-medium text-foreground">
+                        <label
+                          htmlFor="name"
+                          className="text-sm font-medium text-foreground"
+                        >
                           Name
                         </label>
 
-                        <input id="name" name="name" type="text" placeholder="Your name" required className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"/>
+                        <input
+                          id="name"
+                          name="name"
+                          type="text"
+                          placeholder="Your name"
+                          required
+                          className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
+                        />
                       </div>
 
                       <div className="grid gap-2">
-                        <label htmlFor="email" className="text-sm font-medium text-foreground">
+                        <label
+                          htmlFor="email"
+                          className="text-sm font-medium text-foreground"
+                        >
                           Email
                         </label>
 
-                        <input id="email" name="email" type="email" placeholder="you@example.com" required className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"/>
+                        <input
+                          id="email"
+                          name="email"
+                          type="email"
+                          placeholder="you@example.com"
+                          required
+                          className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
+                        />
                       </div>
                     </div>
 
                     <div className="grid gap-2">
-                      <label htmlFor="message" className="text-sm font-medium text-foreground">
+                      <label
+                        htmlFor="message"
+                        className="text-sm font-medium text-foreground"
+                      >
                         Message
                       </label>
 
-                      <textarea id="message" name="message" rows={5} placeholder="Tell me about the project..." required className="w-full resize-none rounded-lg border border-border bg-background px-3 py-3 text-sm leading-6 text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"/>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={5}
+                        placeholder="Tell me about the project..."
+                        required
+                        className="w-full resize-none rounded-lg border border-border bg-background px-3 py-3 text-sm leading-6 text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
+                      />
                     </div>
 
-                    <button type="submit" disabled={isSubmitting} className="inline-flex h-11 w-fit items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="inline-flex h-11 w-fit items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    >
                       {isSubmitting ? "Sending..." : "Send Message"}
                       <Send className="size-4" aria-hidden="true" />
                     </button>
 
                     {status && (
-                      <p role="status" aria-live="polite" className={cn("text-sm", status.type === "success" ? "text-green-600 dark:text-green-400" : "text-destructive")}>
+                      <p
+                        role="status"
+                        aria-live="polite"
+                        className={cn(
+                          "text-sm",
+                          status.type === "success"
+                            ? "text-green-600 dark:text-green-400"
+                            : "text-destructive",
+                        )}
+                      >
                         {status.message}
                       </p>
                     )}

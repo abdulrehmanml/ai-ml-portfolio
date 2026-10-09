@@ -12,6 +12,7 @@ import { ProjectCard } from "@/components/projects/project-card"
 
 import type { Project } from "@/types"
 import type { Service } from "@/data/services"
+import { ContactCtaLink } from "@/components/analytics/cta-link-projects-services"
 
 type ServicePageProps = { service: Service }
 
@@ -292,8 +293,9 @@ export function ServicePage({ service }: ServicePageProps) {
                   </p>
                 </div>
 
-                <Link
+                <ContactCtaLink
                   href="/#contact"
+                  ctaLocation="service_page"
                   className="group mx-auto inline-flex h-11 w-fit items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 lg:mx-0"
                 >
                   Get in touch
@@ -301,7 +303,7 @@ export function ServicePage({ service }: ServicePageProps) {
                     className="size-4 transition-transform duration-200 group-hover:translate-x-1"
                     aria-hidden="true"
                   />
-                </Link>
+                </ContactCtaLink>
               </div>
             </FadeIn>
           </Container>

@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/layout/theme-toggle"
+import { sendGAEvent } from "@next/third-parties/google"
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -56,6 +56,12 @@ export function Navbar() {
     event: MouseEvent<HTMLAnchorElement>,
     href: string,
   ) => {
+    if (href === "/#contact") {
+      sendGAEvent("event", "contact_cta_click", {
+        cta_location: "navbar",
+      })
+    }
+
     if (href === "/" && pathname === "/") {
       event.preventDefault()
 

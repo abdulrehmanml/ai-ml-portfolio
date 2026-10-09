@@ -11,6 +11,7 @@ import { Footer } from "@/components/layout/footer"
 import { Navbar } from "@/components/layout/navbar"
 import { Section } from "@/components/layout/section"
 import type { Project } from "@/types"
+import { ContactCtaLink } from "@/components/analytics/cta-link-projects-services"
 
 type ProjectPageProps = {
   project: Project
@@ -439,10 +440,10 @@ export function ProjectPage({ project }: ProjectPageProps) {
                   </p>
                 </div>
 
-                <Link href="/#contact" className="group mx-auto inline-flex h-11 w-fit items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 lg:mx-0">
+                <ContactCtaLink href="/#contact" ctaLocation="project_page" className="group mx-auto inline-flex h-11 w-fit items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 lg:mx-0">
                   Get in touch
                   <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.7} aria-hidden="true"/>
-                </Link>
+                </ContactCtaLink>
               </div>
             </FadeIn>
           </Container>

@@ -65,7 +65,7 @@ export function Hero() {
           <div className="relative z-10 max-w-3xl">
             <FadeIn>
               <p className="mb-5 font-mono text-sm font-medium uppercase tracking-[0.2em] text-primary">
-                AI / ML Engineer
+                AI Engineer
               </p>
             </FadeIn>
 

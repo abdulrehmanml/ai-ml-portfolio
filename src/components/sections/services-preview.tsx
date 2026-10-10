@@ -59,16 +59,14 @@ export function ServicesPreview() {
               </p>
 
               <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[44px] lg:leading-[1.08] lg:text-justify">
-                <span>
-                  AI/ML Solutions{" "}
-                </span>
-                <span className="text-primary">
-                  built for practical use.
-                </span>
+                <span>AI/ML Solutions </span>
+                <span className="text-primary">built for practical use.</span>
               </h2>
 
               <p className="mt-4 w-full max-w-xl text-justify text-sm leading-6 text-muted-foreground sm:text-base md:w-[92%] md:max-w-none lg:w-full lg:max-w-md">
-                From data analysis and machine learning to generative AI and deployment, I build practical solutions that move beyond experimentation into usable applications.
+                From data analysis and machine learning to generative AI and
+                deployment, I build practical solutions that move beyond
+                experimentation into usable applications.
               </p>
             </div>
 
@@ -99,7 +97,7 @@ export function ServicesPreview() {
                           </div>
                         </div>
 
-                        <ArrowRight className="mt-1 size-4 shrink-0 text-muted-foreground transition-all duration-200 min-[560px]:size-5 group-hover:translate-x-1 group-hover:text-primary"/>
+                        <ArrowRight className="mt-1 size-4 shrink-0 text-muted-foreground transition-all duration-200 min-[560px]:size-5 group-hover:translate-x-1 group-hover:text-primary" />
                       </div>
                     </Link>
                   </SlideUp>

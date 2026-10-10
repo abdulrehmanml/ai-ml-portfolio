@@ -105,20 +105,14 @@ export const projects: Project[] = [
       "RAG pipeline",
       "Streamlit application",
     ],
-    technologies: [
-      "Python",
-      "Gemini",
-      "ChromaDB",
-      "RAG",
-      "Streamlit"
-    ],
+    technologies: ["Python", "Gemini", "ChromaDB", "RAG", "Streamlit"],
     image: "/images/projects/agrofarm-ai.png",
     href: "/projects/agrofarm-ai",
     githubUrl: "https://github.com/abdulrehmanml/agrofarm-ai",
     liveDemoUrl: "https://agrofarm-ai.streamlit.app/",
     projectLinksDescription: "Explore the source code and live application.",
   },
-  
+
   {
     slug: "ecommerce-sales-profitability-analysis",
     title: "E-Commerce Sales & Profitability Analysis",
@@ -157,8 +151,10 @@ export const projects: Project[] = [
     ],
     image: "/images/projects/ecommerce-sales-profitability-analysis.png",
     href: "/projects/ecommerce-sales-profitability-analysis",
-    githubUrl: "https://github.com/abdulrehman-02/ecommerce-sales-profitability-analysis",
-    documentationUrl: "https://github.com/abdulrehmanml/aws-secure-web-hosting-infrastructure/blob/main/documentation/AWSProjectDocumentation.pdf",
+    githubUrl:
+      "https://github.com/abdulrehman-02/ecommerce-sales-profitability-analysis",
+    documentationUrl:
+      "https://github.com/abdulrehmanml/aws-secure-web-hosting-infrastructure/blob/main/documentation/AWSProjectDocumentation.pdf",
     projectLinksDescription: "Explore the source code and documentation.",
   },
 
@@ -190,18 +186,14 @@ export const projects: Project[] = [
       "EC2 IAM role integration",
       "Infrastructure troubleshooting",
     ],
-    technologies: [
-      "AWS",
-      "EC2",
-      "S3",
-      "IAM",
-      "Linux",
-      "Nginx",
-    ],
+    technologies: ["AWS", "EC2", "S3", "IAM", "Linux", "Nginx"],
     image: "/images/projects/aws-secure-web-hosting.png",
     href: "/projects/aws-secure-web-hosting-infrastructure",
-    githubUrl: "https://github.com/abdulrehmanml/aws-secure-web-hosting-infrastructure",
-    documentationUrl: "https://github.com/abdulrehmanml/ecommerce-sales-profitability-analysis/blob/main/ecommerce-sales-analysis-report.pdf",
-    projectLinksDescription: "Explore the AWS implementation and documentation.",
+    githubUrl:
+      "https://github.com/abdulrehmanml/aws-secure-web-hosting-infrastructure",
+    documentationUrl:
+      "https://github.com/abdulrehmanml/ecommerce-sales-profitability-analysis/blob/main/ecommerce-sales-analysis-report.pdf",
+    projectLinksDescription:
+      "Explore the AWS implementation and documentation.",
   },
 ]

@@ -16,8 +16,27 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "AI/ML Engineer Portfolio",
-  description: "AI/ML Engineer portfolio and case studies.",
+  metadataBase: new URL("https://abdulrehmanmughal.me"),
+  title: {
+    default: "Abdul Rehman | AI Engineer",
+    template: "%s | Abdul Rehman",
+  },
+  description:
+    "Explore Abdul Rehman's AI engineering portfolio featuring machine learning, data analysis, NLP, generative AI, and deployed AI applications.",
+  openGraph: {
+    type: "website",
+    siteName: "Abdul Rehman Portfolio",
+    title: "Abdul Rehman | AI Engineer",
+    description:
+      "Practical AI applications, machine learning projects, and deployment workflows.",
+    locale: "en_PK",
+  },
+  twitter: {
+    card: "summary",
+    title: "Abdul Rehman | AI Engineer",
+    description:
+      "Machine learning, generative AI, and practical AI application development.",
+  },
 }
 
 export default function RootLayout({
@@ -42,9 +61,7 @@ export default function RootLayout({
           </ThemeProvider>
         </MotionProvider>
         {process.env.NEXT_PUBLIC_GA_ID ? (
-          <GoogleAnalytics
-            gaId={process.env.NEXT_PUBLIC_GA_ID}
-          />
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         ) : null}
       </body>
     </html>

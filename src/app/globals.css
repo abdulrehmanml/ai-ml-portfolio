@@ -43,33 +43,34 @@
 }
 
 .dark {
-  --background: #08090a;
-  --foreground: #f5f7fa;
+  /* Core colors */
+  --background: #111318;
+  --foreground: #e7eaf0;
 
-  --card: #101216;
-  --card-foreground: #f5f7fa;
+  --card: #181c24;
+  --card-foreground: #e7eaf0;
 
-  --popover: #101216;
-  --popover-foreground: #f5f7fa;
+  --popover: #181c24;
+  --popover-foreground: #e7eaf0;
 
-  --primary: #3b82f6;
-  --primary-foreground: #08111f;
+  --primary: #70c9c2;
+  --primary-foreground: #0d1717;
 
-  --secondary: #181b21;
-  --secondary-foreground: #f5f7fa;
+  --secondary: #202631;
+  --secondary-foreground: #e7eaf0;
 
-  --muted: #181b21;
-  --muted-foreground: #9aa1ac;
+  --muted: #202631;
+  --muted-foreground: #a3adbc;
 
-  --accent: #2563eb;
-  --accent-foreground: #081115;
+  --accent: #29374e;
+  --accent-foreground: #e7eaf0;
 
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
+  --destructive: #f87171;
+  --destructive-foreground: #111318;
 
-  --border: #242832;
-  --input: #242832;
-  --ring: #3b82f6;
+  --border: #4b5563;
+  --input: #4b5563;
+  --ring: #70c9c2;
 }
 
 @theme inline {
@@ -108,11 +109,6 @@
   /* Custom radius utilities */
   --radius-button: var(--radius-control);
   --radius-card: var(--radius-surface);
-
-  /* Layout tokens */
-  --container-max: var(--container-max);
-  --page-padding-mobile: var(--page-padding-mobile);
-  --page-padding-desktop: var(--page-padding-desktop);
 }
 
 * {
@@ -137,8 +133,7 @@ body {
 }
 
 .about-particle {
-  box-shadow: 0 0 14px
-    color-mix(in oklab, var(--primary) 45%, transparent);
+  box-shadow: 0 0 14px color-mix(in oklab, var(--primary) 45%, transparent);
 }
 
 .rotate-16 {
@@ -162,7 +157,7 @@ body {
 }
 
 .dark .project-card-shadow {
-  box-shadow: 0 12px 30px -16px rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 30px -20px rgba(112, 201, 194, 0.12);
 }
 
 /* Accessibility */

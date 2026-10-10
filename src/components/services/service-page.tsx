@@ -20,8 +20,8 @@ export function ServicePage({ service }: ServicePageProps) {
   const Icon = service.icon
 
   const relatedProjects = service.projectSlugs
-  .map((slug) => projects.find((project) => project.slug === slug))
-  .filter((project): project is Project => project !== undefined)
+    .map((slug) => projects.find((project) => project.slug === slug))
+    .filter((project): project is Project => project !== undefined)
 
   return (
     <>
@@ -29,13 +29,19 @@ export function ServicePage({ service }: ServicePageProps) {
 
       <main className="bg-background">
         {/* Hero */}
-        <Section id="service-hero" className="pt-28 min-[560px]:pt-32 lg:pt-28">  
+        <Section id="service-hero" className="pt-28 min-[560px]:pt-32 lg:pt-28">
           <Container>
             <FadeIn>
               <div className="pt-0 min-[560px]:pt-10 lg:pt-0">
-                <Link href="/#services" className="group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors duration-200 hover:text-primary">
-                <ArrowLeft className="size-4 transition-transform duration-200 group-hover:-translate-x-1" aria-hidden="true" />
-                Back to Services
+                <Link
+                  href="/#services"
+                  className="group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
+                >
+                  <ArrowLeft
+                    className="size-4 transition-transform duration-200 group-hover:-translate-x-1"
+                    aria-hidden="true"
+                  />
+                  Back to Services
                 </Link>
               </div>
             </FadeIn>
@@ -43,68 +49,83 @@ export function ServicePage({ service }: ServicePageProps) {
             <div className="mt-6 grid gap-10 min-[560px]:mt-8 lg:mt-4 lg:pt-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-start lg:gap-16">
               <SlideUp>
                 <div className="lg:flex lg:h-full lg:items-center">
-                <div className="w-full">
-                  <div className="flex items-center gap-4">
-                    <span className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
-                      {service.number}
-                    </span>
+                  <div className="w-full">
+                    <div className="flex items-center gap-4">
+                      <span className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
+                        {service.number}
+                      </span>
 
-                    <span className="h-px w-12 bg-accent/40" aria-hidden="true" />
+                      <span
+                        className="h-px w-12 shrink-0 bg-accent/40 dark:bg-primary/70"
+                        aria-hidden="true"
+                      />
 
-                    <span className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
-                      Service
-                    </span>
+                      <span className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                        Service
+                      </span>
+                    </div>
+
+                    <h1 className="mt-5 text-4xl font-semibold leading-[1.05] tracking-tight text-primary min-[560px]:text-[48px] lg:text-[60px]">
+                      {service.title}
+                    </h1>
+
+                    <p className="mt-6 max-w-2xl text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                      {service.description}
+                    </p>
                   </div>
-
-                  <h1 className="mt-5 text-4xl font-semibold leading-[1.05] tracking-tight text-primary min-[560px]:text-[48px] lg:text-[60px]">
-                    {service.title}
-                  </h1>
-
-                  <p className="mt-6 max-w-2xl text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                    {service.description}
-                  </p>
-                </div>
                 </div>
               </SlideUp>
 
               <FadeIn>
                 <div className="mx-auto w-[calc(100%-2rem)] max-w-sm min-[560px]:w-full lg:mx-0 lg:ml-auto lg:mr-0">
                   <div className="project-card-shadow group relative w-full max-w-sm overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-primary/50 hover:bg-primary/5 min-[560px]:p-7">
-                    <div className="pointer-events-none absolute right-0 top-0 h-8 w-8 border-r border-t border-primary/35 transition-all duration-300 group-hover:h-10 group-hover:w-10 group-hover:border-primary/60" aria-hidden="true" />
-                      <div className="pointer-events-none absolute bottom-0 left-0 h-8 w-8 border-b border-l border-accent/30 transition-all duration-300 group-hover:h-10 group-hover:w-10 group-hover:border-accent/50"
-                        aria-hidden="true" />
+                    <div
+                      className="pointer-events-none absolute right-0 top-0 h-8 w-8 border-r border-t border-primary/35 transition-all duration-300 group-hover:h-10 group-hover:w-10 group-hover:border-primary/60"
+                      aria-hidden="true"
+                    />
+                    <div
+                      className="pointer-events-none absolute bottom-0 left-0 h-8 w-8 border-b border-l border-accent/30 transition-all duration-300 group-hover:h-10 group-hover:w-10 group-hover:border-accent/50"
+                      aria-hidden="true"
+                    />
 
-                      <div className="relative flex items-center justify-between">
-                        <div className="flex min-w-0 items-center gap-4">
-                          <div className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-primary transition-all duration-300 group-hover:border-primary/40 group-hover:bg-primary/15 group-hover:shadow-[0_6px_20px_-10px_var(--primary)]">
-                            <Icon
-                              className="size-5 transition-transform duration-300 group-hover:scale-105"
-                              aria-hidden="true"
-                            />
-                          </div>
-
-                          <p className="min-w-0 flex-1 text-sm font-medium uppercase tracking-[0.09em] text-primary transition-colors duration-300 group-hover:text-primary min-[560px]:text-base">
-                            {service.title}
-                          </p>
+                    <div className="relative flex items-center justify-between">
+                      <div className="flex min-w-0 items-center gap-4">
+                        <div className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-primary transition-all duration-300 group-hover:border-primary/40 group-hover:bg-primary/15 group-hover:shadow-[0_6px_20px_-10px_var(--primary)]">
+                          <Icon
+                            className="size-5 transition-transform duration-300 group-hover:scale-105"
+                            aria-hidden="true"
+                          />
                         </div>
+
+                        <p className="min-w-0 flex-1 text-sm font-medium uppercase tracking-[0.09em] text-primary transition-colors duration-300 group-hover:text-primary min-[560px]:text-base">
+                          {service.title}
+                        </p>
                       </div>
-                    <div className="mt-5 h-px w-12 bg-accent/40 transition-all duration-300 group-hover:w-16 group-hover:bg-primary/60"
-                      aria-hidden="true"/>
+                    </div>
+                    <div
+                      className="mt-5 h-px w-12 bg-accent/40 transition-all duration-300 group-hover:w-16 group-hover:bg-primary/60"
+                      aria-hidden="true"
+                    />
                     <p className="mt-4 text-justify text-sm leading-6 text-muted-foreground">
                       {service.shortDescription}
                     </p>
                     <div className="mt-6 border-t border-border pt-4">
                       <p className="text-center font-mono text-[10px] uppercase tracking-[0.08em] text-muted-foreground transition-colors duration-300 group-hover:text-muted-foreground">
-                        {service.technologies.slice(0, 3).map((technology, index) => (
-                          <span key={technology}>
-                            {index > 0 && (
-                              <span className="mx-2 text-primary" aria-hidden="true">
-                                ·
-                              </span>
-                            )}
-                            {technology}
-                          </span>
-                        ))}
+                        {service.technologies
+                          .slice(0, 3)
+                          .map((technology, index) => (
+                            <span key={technology}>
+                              {index > 0 && (
+                                <span
+                                  className="mx-2 text-primary"
+                                  aria-hidden="true"
+                                >
+                                  ·
+                                </span>
+                              )}
+                              {technology}
+                            </span>
+                          ))}
                       </p>
                     </div>
                   </div>
@@ -115,7 +136,10 @@ export function ServicePage({ service }: ServicePageProps) {
         </Section>
 
         {/* Divider */}
-        <div className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent" aria-hidden="true"/>
+        <div
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
+          aria-hidden="true"
+        />
 
         {/* Capabilities */}
         <Section id="what-i-can-do">
@@ -154,7 +178,10 @@ export function ServicePage({ service }: ServicePageProps) {
         </Section>
 
         {/* Divider */}
-        <div className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent" aria-hidden="true"/>
+        <div
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
+          aria-hidden="true"
+        />
 
         {/* Process */}
         <Section id="how-i-work">
@@ -188,7 +215,7 @@ export function ServicePage({ service }: ServicePageProps) {
                         <p className="px-6 text-sm font-medium leading-6 transition-colors duration-200 group-hover:text-primary min-[560px]:px-8 min-[560px]:text-base">
                           {step}
                         </p>
-                      </div>                      
+                      </div>
                     </SlideUp>
                   ))}
                 </div>
@@ -198,7 +225,10 @@ export function ServicePage({ service }: ServicePageProps) {
         </Section>
 
         {/* Divider */}
-        <div className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent" aria-hidden="true"/>
+        <div
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
+          aria-hidden="true"
+        />
 
         {/* Tools */}
         <Section id="tools-technologies">
@@ -210,9 +240,7 @@ export function ServicePage({ service }: ServicePageProps) {
                 </p>
                 <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
                   Technologies used{" "}
-                  <span className="text-primary">
-                    across the workflow.
-                  </span>
+                  <span className="text-primary">across the workflow.</span>
                 </h2>
               </div>
             </FadeIn>
@@ -233,7 +261,10 @@ export function ServicePage({ service }: ServicePageProps) {
         </Section>
 
         {/* Divider */}
-        <div className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent" aria-hidden="true"/>
+        <div
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
+          aria-hidden="true"
+        />
 
         {/* Relevant Work */}
         <Section id="relevant-work">
@@ -245,7 +276,7 @@ export function ServicePage({ service }: ServicePageProps) {
                 </p>
 
                 <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
-                  Related projects {" "}
+                  Related projects{" "}
                   <span className="text-primary">from my portfolio.</span>
                 </h2>
               </div>
@@ -261,7 +292,8 @@ export function ServicePage({ service }: ServicePageProps) {
             ) : (
               <div className="mt-10 max-w-2xl border-t border-border pt-6">
                 <p className="text-sm leading-6 text-muted-foreground">
-                  Relevant project work will be added here as the portfolio expands.
+                  Relevant project work will be added here as the portfolio
+                  expands.
                 </p>
               </div>
             )}
@@ -269,7 +301,10 @@ export function ServicePage({ service }: ServicePageProps) {
         </Section>
 
         {/* Divider */}
-        <div className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent" aria-hidden="true"/>
+        <div
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
+          aria-hidden="true"
+        />
 
         {/* CTA */}
         <Section id="service-cta">
@@ -283,13 +318,12 @@ export function ServicePage({ service }: ServicePageProps) {
 
                   <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
                     Need help with{" "}
-                    <span className="text-primary">
-                      {service.title}?
-                    </span>
+                    <span className="text-primary">{service.title}?</span>
                   </h2>
 
                   <p className="mt-4 max-w-2xl text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                    Share the problem, requirements, or project details and we can discuss the right approach.
+                    Share the problem, requirements, or project details and we
+                    can discuss the right approach.
                   </p>
                 </div>
 
@@ -308,7 +342,6 @@ export function ServicePage({ service }: ServicePageProps) {
             </FadeIn>
           </Container>
         </Section>
-
       </main>
 
       <Footer />

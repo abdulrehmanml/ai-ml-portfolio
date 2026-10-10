@@ -2,8 +2,15 @@
 
 import Link from "next/link"
 import type { ElementType } from "react"
-import {ArrowRight, BrainCircuit, Cloud, Database, Network, Server, } from "lucide-react"
-import { SiGit, SiPython, SiScikitlearn } from "@icons-pack/react-simple-icons"
+import {
+  ArrowRight,
+  BrainCircuit,
+  Cloud,
+  Database,
+  Network,
+  Server,
+} from "lucide-react"
+import { SiGit } from "@icons-pack/react-simple-icons"
 
 import { Container } from "@/components/layout/container"
 import { Section } from "@/components/layout/section"
@@ -12,24 +19,44 @@ import { SlideUp } from "@/components/animations/slide-up"
 import { Float } from "@/components/animations/float"
 import { scrollToSection } from "@/lib/scroll-to-section"
 import { sendGAEvent } from "@next/third-parties/google"
+import Image from "next/image"
 
 type TechNodeProps = {
   label: string
   icon?: ElementType
   className?: string
+  iconClassName?: string
+  iconSrc?: string
 }
 
-function TechNode({ label, icon: Icon, className }: TechNodeProps) {
+function TechNode({
+  label,
+  icon: Icon,
+  className,
+  iconClassName,
+  iconSrc,
+}: TechNodeProps) {
   return (
     <div
       className={`group flex w-fit items-center gap-2 rounded-xl border border-border/80 bg-card px-3 py-2 text-xs font-medium text-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/60 hover:bg-primary/10 hover:text-primary hover:shadow-[0_4px_18px_-8px_var(--primary)] dark:bg-card dark:hover:border-primary/70 dark:hover:bg-primary/15 dark:hover:text-primary dark:hover:shadow-[0_4px_20px_-8px_var(--primary)] ${className ?? ""}`}
     >
-      {Icon && (
-        <Icon
-          className="size-4 shrink-0 text-primary transition-transform duration-200 group-hover:scale-105"
+      {iconSrc ? (
+        <Image
+          src={iconSrc}
+          alt=""
+          width={20}
+          height={20}
+          className="size-4 shrink-0 object-contain transition-transform duration-200 group-hover:scale-105"
           aria-hidden="true"
         />
-      )}
+      ) : Icon ? (
+        <Icon
+          className={`size-4 shrink-0 transition-transform duration-200 group-hover:scale-105 ${
+            iconClassName ?? "text-primary"
+          }`}
+          aria-hidden="true"
+        />
+      ) : null}
 
       <span className="whitespace-nowrap">{label}</span>
     </div>
@@ -43,7 +70,7 @@ type WorkflowItemProps = {
 
 function WorkflowItem({ icon: Icon, label }: WorkflowItemProps) {
   return (
-    <div className="flex h-11 items-center gap-3 rounded-lg border border-border/30 bg-background/45 px-3">
+    <div className="mx-2 flex h-11 items-center gap-3 rounded-lg border border-[#D1D9E6] bg-background/45 px-2 sm:mx-3 sm:px-3 dark:border-[#414B5C]">
       <div className="flex size-8 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
         <Icon className="size-4" aria-hidden="true" />
       </div>
@@ -52,7 +79,10 @@ function WorkflowItem({ icon: Icon, label }: WorkflowItemProps) {
         {label}
       </span>
 
-      <span className="ml-auto h-px w-10 bg-border/70" aria-hidden="true" />
+      <span
+        className="ml-auto h-px w-10 shrink-0 bg-[#C3CDDA] dark:bg-[#566273]"
+        aria-hidden="true"
+      />
     </div>
   )
 }
@@ -84,7 +114,8 @@ export function Hero() {
 
             <FadeIn>
               <p className="mt-6 w-full max-w-none text-justify text-base leading-7 text-muted-foreground min-[560px]:max-w-2xl min-[560px]:text-justify sm:text-lg md:max-lg:max-w-none lg:max-w-none lg:text-left">
-                I build practical machine learning and AI applications, turning data and AI models into usable solutions.
+                I build practical machine learning and AI applications, turning
+                data and AI models into usable solutions.
               </p>
             </FadeIn>
 
@@ -107,8 +138,8 @@ export function Hero() {
                   onClick={(event) => {
                     event.preventDefault()
                     sendGAEvent("event", "contact_cta_click", {
-                        cta_location: "hero",
-                      })
+                      cta_location: "hero",
+                    })
 
                     scrollToSection("contact")
                   }}
@@ -126,10 +157,10 @@ export function Hero() {
             className="relative mx-auto hidden h-97.5 w-145 max-w-full overflow-visible lg:block lg:-translate-x-28"
           >
             {/* Ambient glow */}
-            <div className="absolute inset-[22%] rounded-full bg-primary/3 blur-3xl" />
+            <div className="absolute inset-[28%] rounded-full bg-primary/2 blur-2xl" />
 
             {/* Central engineering panel */}
-            <div className="absolute left-1/2 top-1/2 z-10 w-70 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-card p-5 shadow-[0_18px_45px_-18px_var(--primary)]">
+            <div className="absolute left-1/2 top-1/2 z-10 w-70 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-card p-5 shadow-[0_12px_32px_-20px_var(--primary)]">
               {/* Header */}
               <div className="flex items-center gap-3">
                 <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
@@ -167,7 +198,7 @@ export function Hero() {
               x={[0, 10, -6, 5, 0]}
               y={[0, 0, 0, 0, 0]}
             >
-              <TechNode label="Python" icon={SiPython} />
+              <TechNode label="Python" iconSrc="/icons/python.svg" />
             </Float>
 
             {/* Scikit-learn — Y only */}
@@ -178,7 +209,10 @@ export function Hero() {
               x={[0, 0, 0, 0, 0]}
               y={[0, -8, 7, -5, 0]}
             >
-              <TechNode label="Scikit-learn" icon={SiScikitlearn} />
+              <TechNode
+                label="Scikit-learn"
+                iconSrc="/icons/scikit-learn.png"
+              />
             </Float>
 
             {/* RAG — 2D */}
@@ -189,7 +223,11 @@ export function Hero() {
               x={[0, 5, -4, 3, 0]}
               y={[0, -6, 7, -4, 0]}
             >
-              <TechNode label="RAG" icon={Database} />
+              <TechNode
+                label="RAG"
+                icon={Database}
+                iconClassName="text-primary"
+              />
             </Float>
 
             {/* API — X only */}
@@ -200,7 +238,11 @@ export function Hero() {
               x={[0, -7, 5, -4, 0]}
               y={[0, 0, 0, 0, 0]}
             >
-              <TechNode label="API" icon={Server} />
+              <TechNode
+                label="API"
+                icon={Server}
+                iconClassName="text-primary"
+              />
             </Float>
 
             {/* Git — 2D */}
@@ -211,7 +253,11 @@ export function Hero() {
               x={[0, -6, 7, -4, 0]}
               y={[0, 5, -6, 4, 0]}
             >
-              <TechNode label="Git" icon={SiGit} />
+              <TechNode
+                label="Git"
+                icon={SiGit}
+                iconClassName="text-[#F05032]"
+              />
             </Float>
 
             {/* Cloud — Y only */}
@@ -222,14 +268,18 @@ export function Hero() {
               x={[0, 0, 0, 0, 0]}
               y={[0, 6, -7, 4, 0]}
             >
-              <TechNode label="Cloud" icon={Cloud} />
+              <TechNode
+                label="Cloud"
+                icon={Cloud}
+                iconClassName="text-primary"
+              />
             </Float>
           </div>
         </div>
 
         {/* Mobile / tablet AI / ML visual */}
         <div className="mt-6 md:mt-8 lg:hidden">
-          <div className="mx-auto w-70 rounded-2xl border border-border bg-card p-5 shadow-[0_16px_40px_-18px_var(--primary)]">
+          <div className="mx-auto w-70 rounded-2xl border border-border bg-card p-5 shadow-[0_12px_30px_-20px_var(--primary)]">
             <div className="flex items-center gap-3">
               <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <BrainCircuit className="size-5" aria-hidden="true" />

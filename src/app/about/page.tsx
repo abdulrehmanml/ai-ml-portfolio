@@ -44,9 +44,14 @@ export default function AboutPage() {
                     I&apos;m Abdul Rehman.
                   </h1>
 
-                    <p className="mt-6 text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                      I&apos;m an Artificial Intelligence undergraduate focused on building practical AI/ML solutions that turn data, machine learning, and AI technologies into useful applications. My work spans data analysis, predictive modeling, NLP, generative AI, and the development of interactive machine learning applications.
-                    </p>
+                  <p className="mt-6 text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                    I&apos;m an Artificial Intelligence undergraduate focused on
+                    building practical AI/ML solutions that turn data, machine
+                    learning, and AI technologies into useful applications. My
+                    work spans data analysis, predictive modeling, NLP,
+                    generative AI, and the development of interactive machine
+                    learning applications.
+                  </p>
 
                   <div className="mt-7 ml-2">
                     <Link
@@ -115,7 +120,7 @@ export default function AboutPage() {
 
         {/* Section Divider */}
         <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent"
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
           aria-hidden="true"
         />
 
@@ -134,7 +139,10 @@ export default function AboutPage() {
                 </h2>
 
                 <p className="mt-4 w-full text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                  I approach AI/ML projects as complete workflows, starting with a clear understanding of the problem and the data, then building and evaluating the right solution before turning it into a practical, usable application.
+                  I approach AI/ML projects as complete workflows, starting with
+                  a clear understanding of the problem and the data, then
+                  building and evaluating the right solution before turning it
+                  into a practical, usable application.
                 </p>
               </div>
             </FadeIn>
@@ -186,7 +194,7 @@ export default function AboutPage() {
 
         {/* Section Divider */}
         <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent"
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
           aria-hidden="true"
         />
 
@@ -201,11 +209,15 @@ export default function AboutPage() {
 
                 <h2 className="mt-4 max-w-5xl text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
                   Technical capabilities for{" "}
-                  <span className="text-primary">building AI/ML solutions.</span>
+                  <span className="text-primary">
+                    building AI/ML solutions.
+                  </span>
                 </h2>
 
                 <p className="mt-4 w-full text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                  I combine data analysis, machine learning, language technologies, and deployment skills to develop solutions across different stages of the AI/ML lifecycle.
+                  I combine data analysis, machine learning, language
+                  technologies, and deployment skills to develop solutions
+                  across different stages of the AI/ML lifecycle.
                 </p>
               </div>
             </FadeIn>
@@ -243,7 +255,13 @@ export default function AboutPage() {
                   title: "Deployment",
                   description:
                     "Connect trained models and AI workflows to usable applications through APIs, model serialization, interactive interfaces, and practical deployment workflows.",
-                  skills: ["Streamlit", "APIs", "Joblib", "Git & GitHub", "AWS"],
+                  skills: [
+                    "Streamlit",
+                    "APIs",
+                    "Joblib",
+                    "Git & GitHub",
+                    "AWS",
+                  ],
                 },
               ].map((item) => (
                 <SlideUp key={item.number} className="min-w-0">
@@ -284,7 +302,7 @@ export default function AboutPage() {
 
         {/* Section Divider */}
         <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent"
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
           aria-hidden="true"
         />
 
@@ -299,11 +317,14 @@ export default function AboutPage() {
 
                 <h2 className="mt-4 w-full text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
                   Tools I use to build{" "}
-                  <span className="text-primary">and ship AI/ML solutions.</span>
+                  <span className="text-primary">
+                    and ship AI/ML solutions.
+                  </span>
                 </h2>
 
                 <p className="mt-4 w-full text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                  A focused set of technologies I use across data preparation, machine learning, AI applications, and deployment.
+                  A focused set of technologies I use across data preparation,
+                  machine learning, AI applications, and deployment.
                 </p>
               </div>
             </FadeIn>
@@ -366,7 +387,7 @@ export default function AboutPage() {
 
         {/* Section Divider */}
         <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent"
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
           aria-hidden="true"
         />
 
@@ -380,12 +401,16 @@ export default function AboutPage() {
                 </p>
 
                 <h2 className="mt-4 max-w-5xl text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
-                  Projects that turn {" "}
-                  <span className="text-primary">ideas into working solutions.</span>
+                  Projects that turn{" "}
+                  <span className="text-primary">
+                    ideas into working solutions.
+                  </span>
                 </h2>
 
                 <p className="mt-4 w-full text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                  A selection of practical projects covering predictive machine learning, NLP, and retrieval-augmented generative AI applications.
+                  A selection of practical projects covering predictive machine
+                  learning, NLP, and retrieval-augmented generative AI
+                  applications.
                 </p>
               </div>
             </FadeIn>
@@ -402,7 +427,7 @@ export default function AboutPage() {
 
         {/* Section Divider */}
         <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent"
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
           aria-hidden="true"
         />
 
@@ -422,7 +447,9 @@ export default function AboutPage() {
                   </h2>
 
                   <p className="mt-4 text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                    Currently strengthening my skills in production machine learning, AI applications, APIs, cloud deployment, and agentic systems.
+                    Currently strengthening my skills in production machine
+                    learning, AI applications, APIs, cloud deployment, and
+                    agentic systems.
                   </p>
                 </div>
               </FadeIn>
@@ -442,7 +469,7 @@ export default function AboutPage() {
                         <span className="font-mono text-xs text-primary">
                           {String(index + 1).padStart(2, "0")}
                         </span>
-                      
+
                         <span className="shrink-0 whitespace-nowrap text-sm font-medium transition-colors duration-200 group-hover:text-primary">
                           {focus}
                         </span>
@@ -457,7 +484,7 @@ export default function AboutPage() {
 
         {/* Section Divider */}
         <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent"
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
           aria-hidden="true"
         />
 
@@ -479,7 +506,9 @@ export default function AboutPage() {
                   </h2>
 
                   <p className="mt-4 max-w-2xl text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                    Have a project in mind or looking for an AI/ML solution? Let&apos;s discuss the problem, explore the right approach, and see how I can help.
+                    Have a project in mind or looking for an AI/ML solution?
+                    Let&apos;s discuss the problem, explore the right approach,
+                    and see how I can help.
                   </p>
                 </div>
 

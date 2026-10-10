@@ -25,7 +25,10 @@ export default function ProjectsPage() {
 
       <main className="bg-background">
         {/* Hero */}
-        <Section id="projects-hero" className="pt-28 min-[560px]:pt-32 lg:pt-28">
+        <Section
+          id="projects-hero"
+          className="pt-28 min-[560px]:pt-32 lg:pt-28"
+        >
           <Container>
             <FadeIn>
               <Link
@@ -49,7 +52,7 @@ export default function ProjectsPage() {
 
               <FadeIn>
                 <div
-                  className="mt-3 h-px w-12 bg-accent/40"
+                  className="h-px w-12 shrink-0 bg-accent/40 dark:bg-primary/70"
                   aria-hidden="true"
                 />
               </FadeIn>
@@ -67,7 +70,10 @@ export default function ProjectsPage() {
         </Section>
 
         {/* Divider */}
-        <div className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent" aria-hidden="true"/>
+        <div
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
+          aria-hidden="true"
+        />
 
         {/* All Projects */}
         <Section id="all-projects">

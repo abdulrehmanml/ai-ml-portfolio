@@ -61,9 +61,7 @@ export function ThemeToggle() {
           className="absolute right-0 top-full z-50 mt-3 w-52 rounded-lg border border-border bg-card px-3 py-2.5 text-left text-xs leading-5 text-foreground shadow-lg"
           role="status"
         >
-          <p className="font-medium text-foreground">
-            Dark mode available
-          </p>
+          <p className="font-medium text-foreground">Dark mode available</p>
 
           <p className="mt-0.5 text-muted-foreground">
             Use the moon icon to switch.

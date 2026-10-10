@@ -147,7 +147,13 @@ export function ContactPreview() {
                     <Link
                       key={label}
                       href={href}
-                      onClick={() => { if (href.startsWith("mailto:")) { sendGAEvent("event", "contact_email_click", { link_location: "contact_section", }) } }}
+                      onClick={() => {
+                        if (href.startsWith("mailto:")) {
+                          sendGAEvent("event", "contact_email_click", {
+                            link_location: "contact_section",
+                          })
+                        }
+                      }}
                       className="group flex w-fit items-center gap-3 rounded-lg px-2 py-1.5 text-[15px] font-medium text-muted-foreground transition-all duration-200 hover:bg-primary/5 hover:text-primary"
                     >
                       <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border/70 bg-card/50 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:border-primary/40 group-hover:bg-primary/5">

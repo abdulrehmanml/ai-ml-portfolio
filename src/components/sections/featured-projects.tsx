@@ -25,15 +25,21 @@ export function FeaturedProjects() {
 
                 <h2 className="w-full text-justify text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[40px] lg:leading-[1.1] lg:whitespace-nowrap">
                   Projects built with{" "}
-                  <span className="text-primary">data, machine learning, and AI.</span>
+                  <span className="text-primary">
+                    data, machine learning, and AI.
+                  </span>
                 </h2>
 
                 <p className="mt-3 w-full text-justify text-sm leading-6 text-muted-foreground sm:text-base lg:text-[15px]">
-                  A selection of practical projects spanning machine learning, NLP, generative AI, and data-driven applications.
+                  A selection of practical projects spanning machine learning,
+                  NLP, generative AI, and data-driven applications.
                 </p>
               </div>
 
-              <Link href="/projects" className="group inline-flex h-11 w-fit whitespace-nowrap items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 self-end">
+              <Link
+                href="/projects"
+                className="group inline-flex h-11 w-fit whitespace-nowrap items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 self-end"
+              >
                 View all projects
                 <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>

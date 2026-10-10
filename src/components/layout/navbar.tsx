@@ -176,9 +176,7 @@ export function Navbar() {
               : "hover:text-primary",
           )}
           onClick={(event) => handleSectionClick(event, "/")}
-          aria-current={
-            displayedActiveNav === "Home" ? "location" : undefined
-          }
+          aria-current={displayedActiveNav === "Home" ? "location" : undefined}
         >
           Abdul Rehman
         </Link>

@@ -27,8 +27,14 @@ export function ProjectPage({ project }: ProjectPageProps) {
         <Section id="project-hero" className="pt-28 min-[560px]:pt-32 lg:pt-28">
           <Container>
             <FadeIn>
-              <Link href="/projects" className="group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors duration-200 hover:text-primary">
-                <ArrowLeft className="size-4 transition-transform duration-200 group-hover:-translate-x-1" aria-hidden="true"/>
+              <Link
+                href="/projects"
+                className="group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
+              >
+                <ArrowLeft
+                  className="size-4 transition-transform duration-200 group-hover:-translate-x-1"
+                  aria-hidden="true"
+                />
                 Back to Projects
               </Link>
             </FadeIn>
@@ -41,7 +47,10 @@ export function ProjectPage({ project }: ProjectPageProps) {
                     <span className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
                       Project
                     </span>
-                    <span className="h-px w-12 bg-accent/40" aria-hidden="true"/>
+                    <span
+                      className="h-px w-12 shrink-0 bg-accent/40 dark:bg-primary/70"
+                      aria-hidden="true"
+                    />
                     <span className="font-mono text-xs uppercase tracking-[0.14em] text-muted-foreground">
                       {project.category}
                     </span>
@@ -60,12 +69,25 @@ export function ProjectPage({ project }: ProjectPageProps) {
               {/* Project preview */}
               <FadeIn>
                 <div className="mx-auto w-100 max-w-[calc(100vw-2rem)]">
-                    <div className="project-card-shadow group relative overflow-hidden rounded-2xl border border-border bg-card p-3 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_12px_32px_-16px_var(--primary)]">
-                    <div className="pointer-events-none absolute right-0 top-0 h-9 w-9 border-r border-t border-primary/40 transition-all duration-300 group-hover:h-11 group-hover:w-11 group-hover:border-primary/60"
-                      aria-hidden="true"/>
-                    <div className="pointer-events-none absolute bottom-0 left-0 h-9 w-9 border-b border-l border-accent/30 transition-all duration-300 group-hover:h-11 group-hover:w-11 group-hover:border-accent/50" aria-hidden="true"/>
+                  <div className="project-card-shadow group relative overflow-hidden rounded-2xl border border-border bg-card p-3 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_12px_32px_-16px_var(--primary)]">
+                    <div
+                      className="pointer-events-none absolute right-0 top-0 h-9 w-9 border-r border-t border-primary/40 transition-all duration-300 group-hover:h-11 group-hover:w-11 group-hover:border-primary/60"
+                      aria-hidden="true"
+                    />
+                    <div
+                      className="pointer-events-none absolute bottom-0 left-0 h-9 w-9 border-b border-l border-accent/30 transition-all duration-300 group-hover:h-11 group-hover:w-11 group-hover:border-accent/50"
+                      aria-hidden="true"
+                    />
                     <div className="group relative overflow-hidden rounded-xl border border-border/70">
-                      <Image src={project.image} alt={`${project.title} project preview`} width={800} height={500} sizes="(min-width: 1024px) 28vw, (min-width: 560px) 70vw, 100vw" className="aspect-[1.6] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]" priority/>
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} project preview`}
+                        width={800}
+                        height={500}
+                        sizes="(min-width: 1024px) 28vw, (min-width: 560px) 70vw, 100vw"
+                        className="aspect-[1.6] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                        priority
+                      />
                     </div>
                   </div>
                 </div>
@@ -75,7 +97,10 @@ export function ProjectPage({ project }: ProjectPageProps) {
         </Section>
 
         {/* Divider */}
-        <div className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent" aria-hidden="true"/>
+        <div
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
+          aria-hidden="true"
+        />
 
         {/* Problem & Solution */}
         <Section id="problem-solution">
@@ -100,29 +125,29 @@ export function ProjectPage({ project }: ProjectPageProps) {
                     <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
                       01 — Problem
                     </p>
-              
+
                     <h3 className="mt-4 text-2xl font-semibold tracking-tight">
                       What was the objective?
                     </h3>
-              
+
                     <p className="mt-4 text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                       {project.problem}
                     </p>
                   </div>
                 </article>
               </SlideUp>
-              
+
               <SlideUp>
                 <article className="group h-full w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary">
                   <div className="px-4 min-[560px]:px-5 lg:px-6">
                     <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
                       02 — Solution
                     </p>
-              
+
                     <h3 className="mt-4 text-2xl font-semibold tracking-tight">
                       What was built?
                     </h3>
-              
+
                     <p className="mt-4 text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                       {project.solution}
                     </p>
@@ -134,7 +159,10 @@ export function ProjectPage({ project }: ProjectPageProps) {
         </Section>
 
         {/* Divider */}
-        <div className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent" aria-hidden="true"/>
+        <div
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
+          aria-hidden="true"
+        />
 
         {/* Approach / Workflow */}
         <Section id="project-workflow">
@@ -166,7 +194,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                             {String(index + 1).padStart(2, "0")}
                           </div>
                         </div>
-              
+
                         {/* Step */}
                         <h3 className="mt-6 px-2 text-base font-semibold leading-6 tracking-tight transition-colors duration-300 group-hover:text-primary">
                           {step}
@@ -174,7 +202,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                       </div>
                     </SlideUp>
                   </div>
-              
+
                   {/* Desktop arrow */}
                   {index < project.workflow.length - 1 && (
                     <div
@@ -213,8 +241,14 @@ export function ProjectPage({ project }: ProjectPageProps) {
 
                     {/* Mobile arrow */}
                     {index < project.workflow.length - 1 && (
-                      <div className="flex h-12 items-center justify-center" aria-hidden="true">
-                        <MoveRight className="size-5 rotate-90 text-muted-foreground transition-all duration-300 hover:translate-y-1 hover:text-primary" strokeWidth={1.5}/>
+                      <div
+                        className="flex h-12 items-center justify-center"
+                        aria-hidden="true"
+                      >
+                        <MoveRight
+                          className="size-5 rotate-90 text-muted-foreground transition-all duration-300 hover:translate-y-1 hover:text-primary"
+                          strokeWidth={1.5}
+                        />
                       </div>
                     )}
                   </React.Fragment>
@@ -225,7 +259,10 @@ export function ProjectPage({ project }: ProjectPageProps) {
         </Section>
 
         {/* Divider */}
-        <div className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent" aria-hidden="true"/>
+        <div
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
+          aria-hidden="true"
+        />
 
         {/* Tools & Technologies */}
         <Section id="technology-stack">
@@ -242,22 +279,28 @@ export function ProjectPage({ project }: ProjectPageProps) {
                 </h2>
               </div>
             </FadeIn>
-              <SlideUp>
-                <div className="mx-auto mt-10 w-full max-w-3xl px-4 min-[560px]:px-6 lg:px-0">
-                  <div className="flex flex-wrap justify-center gap-3">
-                    {project.technologies.map((technology) => (
-                      <span key={technology} className="rounded-lg border border-border bg-card px-4 py-2.5 font-mono text-xs text-muted-foreground shadow-[0_2px_8px_-6px_var(--primary)] transition-colors duration-200 hover:border-primary/40 hover:text-primary">
-                        {technology}
-                      </span>
-                    ))}
-                  </div>
+            <SlideUp>
+              <div className="mx-auto mt-10 w-full max-w-3xl px-4 min-[560px]:px-6 lg:px-0">
+                <div className="flex flex-wrap justify-center gap-3">
+                  {project.technologies.map((technology) => (
+                    <span
+                      key={technology}
+                      className="rounded-lg border border-border bg-card px-4 py-2.5 font-mono text-xs text-muted-foreground shadow-[0_2px_8px_-6px_var(--primary)] transition-colors duration-200 hover:border-primary/40 hover:text-primary"
+                    >
+                      {technology}
+                    </span>
+                  ))}
                 </div>
-              </SlideUp>
+              </div>
+            </SlideUp>
           </Container>
         </Section>
 
         {/* Divider */}
-        <div className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent" aria-hidden="true"/>
+        <div
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
+          aria-hidden="true"
+        />
 
         {/* Key Work / Technical Details */}
         <Section id="key-work">
@@ -295,7 +338,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
 
         {/* Divider */}
         <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent"
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
           aria-hidden="true"
         />
 
@@ -335,7 +378,10 @@ export function ProjectPage({ project }: ProjectPageProps) {
         </Section>
 
         {/* Divider */}
-        <div className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent" aria-hidden="true"/>
+        <div
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
+          aria-hidden="true"
+        />
 
         {/* Project Links */}
         <Section id="project-links">
@@ -350,19 +396,24 @@ export function ProjectPage({ project }: ProjectPageProps) {
                   {project.projectLinksDescription}
                 </h2>
               </div>
-            </FadeIn> 
+            </FadeIn>
             <div className="mt-8 grid w-fit gap-x-4 gap-y-6 min-[560px]:grid-cols-2">
               <SlideUp>
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="group block w-48 border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary">
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block w-48 border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary"
+                >
                   <div className="inline-flex items-center">
                     <div>
                       <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-primary transition-colors duration-200 group-hover:text-primary">
                         Repository
-                      </p>  
+                      </p>
                       <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground transition-colors duration-200 group-hover:text-primary">
                         View Repository
                       </h3>
-                    </div>  
+                    </div>
                     <ArrowUpRight
                       className="ml-1 size-5 shrink-0 text-muted-foreground transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary"
                       strokeWidth={1.7}
@@ -370,53 +421,70 @@ export function ProjectPage({ project }: ProjectPageProps) {
                     />
                   </div>
                 </a>
-              </SlideUp>  
+              </SlideUp>
 
               {project.documentationUrl ? (
                 <SlideUp>
-                  <a href={project.documentationUrl} target="_blank" rel="noopener noreferrer" className="group block w-48 border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary">
+                  <a
+                    href={project.documentationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block w-48 border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary"
+                  >
                     <div className="inline-flex items-center">
                       <div>
                         <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-primary transition-colors duration-200 group-hover:text-primary">
                           Documentation
                         </p>
-              
+
                         <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground transition-colors duration-200 group-hover:text-primary">
                           View Documentation
                         </h3>
                       </div>
-              
-                      <ArrowUpRight className="ml-1 size-5 shrink-0 text-muted-foreground transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" strokeWidth={1.7}aria-hidden="true"/>
+
+                      <ArrowUpRight
+                        className="ml-1 size-5 shrink-0 text-muted-foreground transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary"
+                        strokeWidth={1.7}
+                        aria-hidden="true"
+                      />
                     </div>
                   </a>
                 </SlideUp>
               ) : project.liveDemoUrl ? (
                 <SlideUp>
-                  <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" className="group block w-48 border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary">
+                  <a
+                    href={project.liveDemoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block w-48 border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary"
+                  >
                     <div className="inline-flex items-center">
                       <div>
                         <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-primary transition-colors duration-200 group-hover:text-primary">
                           Live Application
                         </p>
-              
+
                         <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground transition-colors duration-200 group-hover:text-primary">
                           Open Application
                         </h3>
                       </div>
-              
-                      <ArrowUpRight className="ml-1 size-5 shrink-0 text-muted-foreground transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" strokeWidth={1.7} aria-hidden="true"/>
+
+                      <ArrowUpRight
+                        className="ml-1 size-5 shrink-0 text-muted-foreground transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary"
+                        strokeWidth={1.7}
+                        aria-hidden="true"
+                      />
                     </div>
                   </a>
                 </SlideUp>
-              ) : null}              
-
+              ) : null}
             </div>
           </Container>
         </Section>
 
         {/* Divider */}
         <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent"
+          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
           aria-hidden="true"
         />
 
@@ -436,19 +504,27 @@ export function ProjectPage({ project }: ProjectPageProps) {
                   </h2>
 
                   <p className="mt-4 max-w-3xl text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                    Have a problem, dataset, or application idea? Let&apos;s discuss the right approach.
+                    Have a problem, dataset, or application idea? Let&apos;s
+                    discuss the right approach.
                   </p>
                 </div>
 
-                <ContactCtaLink href="/#contact" ctaLocation="project_page" className="group mx-auto inline-flex h-11 w-fit items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 lg:mx-0">
+                <ContactCtaLink
+                  href="/#contact"
+                  ctaLocation="project_page"
+                  className="group mx-auto inline-flex h-11 w-fit items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 lg:mx-0"
+                >
                   Get in touch
-                  <ArrowUpRight className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.7} aria-hidden="true"/>
+                  <ArrowUpRight
+                    className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    strokeWidth={1.7}
+                    aria-hidden="true"
+                  />
                 </ContactCtaLink>
               </div>
             </FadeIn>
           </Container>
         </Section>
-
       </main>
 
       <Footer />

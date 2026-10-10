@@ -3,7 +3,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
-import { ArrowRight, BarChart3, BrainCircuit, Cloud, MessageSquareText, } from "lucide-react"
+import {
+  ArrowRight,
+  BarChart3,
+  BrainCircuit,
+  Cloud,
+  MessageSquareText,
+} from "lucide-react"
 
 import { Container } from "@/components/layout/container"
 import { Section } from "@/components/layout/section"
@@ -51,7 +57,10 @@ export function AboutPreview() {
             </h2>
 
             <p className="mt-3 w-full max-w-6xl text-justify text-sm leading-6 text-muted-foreground lg:text-[15px]">
-              An Artificial Intelligence undergraduate focused on machine learning, data analysis, NLP, and generative AI. I build practical AI solutions that turn ideas and data into useful, deployable applications.
+              An Artificial Intelligence undergraduate focused on machine
+              learning, data analysis, NLP, and generative AI. I build practical
+              AI solutions that turn ideas and data into useful, deployable
+              applications.
             </p>
           </div>
 
@@ -61,18 +70,30 @@ export function AboutPreview() {
             <SlideUp>
               <div className="mx-auto flex w-full max-w-65 flex-col justify-center lg:mx-0 lg:justify-self-center">
                 <div className="relative pt-1 lg:pt-2">
-                  <div aria-hidden="true" className="pointer-events-none absolute -inset-5 hidden rounded-2xl bg-primary/10 blur-2xl lg:block"/>
-
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -inset-5 hidden rounded-2xl bg-primary/10 blur-2xl lg:block"
+                  />
 
                   <div className="group relative aspect-portrait overflow-hidden rounded-lg border border-border/70 bg-muted/10">
-                    <Image src="/images/abdul-rehman.png" alt="Abdul Rehman" fill loading="eager" sizes="280px" className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]" />
+                    <Image
+                      src="/images/abdul-rehman.png"
+                      alt="Abdul Rehman"
+                      fill
+                      loading="eager"
+                      sizes="280px"
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
 
                     <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background/10 via-transparent to-transparent" />
                   </div>
                 </div>
 
                 <div className="mt-4 flex justify-center">
-                  <Link href="/about" className="group inline-flex h-11 items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 active:bg-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                  <Link
+                    href="/about"
+                    className="group inline-flex h-11 items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 active:bg-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  >
                     More About Me
                     <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
                   </Link>

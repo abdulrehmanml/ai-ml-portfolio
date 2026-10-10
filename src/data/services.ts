@@ -107,13 +107,7 @@ export const services: Service[] = [
       "Connect the generative model",
       "Deliver the AI application",
     ],
-    technologies: [
-      "Python",
-      "Gemini",
-      "ChromaDB",
-      "RAG",
-      "Streamlit",
-    ],
+    technologies: ["Python", "Gemini", "ChromaDB", "RAG", "Streamlit"],
     projectSlugs: ["agrofarm-ai"],
   },
 
@@ -150,6 +144,10 @@ export const services: Service[] = [
       "GitHub",
       "AWS",
     ],
-    projectSlugs: ["customer-churn-prediction", "sentiment-analysis", "agrofarm-ai"],
+    projectSlugs: [
+      "customer-churn-prediction",
+      "sentiment-analysis",
+      "agrofarm-ai",
+    ],
   },
 ]

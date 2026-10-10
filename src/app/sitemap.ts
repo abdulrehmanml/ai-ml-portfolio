@@ -3,14 +3,10 @@ import type { MetadataRoute } from "next"
 import { projects } from "@/data/projects"
 import { services } from "@/data/services"
 
-const BASE_URL = "https://www.abdulrehmanmughal.me"
+const BASE_URL = "https://abdulrehmanmughal.me"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = [
-    "/",
-    "/about",
-    "/projects",
-  ]
+  const staticRoutes = ["/", "/about", "/projects"]
 
   return [
     ...staticRoutes.map((route) => ({

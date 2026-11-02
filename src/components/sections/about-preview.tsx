@@ -43,20 +43,23 @@ export function AboutPreview() {
   const [skillHover, setSkillHover] = useState<number | null>(null)
 
   return (
-    <Section id="about" className="border-y border-accent/30">
+    <Section
+      id="about"
+      className="border-y border-accent/30 pt-14 pb-14 min-[390px]:pt-16 min-[390px]:pb-16 min-[560px]:pt-18 min-[560px]:pb-18 sm:pt-18 sm:pb-18 md:pt-20 md:pb-20 lg:pt-16 lg:pb-16 xl:pt-20 xl:pb-20 2xl:pt-24 2xl:pb-24"
+    >
       <Container>
         <FadeIn>
           {/* Section heading */}
           <div className="w-full">
-            <p className="mb-5 text-sm font-medium uppercase tracking-[0.14em] text-primary">
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:mb-5 min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
               About Me
             </p>
 
-            <h2 className="w-full text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[42px] lg:leading-[1.1]">
+            <h2 className="w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl lg:text-[42px]">
               I&apos;m Abdul Rehman.
             </h2>
 
-            <p className="mt-3 w-full max-w-6xl text-justify text-sm leading-6 text-muted-foreground lg:text-[15px]">
+            <p className="mt-3 w-full max-w-none min-w-0 text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base min-[560px]:leading-7 lg:text-[15px]">
               An Artificial Intelligence undergraduate focused on machine
               learning, data analysis, NLP, and generative AI. I build practical
               AI solutions that turn ideas and data into useful, deployable
@@ -65,10 +68,10 @@ export function AboutPreview() {
           </div>
 
           {/* Profile + Technical Skills */}
-          <div className="mt-7 grid gap-8 lg:grid-cols-[260px_minmax(0,680px)] lg:items-start lg:justify-center lg:gap-16">
+          <div className="mt-6 grid min-w-0 grid-cols-1 gap-7 min-[560px]:mt-8 min-[560px]:gap-8 md:mx-auto md:w-fit md:grid-cols-[190px_auto] md:items-center md:gap-8 lg:mx-auto lg:w-fit lg:grid-cols-[190px_auto] lg:gap-8 xl:grid-cols-[210px_auto] xl:gap-12">
             {/* Profile visual */}
             <SlideUp>
-              <div className="mx-auto flex w-full max-w-65 flex-col justify-center lg:mx-0 lg:justify-self-center">
+              <div className="mx-auto flex w-full min-w-0 max-w-[190px] flex-col justify-center lg:mx-0 lg:justify-self-center xl:max-w-[210px]">
                 <div className="relative pt-1 lg:pt-2">
                   <div
                     aria-hidden="true"
@@ -81,7 +84,7 @@ export function AboutPreview() {
                       alt="Abdul Rehman"
                       fill
                       loading="eager"
-                      sizes="280px"
+                      sizes="(min-width: 1280px) 210px, 190px"
                       className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
                     />
 
@@ -101,15 +104,15 @@ export function AboutPreview() {
               </div>
             </SlideUp>
 
-            {/* Technical Skills */}
+            {/* Technical Expertise */}
             <SlideUp>
               <div
-                className="mx-auto w-fit max-w-full rounded-xl border border-border/70 bg-card/40 p-2"
+                className="mx-auto w-fit min-w-0 max-w-full rounded-xl border-[1.5px] border-border bg-card/40 p-2 min-[560px]:p-3 md:mx-0"
                 onMouseLeave={() => setSkillHover(null)}
               >
                 <div className="px-3 py-2.5">
-                  <h3 className="text-lg font-semibold text-primary">
-                    Technical Skills
+                  <h3 className="text-base font-semibold text-primary min-[560px]:text-lg">
+                    Technical Expertise
                   </h3>
                 </div>
 
@@ -122,20 +125,20 @@ export function AboutPreview() {
                         key={title}
                         onMouseEnter={() => setSkillHover(index)}
                         className={[
-                          "grid rounded-lg border border-border/60 bg-background/60 px-4 py-3 transition-all duration-200",
-                          "sm:grid-cols-[175px_auto] sm:items-center",
+                          "grid min-w-0 grid-cols-1 gap-2 rounded-lg border-[1.5px] border-border/90 bg-background/60 px-3 py-3 transition-all duration-200 min-[390px]:px-4",
+                          "lg:grid-cols-[175px_minmax(0,1fr)] lg:items-center lg:gap-3",
                           isActive
                             ? "-translate-y-0.5 border-primary/25 bg-primary/5"
                             : "",
                         ].join(" ")}
                       >
-                        <div className="flex items-center gap-3">
+                        <div className="flex min-w-0 items-center gap-3">
                           <span
                             className={[
-                              "inline-flex size-8 shrink-0 items-center justify-center rounded-md border transition-all duration-200",
+                              "inline-flex size-8 shrink-0 items-center justify-center rounded-md border-[1.5px] transition-all duration-200",
                               isActive
                                 ? "border-primary/25 bg-primary/5"
-                                : "border-border/70",
+                                : "border-border/90",
                             ].join(" ")}
                           >
                             <Icon
@@ -150,22 +153,15 @@ export function AboutPreview() {
 
                           <span
                             className={[
-                              "text-sm font-medium transition-colors duration-200",
-                              isActive ? "text-primary" : "text-foreground",
+                              "min-w-0 text-sm font-medium transition-colors duration-200",
+                              isActive ? "text-primary" : "text-primary/90",
                             ].join(" ")}
                           >
                             {title}
                           </span>
                         </div>
 
-                        <p
-                          className={[
-                            "text-sm leading-6 transition-colors duration-200",
-                            isActive
-                              ? "text-muted-foreground"
-                              : "text-muted-foreground",
-                          ].join(" ")}
-                        >
+                        <p className="min-w-0 text-left text-sm leading-6 text-muted-foreground transition-colors duration-200">
                           {skills}
                         </p>
                       </div>

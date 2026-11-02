@@ -124,7 +124,7 @@ export function ContactPreview() {
     <Section id="contact" className="border-y border-accent/30">
       <Container>
         <FadeIn>
-          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-16">
+          <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-10 [&>*]:min-w-0 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-16">
             {/* Contact introduction */}
             <div>
               <p className="mb-5 text-sm font-medium uppercase tracking-[0.14em] text-primary">
@@ -154,7 +154,7 @@ export function ContactPreview() {
                           })
                         }
                       }}
-                      className="group flex w-fit items-center gap-3 rounded-lg px-2 py-1.5 text-[15px] font-medium text-muted-foreground transition-all duration-200 hover:bg-primary/5 hover:text-primary"
+                      className="group flex w-fit max-w-full min-w-0 items-center gap-3 rounded-lg px-2 py-1.5 text-[15px] font-medium text-muted-foreground transition-all duration-200 hover:bg-primary/5 hover:text-primary"
                     >
                       <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border/70 bg-card/50 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:border-primary/40 group-hover:bg-primary/5">
                         <Icon
@@ -163,7 +163,9 @@ export function ContactPreview() {
                         />
                       </span>
 
-                      <span>{value}</span>
+                      <span className="min-w-0 [overflow-wrap:anywhere]">
+                        {value}
+                      </span>
 
                       <ArrowUpRight
                         className="size-4 opacity-60 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
@@ -177,9 +179,9 @@ export function ContactPreview() {
 
             {/* Contact form */}
             <SlideUp>
-              <div className="mx-auto w-full px-3 sm:px-0">
+              <div className="mx-auto w-full min-w-0 px-3 sm:px-0">
                 <form
-                  className="mx-auto w-full max-w-md rounded-xl border border-border/70 bg-card/40 p-5 sm:p-6 lg:mx-0 lg:max-w-none"
+                  className="mx-auto w-full min-w-0 max-w-md rounded-xl border border-border/70 bg-card/40 p-5 sm:p-6 lg:mx-0 lg:max-w-none"
                   onSubmit={handleSubmit}
                 >
                   <div className="hidden" aria-hidden="true">

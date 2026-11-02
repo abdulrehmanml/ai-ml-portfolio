@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState, type MouseEvent } from "react"
+import { useEffect, useRef, useState, type MouseEvent } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { usePathname } from "next/navigation"
@@ -48,6 +48,8 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeNav, setActiveNav] = useState<ActiveNav>("Home")
+  const menuRef = useRef<HTMLDivElement>(null)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
 
   const displayedActiveNav =
     pathname === "/" ? activeNav : getRouteActiveNav(pathname)
@@ -154,6 +156,29 @@ export function Navbar() {
     }
   }, [menuOpen])
 
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const handleOutsideClick = (event: PointerEvent) => {
+      const target = event.target
+
+      if (!(target instanceof Node)) return
+
+      const clickedInsideMenu = menuRef.current?.contains(target)
+      const clickedMenuButton = menuButtonRef.current?.contains(target)
+
+      if (!clickedInsideMenu && !clickedMenuButton) {
+        setMenuOpen(false)
+      }
+    }
+
+    document.addEventListener("pointerdown", handleOutsideClick)
+
+    return () => {
+      document.removeEventListener("pointerdown", handleOutsideClick)
+    }
+  }, [menuOpen])
+
   return (
     <header
       className={cn(
@@ -180,7 +205,7 @@ export function Navbar() {
         >
           Abdul Rehman
         </Link>
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => {
             const isActive = displayedActiveNav === item.label
             return (
@@ -202,9 +227,10 @@ export function Navbar() {
           })}
           <ThemeToggle />
         </div>
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
           <Button
+            ref={menuButtonRef}
             variant="ghost"
             size="icon"
             aria-label={
@@ -220,9 +246,10 @@ export function Navbar() {
       </nav>
 
       <div
+        ref={menuRef}
         id="mobile-navigation"
         className={cn(
-          "absolute right-5 top-full z-50 mt-2 w-72 max-w-[calc(100vw-2.5rem)] overflow-hidden rounded-xl border border-border bg-background/95 shadow-lg backdrop-blur-xl md:right-8 lg:hidden",
+          "absolute right-5 top-full z-50 mt-2 w-72 max-w-[calc(100vw-2.5rem)] overflow-hidden rounded-xl border border-border bg-background/95 shadow-lg backdrop-blur-xl md:right-8 md:hidden",
           menuOpen ? "block" : "hidden",
         )}
       >
@@ -234,7 +261,17 @@ export function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                onClick={(event) => handleSectionClick(event, item.href)}
+                onClick={(event) => {
+                  event.preventDefault()
+
+                  if (item.href === "/#contact") {
+                    sendGAEvent("event", "contact_cta_click", {
+                      cta_location: "navbar",
+                    })
+                  }
+
+                  setMenuOpen(false)
+                }}
                 className={cn(
                   "flex items-center border-b border-border/80 px-3 py-3 text-sm transition-colors duration-200 last:border-b-0",
                   isActive

@@ -91,9 +91,9 @@ export function Hero() {
   return (
     <Section className="relative flex min-h-0 items-center overflow-hidden border-b border-accent/30 pt-26 sm:pt-32 lg:pt-24 xl:pt-28 2xl:pt-36">
       <Container>
-        <div className="relative grid items-center gap-10 lg:gap-16 lg:grid-cols-[1fr_0.95fr]">
+        <div className="relative grid min-w-0 items-center gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] xl:gap-16 min-[1366px]:grid-cols-[minmax(0,1fr)_580px] min-[1366px]:gap-8">
           {/* Main content */}
-          <div className="relative z-10 max-w-3xl">
+          <div className="relative z-10 min-w-0 w-full max-w-3xl lg:max-w-none xl:max-w-none">
             <FadeIn>
               <p className="mb-5 font-mono text-sm font-medium uppercase tracking-[0.2em] text-primary">
                 AI Engineer
@@ -101,33 +101,31 @@ export function Hero() {
             </FadeIn>
 
             <SlideUp>
-              <h1 className="w-full max-w-none text-[30px] font-semibold leading-[1.08] tracking-tight text-justify [text-align-last:justify] min-[380px]:text-[32px] min-[420px]:text-[34px] min-[560px]:max-w-2xl min-[560px]:text-[40px] sm:text-6xl md:max-w-none md:text-5xl lg:max-w-2xl lg:text-6xl lg:text-left lg:[text-align-last:auto] md:max-lg:text-left md:max-lg:[text-align-last:auto]">
-                <span className="block whitespace-nowrap md:inline lg:block lg:whitespace-nowrap min-[560px]:whitespace-normal">
-                  Building AI/ML systems{" "}
-                </span>
+              <h1 className="w-full min-w-0 text-[30px] font-semibold leading-[1.08] tracking-tight text-left min-[380px]:text-[32px] min-[420px]:text-[34px] min-[560px]:max-w-2xl min-[560px]:text-[40px] md:text-5xl lg:max-w-none xl:max-w-none xl:text-[clamp(48px,3.8vw,80px)]">
+                <span className="inline">Building AI/ML systems </span>
 
-                <span className="inline whitespace-nowrap text-primary text-[0.94em] lg:block lg:whitespace-nowrap min-[560px]:whitespace-normal">
+                <span className="inline text-primary text-[0.94em]">
                   from data to deployment.
                 </span>
               </h1>
             </SlideUp>
 
             <FadeIn>
-              <p className="mt-6 w-full max-w-none text-justify text-base leading-7 text-muted-foreground min-[560px]:max-w-2xl min-[560px]:text-justify sm:text-lg md:max-lg:max-w-none lg:max-w-none lg:text-left">
+              <p className="mt-6 w-full max-w-none text-left text-base leading-7 text-muted-foreground min-[560px]:max-w-2xl sm:text-lg md:max-lg:max-w-none lg:max-w-none">
                 I build practical machine learning and AI applications, turning
                 data and AI models into usable solutions.
               </p>
             </FadeIn>
 
             <SlideUp>
-              <div className="mt-8 flex w-fit max-w-full flex-row flex-wrap gap-3">
+              <div className="mt-8 flex w-full max-w-full flex-nowrap items-center gap-2 sm:w-fit sm:gap-3">
                 <Link
                   href="#featured-work"
                   onClick={(event) => {
                     event.preventDefault()
                     scrollToSection("featured-work")
                   }}
-                  className="group inline-flex h-11 items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 active:bg-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="group inline-flex h-11 items-center justify-center gap-2 rounded-[10px] bg-primary px-3 text-[13px] sm:px-5 sm:text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 active:bg-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   View Projects
                   <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -143,7 +141,7 @@ export function Hero() {
 
                     scrollToSection("contact")
                   }}
-                  className="inline-flex h-11 items-center justify-center rounded-[10px] border border-primary/35 bg-card px-5 text-sm font-medium text-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/65 hover:bg-primary/5 hover:shadow-[0_4px_18px_-10px_var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="inline-flex h-11 items-center justify-center rounded-[10px] border border-primary/35 bg-card px-3 text-[13px] sm:px-5 sm:text-sm font-medium text-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/65 hover:bg-primary/5 hover:shadow-[0_4px_18px_-10px_var(--primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   Contact Me
                 </Link>
@@ -154,7 +152,7 @@ export function Hero() {
           {/* AI / ML engineering visual */}
           <div
             aria-hidden="true"
-            className="relative mx-auto hidden h-97.5 w-145 max-w-full overflow-visible lg:block lg:-translate-x-28"
+            className="relative mx-auto hidden h-97.5 w-145 max-w-full overflow-visible min-[768px]:block xl:-translate-x-28 min-[1366px]:translate-x-0"
           >
             {/* Ambient glow */}
             <div className="absolute inset-[28%] rounded-full bg-primary/2 blur-2xl" />
@@ -192,7 +190,7 @@ export function Hero() {
 
             {/* Python — X only */}
             <Float
-              className="absolute left-[6%] top-[6%] z-20"
+              className="absolute left-0 top-[6%] z-20 min-[768px]:left-[6%]"
               duration={5.8}
               delay={0.2}
               x={[0, 10, -6, 5, 0]}
@@ -203,7 +201,7 @@ export function Hero() {
 
             {/* Scikit-learn — Y only */}
             <Float
-              className="absolute right-[2%] top-[10%] z-20"
+              className="absolute right-0 top-[10%] z-20 min-[768px]:right-[2%]"
               duration={6.4}
               delay={0.9}
               x={[0, 0, 0, 0, 0]}
@@ -217,7 +215,7 @@ export function Hero() {
 
             {/* RAG — 2D */}
             <Float
-              className="absolute left-[10%] top-[48%] z-20"
+              className="absolute left-0 top-[48%] z-20 min-[768px]:left-[10%]"
               duration={6.8}
               delay={1.2}
               x={[0, 5, -4, 3, 0]}
@@ -232,7 +230,7 @@ export function Hero() {
 
             {/* API — X only */}
             <Float
-              className="absolute right-[6%] top-[46%] z-20"
+              className="	absolute right-0 top-[46%] z-20 min-[768px]:right-[6%]"
               duration={5.5}
               delay={1.7}
               x={[0, -7, 5, -4, 0]}
@@ -247,7 +245,7 @@ export function Hero() {
 
             {/* Git — 2D */}
             <Float
-              className="absolute bottom-[2%] left-[8%] z-20"
+              className="absolute bottom-[2%] left-0 z-20 min-[768px]:left-[8%]"
               duration={6.7}
               delay={0.6}
               x={[0, -6, 7, -4, 0]}
@@ -262,7 +260,7 @@ export function Hero() {
 
             {/* Cloud — Y only */}
             <Float
-              className="absolute bottom-[2%] right-[8%] z-20"
+              className="absolute bottom-[2%] right-0 z-20 min-[768px]:right-[8%]"
               duration={6}
               delay={1.5}
               x={[0, 0, 0, 0, 0]}
@@ -278,8 +276,8 @@ export function Hero() {
         </div>
 
         {/* Mobile / tablet AI / ML visual */}
-        <div className="mt-6 md:mt-8 lg:hidden">
-          <div className="mx-auto w-70 rounded-2xl border border-border bg-card p-5 shadow-[0_12px_30px_-20px_var(--primary)]">
+        <div className="-ml-[calc(50vw-50%)] mt-6 flex w-screen justify-center md:mt-8 min-[768px]:hidden">
+          <div className="mx-auto w-full max-w-70 rounded-2xl border border-border bg-card p-5 shadow-[0_12px_30px_-20px_var(--primary)]">
             <div className="flex items-center gap-3">
               <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <BrainCircuit className="size-5" aria-hidden="true" />

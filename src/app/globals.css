@@ -180,3 +180,17 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Wider shared layout for laptop and desktop */
+@media (min-width: 1280px) {
+  :root {
+    --container-max: 1728px;
+  }
+}
+
+/* Wider fluid layout for large desktops */
+@media (min-width: 1800px) {
+  :root {
+    --container-max: min(95vw, 2200px);
+  }
+}

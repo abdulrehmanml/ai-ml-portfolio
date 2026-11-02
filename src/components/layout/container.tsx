@@ -6,7 +6,10 @@ type ContainerProps = React.HTMLAttributes<HTMLDivElement>
 export function Container({ className, children, ...props }: ContainerProps) {
   return (
     <div
-      className={cn("mx-auto w-full max-w-300 px-5 md:px-8", className)}
+      className={cn(
+        "site-container mx-auto w-full max-w-[var(--container-max)] px-5 md:px-8 lg:px-16 2xl:px-8 min-[1800px]:px-12",
+        className,
+      )}
       {...props}
     >
       {children}

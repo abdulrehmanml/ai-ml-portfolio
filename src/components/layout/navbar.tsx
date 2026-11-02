@@ -164,7 +164,7 @@ export function Navbar() {
       )}
     >
       <nav
-        className="mx-auto flex h-18 w-full max-w-300 items-center justify-between px-5 md:px-8"
+        className="site-container mx-auto flex h-18 w-full max-w-[var(--container-max)] items-center justify-between px-5 md:px-8 lg:px-16 2xl:px-8 min-[1800px]:px-12"
         aria-label="Main navigation"
       >
         <Link
@@ -180,11 +180,9 @@ export function Navbar() {
         >
           Abdul Rehman
         </Link>
-
         <div className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => {
             const isActive = displayedActiveNav === item.label
-
             return (
               <Link
                 key={item.label}
@@ -202,13 +200,10 @@ export function Navbar() {
               </Link>
             )
           })}
-
           <ThemeToggle />
         </div>
-
         <div className="flex items-center gap-2 lg:hidden">
           <ThemeToggle />
-
           <Button
             variant="ghost"
             size="icon"
@@ -227,11 +222,11 @@ export function Navbar() {
       <div
         id="mobile-navigation"
         className={cn(
-          "border-t border-border/70 bg-background/95 backdrop-blur-xl lg:hidden",
+          "absolute right-5 top-full z-50 mt-2 w-72 max-w-[calc(100vw-2.5rem)] overflow-hidden rounded-xl border border-border bg-background/95 shadow-lg backdrop-blur-xl md:right-8 lg:hidden",
           menuOpen ? "block" : "hidden",
         )}
       >
-        <div className="mx-auto flex max-w-300 flex-col px-5 py-4">
+        <div className="flex flex-col p-2">
           {navItems.map((item) => {
             const isActive = displayedActiveNav === item.label
 
@@ -241,12 +236,11 @@ export function Navbar() {
                 href={item.href}
                 onClick={(event) => handleSectionClick(event, item.href)}
                 className={cn(
-                  "border-b border-border/50 px-1 py-4 text-sm font-medium transition-colors last:border-b-0",
+                  "flex items-center border-b border-border/80 px-3 py-3 text-sm transition-colors duration-200 last:border-b-0",
                   isActive
-                    ? "bg-primary/5 text-primary"
-                    : "text-muted-foreground hover:text-primary",
+                    ? "rounded-md bg-primary/5 font-semibold text-primary"
+                    : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",
                 )}
-                aria-current={isActive ? "location" : undefined}
               >
                 {item.label}
               </Link>

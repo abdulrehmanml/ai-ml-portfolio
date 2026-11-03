@@ -20,13 +20,13 @@ export function FeaturedProjects() {
         <div className="flex min-w-0 flex-col gap-7 min-[560px]:gap-8 md:gap-10">
           {/* Section heading */}
           <FadeIn>
-            <div className="flex min-w-0 flex-col gap-5 min-[560px]:gap-6 2xl:flex-row 2xl:items-end 2xl:justify-between">
-              <div className="w-full min-w-0 max-w-none 2xl:w-[72%] 2xl:max-w-[1120px]">
+            <div className="flex min-w-0 flex-col gap-5 min-[560px]:gap-6 xl:flex-row xl:items-end xl:justify-between">
+              <div className="w-full min-w-0 max-w-none xl:w-[82%] xl:max-w-[1120px]">
                 <p className="mb-4 text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:mb-5 min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   Featured Work
                 </p>
 
-                <h2 className="w-full min-w-0 text-left text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
+                <h2 className="w-full min-w-0 text-left text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:whitespace-nowrap xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Projects built with{" "}
                   <span className="text-primary">
                     data, machine learning, and AI.
@@ -40,7 +40,7 @@ export function FeaturedProjects() {
 
               <Link
                 href="/projects"
-                className="group inline-flex h-11 w-fit shrink-0 whitespace-nowrap items-center justify-center gap-2 self-start rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 2xl:self-end"
+                className="group inline-flex h-11 w-fit shrink-0 whitespace-nowrap items-center justify-center gap-2 self-start rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 xl:self-end"
               >
                 View all projects
                 <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />

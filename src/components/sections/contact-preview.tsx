@@ -121,27 +121,30 @@ export function ContactPreview() {
   }
 
   return (
-    <Section id="contact" className="border-y border-accent/30">
+    <Section
+      id="contact"
+      className="border-y border-accent/30 pt-14 pb-14 min-[390px]:pt-16 min-[390px]:pb-16 min-[560px]:pt-18 min-[560px]:pb-18 sm:pt-18 sm:pb-18 md:pt-20 md:pb-20 lg:pt-16 lg:pb-16 xl:pt-20 xl:pb-20 2xl:pt-24 2xl:pb-24"
+    >
       <Container>
         <FadeIn>
-          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-16">
+          <div className="grid min-w-0 grid-cols-1 gap-8 min-[560px]:gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-12 xl:gap-16 2xl:gap-20 [&>*]:min-w-0">
             {/* Contact introduction */}
-            <div>
-              <p className="mb-5 text-sm font-medium uppercase tracking-[0.14em] text-primary">
+            <div className="min-w-0">
+              <p className="mb-4 text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:mb-5 min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                 Contact
               </p>
 
-              <h2 className="text-3xl font-semibold tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
+              <h2 className="w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                 <span>Have a project?</span>{" "}
                 <span className="text-primary">Let&apos;s make it real.</span>
               </h2>
 
-              <p className="mt-4 w-full max-w-lg text-justify text-sm leading-6 text-muted-foreground min-[560px]:max-w-none lg:max-w-lg lg:text-[15px]">
+              <p className="mt-3 w-full min-w-0 max-w-none text-left text-sm leading-6 text-muted-foreground min-[560px]:mt-4 min-[560px]:text-base min-[560px]:leading-7 lg:max-w-lg xl:text-[15px]">
                 Have an idea, project, or problem to solve? Share the details
                 and let&apos;s discuss how I can help.
               </p>
 
-              <div className="mt-7 flex flex-col gap-1">
+              <div className="mt-6 flex min-w-0 flex-col gap-1 min-[560px]:mt-7">
                 {contactLinks.map(
                   ({ label, value, href, icon: Icon, iconClassName }) => (
                     <Link
@@ -154,7 +157,7 @@ export function ContactPreview() {
                           })
                         }
                       }}
-                      className="group flex w-fit items-center gap-3 rounded-lg px-2 py-1.5 text-[15px] font-medium text-muted-foreground transition-all duration-200 hover:bg-primary/5 hover:text-primary"
+                      className="group flex w-fit max-w-full min-w-0 items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm font-medium text-muted-foreground transition-all duration-200 min-[560px]:gap-3 min-[560px]:text-[15px] hover:bg-primary/5 hover:text-primary"
                     >
                       <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border/70 bg-card/50 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:border-primary/40 group-hover:bg-primary/5">
                         <Icon
@@ -163,7 +166,9 @@ export function ContactPreview() {
                         />
                       </span>
 
-                      <span>{value}</span>
+                      <span className="min-w-0 [overflow-wrap:anywhere]">
+                        {value}
+                      </span>
 
                       <ArrowUpRight
                         className="size-4 opacity-60 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
@@ -177,9 +182,9 @@ export function ContactPreview() {
 
             {/* Contact form */}
             <SlideUp>
-              <div className="mx-auto w-full px-3 sm:px-0">
+              <div className="mx-auto w-full min-w-0">
                 <form
-                  className="mx-auto w-full max-w-md rounded-xl border border-border/70 bg-card/40 p-5 sm:p-6 lg:mx-0 lg:max-w-none"
+                  className="mx-auto w-full min-w-0 max-w-md rounded-xl border border-border/70 bg-card/40 p-4 min-[390px]:p-5 min-[560px]:p-6 lg:mx-0 lg:max-w-none"
                   onSubmit={handleSubmit}
                 >
                   <div className="hidden" aria-hidden="true">
@@ -194,7 +199,7 @@ export function ContactPreview() {
                   </div>
                   <div className="grid gap-5">
                     <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
-                      <div className="grid gap-2">
+                      <div className="grid w-full max-w-[320px] gap-2">
                         <label
                           htmlFor="name"
                           className="text-sm font-medium text-foreground"
@@ -212,7 +217,7 @@ export function ContactPreview() {
                         />
                       </div>
 
-                      <div className="grid gap-2">
+                      <div className="grid w-full max-w-[320px] gap-2">
                         <label
                           htmlFor="email"
                           className="text-sm font-medium text-foreground"
@@ -252,7 +257,7 @@ export function ContactPreview() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="inline-flex h-11 w-fit items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                      className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] min-[560px]:w-fit disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     >
                       {isSubmitting ? "Sending..." : "Send Message"}
                       <Send className="size-4" aria-hidden="true" />

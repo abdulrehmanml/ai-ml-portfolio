@@ -15,7 +15,7 @@ export function Footer() {
               Abdul Rehman
             </Link>
 
-            <p className="text-sm leading-6 text-muted-foreground md:text-[13px] lg:text-sm">
+            <p className="text-sm leading-6 text-muted-foreground">
               Turning data and models into practical, deployable solutions.
             </p>
           </div>

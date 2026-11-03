@@ -206,7 +206,7 @@ export function Navbar() {
       )}
     >
       <nav
-        className="site-container mx-auto flex h-18 w-full max-w-[var(--container-max)] items-center justify-between px-[var(--page-padding)]"
+        className="site-container mx-auto flex h-18 w-full max-w-(--container-max) items-center justify-between px-(--page-padding)"
         aria-label="Main navigation"
       >
         <Link

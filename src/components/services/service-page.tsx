@@ -19,6 +19,12 @@ type ServicePageProps = { service: Service }
 export function ServicePage({ service }: ServicePageProps) {
   const Icon = service.icon
 
+  const longestCapability = service.capabilities.reduce(
+    (longest, capability) =>
+      capability.length > longest.length ? capability : longest,
+    "",
+  )
+
   const relatedProjects = service.projectSlugs
     .map((slug) => projects.find((project) => project.slug === slug))
     .filter((project): project is Project => project !== undefined)
@@ -29,13 +35,13 @@ export function ServicePage({ service }: ServicePageProps) {
 
       <main className="bg-background">
         {/* Hero */}
-        <Section id="service-hero" className="pt-28 min-[560px]:pt-32 lg:pt-28">
+        <Section id="service-hero" className="pt-24 min-[390px]:pt-26 min-[560px]:pt-24 lg:pt-28 xl:pt-32 2xl:pt-36">
           <Container>
             <FadeIn>
-              <div className="pt-0 min-[560px]:pt-10 lg:pt-0">
+              <div>
                 <Link
                   href="/#services"
-                  className="group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
+                  className="group inline-flex w-fit items-center gap-2 rounded-md px-1 py-1 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   <ArrowLeft
                     className="size-4 transition-transform duration-200 group-hover:-translate-x-1"
@@ -46,7 +52,7 @@ export function ServicePage({ service }: ServicePageProps) {
               </div>
             </FadeIn>
 
-            <div className="mt-6 grid gap-10 min-[560px]:mt-8 lg:mt-4 lg:pt-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-start lg:gap-16">
+            <div className="mx-auto mt-6 grid w-full max-w-360 min-w-0 grid-cols-1 gap-10 min-[560px]:mt-8 lg:mt-4 lg:pt-12 lg:grid-cols-[minmax(0,1fr)_minmax(300px,380px)] lg:items-center lg:gap-x-[clamp(24px,3.5vw,64px)]">
               <SlideUp>
                 <div className="lg:flex lg:h-full lg:items-center">
                   <div className="w-full">
@@ -65,11 +71,11 @@ export function ServicePage({ service }: ServicePageProps) {
                       </span>
                     </div>
 
-                    <h1 className="mt-5 text-4xl font-semibold leading-[1.05] tracking-tight text-primary min-[560px]:text-[48px] lg:text-[60px]">
+                    <h1 className="mt-5 w-full min-w-0 text-balance text-[clamp(30px,4vw,60px)] font-semibold leading-[1.08] tracking-tight text-foreground">
                       {service.title}
                     </h1>
 
-                    <p className="mt-6 max-w-2xl text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                    <p className="mt-6 w-full min-w-0 text-left text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                       {service.description}
                     </p>
                   </div>
@@ -77,8 +83,8 @@ export function ServicePage({ service }: ServicePageProps) {
               </SlideUp>
 
               <FadeIn>
-                <div className="mx-auto w-[calc(100%-2rem)] max-w-sm min-[560px]:w-full lg:mx-0 lg:ml-auto lg:mr-0">
-                  <div className="project-card-shadow group relative w-full max-w-sm overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:border-primary/50 hover:bg-primary/5 min-[560px]:p-7">
+                <div className="mx-auto w-full max-w-sm lg:mx-0 lg:ml-auto">
+                  <div className="project-card-shadow group relative w-full overflow-hidden rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-card hover:shadow-[0_12px_32px_-16px_var(--primary)] min-[560px]:p-7">
                     <div
                       className="pointer-events-none absolute right-0 top-0 h-8 w-8 border-r border-t border-primary/35 transition-all duration-300 group-hover:h-10 group-hover:w-10 group-hover:border-primary/60"
                       aria-hidden="true"
@@ -106,7 +112,7 @@ export function ServicePage({ service }: ServicePageProps) {
                       className="mt-5 h-px w-12 bg-accent/40 transition-all duration-300 group-hover:w-16 group-hover:bg-primary/60"
                       aria-hidden="true"
                     />
-                    <p className="mt-4 text-justify text-sm leading-6 text-muted-foreground">
+                    <p className="mt-4 text-left text-sm leading-6 text-muted-foreground">
                       {service.shortDescription}
                     </p>
                     <div className="mt-6 border-t border-border pt-4">
@@ -145,23 +151,29 @@ export function ServicePage({ service }: ServicePageProps) {
         <Section id="what-i-can-do">
           <Container>
             <FadeIn>
-              <div className="max-w-none">
-                <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
+              <div className="w-full max-w-none text-left 2xl:text-center">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   What I Can Do
                 </p>
 
-                <h2 className="mt-4 whitespace-normal text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:whitespace-nowrap lg:text-[44px]">
+                <h2 className="mt-4 w-full min-w-0 max-w-none text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:whitespace-nowrap xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Practical capabilities for{" "}
                   <span className="text-primary">
-                    real project requirements.
+                    real project requirements
                   </span>
                 </h2>
               </div>
             </FadeIn>
-            <div className="mx-auto mt-10 grid w-fit gap-x-12 gap-y-8 min-[560px]:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto mt-10 grid w-fit max-w-full grid-cols-1 gap-x-12 gap-y-8 min-[560px]:grid-cols-2 lg:grid-cols-3">
               {service.capabilities.map((capability, index) => (
                 <SlideUp key={capability}>
-                  <div className="group relative mx-auto h-full w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary lg:w-64 lg:px-4">
+                  <div className="group relative mx-auto h-full w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary lg:w-auto lg:px-4">
+                    <span
+                      className="invisible block h-0 overflow-hidden whitespace-nowrap text-base font-semibold tracking-tight"
+                      aria-hidden="true"
+                    >
+                      {longestCapability}
+                    </span>                  
                     <div className="pl-4 min-[560px]:pl-6 lg:pl-0">
                       <span className="font-mono text-xs font-medium text-primary">
                         {String(index + 1).padStart(2, "0")}
@@ -186,33 +198,33 @@ export function ServicePage({ service }: ServicePageProps) {
         {/* Process */}
         <Section id="how-i-work">
           <Container>
-            <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-12">
+            <div className="grid min-w-0 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(460px,520px)] lg:items-center lg:gap-6 xl:mx-auto xl:w-fit xl:max-w-full xl:grid-cols-[minmax(0,680px)_minmax(0,520px)] xl:gap-10 2xl:grid-cols-[680px_520px] 2xl:gap-8 *:min-w-0">
               <FadeIn>
                 <div className="flex w-full lg:h-full lg:items-center">
                   <div className="w-full">
-                    <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
+                    <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                       How I Work
                     </p>
-                    <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
+                    <h2 className="mt-4 w-full min-w-0 text-balance text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                       A clear workflow from{" "}
                       <span className="text-primary">
-                        problem to usable solution.
+                        problem to usable solution
                       </span>
                     </h2>
                   </div>
                 </div>
               </FadeIn>
 
-              <div className="mx-auto w-fit max-w-full">
-                <div className="grid gap-0">
+              <div className="w-full min-w-0">
+                <div className="mx-auto grid w-fit min-w-0 max-w-full gap-0 xl:mx-0">
                   {service.process.map((step, index) => (
                     <SlideUp key={step}>
-                      <div className="group relative grid gap-3 py-5 before:absolute before:inset-x-4 before:top-0 before:border-t-2 before:border-border/80 min-[560px]:before:inset-x-6 lg:before:inset-x-0 min-[560px]:grid-cols-[56px_1fr] min-[560px]:items-center min-[560px]:gap-5">
-                        <span className="px-6 font-mono text-xs font-medium text-primary min-[560px]:px-8">
+                      <div className="group relative grid min-w-0 gap-3 py-5 before:absolute before:inset-x-4 before:top-0 before:border-t-2 before:border-border/80 min-[560px]:before:inset-x-0 min-[560px]:grid-cols-[56px_max-content] min-[560px]:items-center min-[560px]:gap-5">
+                        <span className="px-6 font-mono text-xs font-medium text-primary min-[560px]:pl-8 min-[560px]:pr-0">
                           {String(index + 1).padStart(2, "0")}
                         </span>
 
-                        <p className="px-6 text-sm font-medium leading-6 transition-colors duration-200 group-hover:text-primary min-[560px]:px-8 min-[560px]:text-base">
+                        <p className="min-w-0 whitespace-normal px-6 text-sm font-medium leading-6 transition-colors duration-200 group-hover:text-primary min-[560px]:pl-8 min-[560px]:pr-3 min-[560px]:text-base min-[560px]:whitespace-nowrap">
                           {step}
                         </p>
                       </div>
@@ -234,13 +246,13 @@ export function ServicePage({ service }: ServicePageProps) {
         <Section id="tools-technologies">
           <Container>
             <FadeIn>
-              <div className="max-w-none">
-                <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
+              <div className="w-full max-w-none text-left 2xl:text-center">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   Tools & Technologies
                 </p>
-                <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
+                <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Technologies used{" "}
-                  <span className="text-primary">across the workflow.</span>
+                  <span className="text-primary">across the workflow</span>
                 </h2>
               </div>
             </FadeIn>
@@ -270,21 +282,32 @@ export function ServicePage({ service }: ServicePageProps) {
         <Section id="relevant-work">
           <Container>
             <FadeIn>
-              <div className="max-w-3xl">
-                <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
+              <div className="mx-auto w-full max-w-none text-left lg:text-center">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   Relevant Work
                 </p>
 
-                <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
+                <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Related projects{" "}
-                  <span className="text-primary">from my portfolio.</span>
+                  <span className="text-primary">from my portfolio</span>
                 </h2>
               </div>
             </FadeIn>
             {relatedProjects.length > 0 ? (
-              <div className="mx-auto mt-10 grid w-full max-w-4xl grid-cols-1 gap-6 px-4 min-[560px]:grid-cols-2 min-[560px]:px-0">
+              <div className="mx-auto mt-10 flex w-full max-w-6xl flex-wrap justify-center gap-4 px-4 min-[560px]:px-0">
                 {relatedProjects.map((project) => (
-                  <SlideUp key={project.slug}>
+                  <SlideUp
+                    key={project.slug}
+                    className={[
+                      "w-full min-w-0 max-w-105",
+                      relatedProjects.length >= 2
+                        ? "min-[560px]:w-[calc(50%-0.5rem)]"
+                        : "",
+                      relatedProjects.length >= 3
+                        ? "min-[1280px]:w-[calc(33.333%-0.667rem)]"
+                        : "",
+                    ].join(" ")}
+                  >
                     <ProjectCard project={project} showImage={false} />
                   </SlideUp>
                 ))}
@@ -292,8 +315,7 @@ export function ServicePage({ service }: ServicePageProps) {
             ) : (
               <div className="mt-10 max-w-2xl border-t border-border pt-6">
                 <p className="text-sm leading-6 text-muted-foreground">
-                  Relevant project work will be added here as the portfolio
-                  expands.
+                  Relevant project work will be added here as the portfolio expands.
                 </p>
               </div>
             )}
@@ -310,27 +332,26 @@ export function ServicePage({ service }: ServicePageProps) {
         <Section id="service-cta">
           <Container>
             <FadeIn>
-              <div className="project-card-shadow mx-auto flex w-[calc(100%-2rem)] flex-col gap-6 rounded-2xl border border-border bg-card p-6 min-[560px]:w-fit min-[560px]:p-7 lg:w-fit lg:max-w-full lg:flex-row lg:items-center lg:justify-center lg:gap-7 lg:px-8 lg:py-7">
-                <div>
-                  <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
+              <div className="project-card-shadow mx-auto flex w-full max-w-7xl min-w-0 flex-col gap-6 rounded-2xl border border-border bg-card p-6 min-[560px]:p-7 lg:w-fit lg:flex-row lg:items-center lg:gap-x-6 xl:gap-x-8 lg:px-8 lg:py-7">
+                <div className="min-w-0 lg:w-fit lg:flex-none">
+                  <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                     Start a Project
                   </p>
 
-                  <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
+                  <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px] 2xl:whitespace-nowrap">
                     Need help with{" "}
                     <span className="text-primary">{service.title}?</span>
                   </h2>
 
-                  <p className="mt-4 max-w-2xl text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                    Share the problem, requirements, or project details and we
-                    can discuss the right approach.
+                  <p className="mt-4 w-full max-w-2xl text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                    Share the problem, requirements, or project details and we can discuss the right approach.
                   </p>
                 </div>
 
                 <ContactCtaLink
                   href="/#contact"
                   ctaLocation="service_page"
-                  className="group mx-auto inline-flex h-11 w-fit items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 lg:mx-0"
+                  className="group mx-auto inline-flex h-11 w-fit shrink-0 items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 lg:mx-0"
                 >
                   Get in touch
                   <ArrowRight
@@ -342,6 +363,7 @@ export function ServicePage({ service }: ServicePageProps) {
             </FadeIn>
           </Container>
         </Section>
+
       </main>
 
       <Footer />

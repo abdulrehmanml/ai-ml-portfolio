@@ -56,14 +56,11 @@ export function AboutPreview() {
             </p>
 
             <h2 className="w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl lg:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
-              I&apos;m Abdul Rehman.
+              I&apos;m Abdul Rehman
             </h2>
 
             <p className="mt-3 w-full max-w-none min-w-0 text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base min-[560px]:leading-7 lg:text-[15px]">
-              An Artificial Intelligence undergraduate focused on machine
-              learning, data analysis, NLP, and generative AI. I build practical
-              AI solutions that turn ideas and data into useful, deployable
-              applications.
+              An Artificial Intelligence undergraduate focused on machine learning, data analysis, NLP, and generative AI. I build practical AI solutions that turn ideas and data into useful, deployable applications.
             </p>
           </div>
 
@@ -71,7 +68,7 @@ export function AboutPreview() {
           <div className="mt-6 grid min-w-0 grid-cols-1 gap-7 min-[560px]:mt-8 min-[560px]:gap-8 md:mx-auto md:w-fit md:grid-cols-[190px_auto] md:items-center md:gap-14 lg:mx-auto lg:w-fit lg:grid-cols-[190px_auto] lg:gap-18 xl:grid-cols-[210px_auto] xl:gap-22 2xl:gap-26">
             {/* Profile visual */}
             <SlideUp>
-              <div className="mx-auto flex w-full min-w-0 max-w-[190px] flex-col justify-center lg:mx-0 lg:justify-self-center xl:max-w-[210px]">
+              <div className="mx-auto flex w-full min-w-0 max-w-47.5 flex-col justify-center lg:mx-0 lg:justify-self-center xl:max-w-52.5">
                 <div className="relative pt-1 lg:pt-2">
                   <div
                     aria-hidden="true"

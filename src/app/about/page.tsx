@@ -32,28 +32,23 @@ export default function AboutPage() {
           className="pt-26 sm:pt-32 lg:pt-24 xl:pt-28 2xl:pt-36"
         >
           <Container>
-            <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+            <div className="grid min-w-0 items-center gap-8 min-[560px]:gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
               {/* Introduction */}
               <SlideUp>
-                <div className="max-w-5xl">
-                  <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
+                <div className="min-w-0 max-w-5xl">
+                  <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                     About Me
                   </p>
 
-                  <h1 className="mt-4 text-4xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[48px] lg:text-[56px] lg:leading-[1.05]">
+                  <h1 className="mt-4 whitespace-nowrap text-[clamp(24px,7.2vw,28px)] font-semibold leading-[1.08] tracking-tight min-[390px]:text-4xl min-[560px]:text-[48px] lg:text-[56px] lg:leading-[1.05]">
                     I&apos;m Abdul Rehman.
                   </h1>
 
-                  <p className="mt-6 text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                    I&apos;m an Artificial Intelligence undergraduate focused on
-                    building practical AI/ML solutions that turn data, machine
-                    learning, and AI technologies into useful applications. My
-                    work spans data analysis, predictive modeling, NLP,
-                    generative AI, and the development of interactive machine
-                    learning applications.
+                  <p className="mt-6 text-left text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                    I&apos;m an Artificial Intelligence undergraduate focused on building practical AI/ML solutions that turn data, machine learning, and AI technologies into useful applications. My work spans data analysis, predictive modeling, NLP, generative AI, and the development of interactive machine learning applications.
                   </p>
 
-                  <div className="mt-7 ml-2">
+                  <div className="mt-7">
                     <Link
                       href="https://abdulrehmanml.github.io/abdul-rehman-cv/"
                       target="_blank"
@@ -71,7 +66,7 @@ export default function AboutPage() {
               </SlideUp>
 
               <FadeIn>
-                <div className="relative mx-auto w-full max-w-md px-4 pb-8 min-[560px]:px-6 min-[560px]:pb-10 lg:px-0 lg:pr-8">
+                <div className="relative mx-auto w-full max-w-[clamp(15rem,76vw,28rem)] pb-8 min-[560px]:pb-10 lg:pr-8">
                   <div
                     className="pointer-events-none absolute -right-1 -top-1 z-10 h-10 w-10 border-r border-t border-primary/50"
                     aria-hidden="true"
@@ -129,20 +124,17 @@ export default function AboutPage() {
           <Container>
             <FadeIn>
               <div className="w-full">
-                <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   My Approach
                 </p>
 
-                <h2 className="mt-4 max-w-5xl text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
+                <h2 className="mt-4 w-full min-w-0 max-w-5xl text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   From problem to{" "}
                   <span className="text-primary">deployable solution.</span>
                 </h2>
 
-                <p className="mt-4 w-full text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                  I approach AI/ML projects as complete workflows, starting with
-                  a clear understanding of the problem and the data, then
-                  building and evaluating the right solution before turning it
-                  into a practical, usable application.
+                <p className="mt-4 w-full text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                  I approach AI/ML projects as complete workflows, starting with a clear understanding of the problem and the data, then building and evaluating the right solution before turning it into a practical, usable application.
                 </p>
               </div>
             </FadeIn>
@@ -182,7 +174,7 @@ export default function AboutPage() {
                     <h3 className="mt-3 text-lg font-semibold tracking-tight transition-colors duration-200 group-hover:text-primary">
                       {step.title}
                     </h3>
-                    <p className="mt-3 text-justify text-sm leading-6 text-muted-foreground">
+                    <p className="mt-3 text-left text-sm leading-6 text-muted-foreground">
                       {step.description}
                     </p>
                   </div>
@@ -203,26 +195,24 @@ export default function AboutPage() {
           <Container>
             <FadeIn>
               <div className="w-full">
-                <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   Core Expertise
                 </p>
 
-                <h2 className="mt-4 max-w-5xl text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
+                <h2 className="mt-4 w-full min-w-0 max-w-5xl text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Technical capabilities for{" "}
                   <span className="text-primary">
                     building AI/ML solutions.
                   </span>
                 </h2>
 
-                <p className="mt-4 w-full text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                  I combine data analysis, machine learning, language
-                  technologies, and deployment skills to develop solutions
-                  across different stages of the AI/ML lifecycle.
+                <p className="mt-4 w-full text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                  I combine data analysis, machine learning, language technologies, and deployment skills to develop solutions across different stages of the AI/ML lifecycle.
                 </p>
               </div>
             </FadeIn>
 
-            <div className="mx-auto mt-12 grid w-full max-w-md gap-6 px-4 min-[560px]:max-w-none min-[560px]:px-0 min-[560px]:grid-cols-2 lg:gap-7">
+            <div className="mx-auto mt-12 grid w-full max-w-md grid-cols-1 gap-6 lg:max-w-5xl lg:grid-cols-2 lg:gap-7">
               {[
                 {
                   number: "01",
@@ -279,10 +269,10 @@ export default function AboutPage() {
                         {item.title}
                       </h3>
 
-                      <p className="mt-3 text-justify text-sm leading-6 text-muted-foreground">
+                      <p className="mt-3 text-left text-sm leading-6 text-muted-foreground">
                         {item.description}
                       </p>
-                      <div className="mt-5 flex flex-nowrap justify-start gap-1 overflow-x-auto min-[560px]:gap-2 lg:justify-center">
+                      <div className="mt-5 flex flex-wrap justify-start gap-1 min-[560px]:gap-2 lg:justify-center">
                         {item.skills.map((skill) => (
                           <span
                             key={skill}
@@ -311,18 +301,18 @@ export default function AboutPage() {
           <Container>
             <FadeIn>
               <div className="w-full">
-                <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   Technical Toolkit
                 </p>
 
-                <h2 className="mt-4 w-full text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
+                <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Tools I use to build{" "}
                   <span className="text-primary">
                     and ship AI/ML solutions.
                   </span>
                 </h2>
 
-                <p className="mt-4 w-full text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                <p className="mt-4 w-full text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                   A focused set of technologies I use across data preparation,
                   machine learning, AI applications, and deployment.
                 </p>
@@ -364,7 +354,7 @@ export default function AboutPage() {
                       aria-hidden="true"
                     />
 
-                    <h3 className="text-sm font-semibold tracking-tight transition-colors duration-200 min-[560px]:group-hover:text-primary">
+                    <h3 className="text-sm font-semibold tracking-tight text-primary">
                       {item.category}
                     </h3>
 
@@ -396,18 +386,18 @@ export default function AboutPage() {
           <Container>
             <FadeIn>
               <div className="w-full">
-                <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   Selected Work
                 </p>
 
-                <h2 className="mt-4 max-w-5xl text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
+                <h2 className="mt-4 w-full min-w-0 max-w-5xl text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Projects that turn{" "}
                   <span className="text-primary">
                     ideas into working solutions.
                   </span>
                 </h2>
 
-                <p className="mt-4 w-full text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                <p className="mt-4 w-full text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                   A selection of practical projects covering predictive machine
                   learning, NLP, and retrieval-augmented generative AI
                   applications.
@@ -415,9 +405,16 @@ export default function AboutPage() {
               </div>
             </FadeIn>
 
-            <div className="mx-auto mt-12 grid w-full max-w-md gap-6 px-4 md:max-lg:max-w-xl md:max-lg:px-4 lg:max-w-none lg:px-0 lg:grid-cols-3 lg:gap-7">
-              {selectedProjects.map((project) => (
-                <SlideUp key={project.slug}>
+            <div className="mx-auto mt-12 grid w-full max-w-[1280px] grid-cols-1 justify-items-center gap-x-6 gap-y-7 min-[560px]:gap-x-7 min-[560px]:gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+              {selectedProjects.map((project, index) => (
+                <SlideUp
+                  key={project.slug}
+                  className={`w-full min-w-0 max-w-[384px] ${
+                    selectedProjects.length === 3 && index === 2
+                      ? "md:col-span-2 md:w-1/2 lg:col-span-1 lg:w-full"
+                      : ""
+                  }`}
+                >
                   <ProjectCard project={project} showImage={false} />
                 </SlideUp>
               ))}
@@ -437,19 +434,17 @@ export default function AboutPage() {
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-10">
               <FadeIn>
                 <div>
-                  <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
+                  <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                     Current Focus
                   </p>
 
-                  <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
+                  <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                     Expanding from models to{" "}
                     <span className="text-primary">production AI systems.</span>
                   </h2>
 
-                  <p className="mt-4 text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                    Currently strengthening my skills in production machine
-                    learning, AI applications, APIs, cloud deployment, and
-                    agentic systems.
+                  <p className="mt-4 text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                    Currently strengthening my skills in production machine learning, AI applications, APIs, cloud deployment, and agentic systems.
                   </p>
                 </div>
               </FadeIn>
@@ -492,20 +487,20 @@ export default function AboutPage() {
         <Section id="about-cta">
           <Container>
             <FadeIn>
-              <div className="project-card-shadow mx-auto flex w-[calc(100%-2rem)] flex-col gap-6 rounded-2xl border border-border bg-card p-6 min-[560px]:w-fit min-[560px]:p-7 lg:w-fit lg:max-w-full lg:flex-row lg:items-center lg:justify-center lg:gap-7 lg:px-8 lg:py-7">
-                <div>
-                  <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
+              <div className="project-card-shadow mx-auto flex w-full max-w-[900px] lg:max-w-[950px] min-w-0 flex-col gap-5 rounded-2xl border border-border bg-card px-4 py-5 min-[390px]:px-5 min-[390px]:py-6 min-[560px]:gap-6 min-[560px]:px-6 lg:flex-row lg:items-center lg:gap-x-[22px] lg:px-8 lg:py-7">
+                <div className="min-w-0 flex-1">
+                  <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                     Let&apos;s Work Together
                   </p>
 
-                  <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px] lg:leading-[1.08]">
+                  <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:whitespace-nowrap xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                     Have a project?{" "}
                     <span className="text-primary">
                       Let&apos;s make it real.
                     </span>
                   </h2>
 
-                  <p className="mt-4 max-w-2xl text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                  <p className="mt-4 max-w-2xl text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                     Have a project in mind or looking for an AI/ML solution?
                     Let&apos;s discuss the problem, explore the right approach,
                     and see how I can help.
@@ -514,7 +509,7 @@ export default function AboutPage() {
 
                 <Link
                   href="/#contact"
-                  className="group mx-auto inline-flex h-11 w-fit items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 lg:mx-0"
+                  className="group mx-auto inline-flex h-10 w-fit shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-[10px] bg-primary px-4 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 lg:mx-0"
                 >
                   Get in touch
                   <ArrowRight

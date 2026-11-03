@@ -178,6 +178,23 @@ export function Navbar() {
       document.removeEventListener("pointerdown", handleOutsideClick)
     }
   }, [menuOpen])
+ 
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false)
+        menuButtonRef.current?.focus()
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown)
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown)
+    }
+  }, [menuOpen])  
 
   return (
     <header
@@ -189,7 +206,7 @@ export function Navbar() {
       )}
     >
       <nav
-        className="site-container mx-auto flex h-18 w-full max-w-[var(--container-max)] items-center justify-between px-5 md:px-8 lg:px-16 2xl:px-8 min-[1800px]:px-12"
+        className="site-container mx-auto flex h-18 w-full max-w-[var(--container-max)] items-center justify-between px-[var(--page-padding)]"
         aria-label="Main navigation"
       >
         <Link

@@ -38,8 +38,7 @@
   --radius-surface: 18px;
 
   --container-max: 1200px;
-  --page-padding-mobile: 20px;
-  --page-padding-desktop: 32px;
+  --page-padding: clamp(1.25rem, 2.2vw, 3rem);
 }
 
 .dark {
@@ -181,16 +180,9 @@ body {
   }
 }
 
-/* Wider shared layout for laptop and desktop */
-@media (min-width: 1280px) {
+/* Fluid shared layout for larger screens */
+@media (min-width: 1200px) {
   :root {
-    --container-max: 1728px;
-  }
-}
-
-/* Wider fluid layout for large desktops */
-@media (min-width: 1800px) {
-  :root {
-    --container-max: min(95vw, 2200px);
+    --container-max: max(1200px, min(96vw, 2200px));
   }
 }

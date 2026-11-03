@@ -50,12 +50,12 @@ export function AboutPreview() {
       <Container>
         <FadeIn>
           {/* Section heading */}
-          <div className="w-full">
+          <div className="w-full min-w-0">
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:mb-5 min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
               About Me
             </p>
 
-            <h2 className="w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl lg:text-[42px]">
+            <h2 className="w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl lg:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
               I&apos;m Abdul Rehman.
             </h2>
 

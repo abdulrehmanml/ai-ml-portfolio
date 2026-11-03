@@ -25,7 +25,7 @@ export function ProjectCard({
     <Link
       href={project.href}
       aria-label={`View case study: ${project.title}`}
-      className="mx-auto block h-full w-full max-w-sm"
+      className="mx-auto block w-full max-w-sm"
     >
       <motion.div
         whileHover={{ y: -4, scale: 1.01 }}
@@ -34,14 +34,16 @@ export function ProjectCard({
           duration: 0.18,
           ease: "easeOut",
         }}
-        className="project-card-shadow h-full"
+        className="project-card-shadow"
       >
-        <Card className="group h-full overflow-hidden border-border/80 bg-card transition-colors duration-300 hover:border-primary/50 hover:bg-primary/5">
+        <Card className="group overflow-hidden border-border/80 bg-card transition-colors duration-300 hover:border-primary/50 hover:bg-primary/5">
           {/* Project visual */}
           {showImage && (
             <div
               className={`relative overflow-hidden border-b border-border/70 bg-muted ${
-                compact ? "h-40 sm:h-44 lg:h-48" : "h-52 sm:h-56 lg:h-60"
+                compact
+                  ? "h-40 min-[560px]:h-44 lg:h-48"
+                  : "h-52 min-[560px]:h-56 lg:h-60"
               }`}
             >
               {project.image ? (
@@ -68,7 +70,7 @@ export function ProjectCard({
 
           {/* Content */}
           <div
-            className={`flex h-full flex-col ${compact ? "p-4 sm:p-4" : "p-6"}`}
+            className={`flex flex-col ${compact ? "p-4" : "p-6"}`}
           >
             <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-primary">
               {project.category}
@@ -80,7 +82,7 @@ export function ProjectCard({
               </h3>
             </div>
 
-            <p className="mt-3 text-justify text-sm leading-6 text-muted-foreground">
+            <p className="mt-3 min-w-0 text-left text-sm leading-6 text-muted-foreground">
               {project.description}
             </p>
 
@@ -89,21 +91,21 @@ export function ProjectCard({
               {project.technologies.slice(0, 4).map((technology) => (
                 <span
                   key={technology}
-                  className="rounded-full border border-border bg-background px-2.5 py-1 text-xs text-muted-foreground transition-colors duration-200 group-hover:border-primary/20 group-hover:text-foreground"
+                  className="rounded-full border border-primary/25 bg-primary/5 px-2.5 py-1 text-xs font-medium text-primary transition-colors duration-200 group-hover:border-primary/50 group-hover:bg-primary/10"
                 >
                   {technology}
                 </span>
               ))}
             </div>
 
-            <div className="mt-auto pt-6">
-              <div className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-primary">
+            <div className="mt-5">
+              <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors duration-200 group-hover:text-primary">
                 View Project
                 <ArrowRight
                   className="size-4 transition-transform duration-200 group-hover:translate-x-1"
                   aria-hidden="true"
                 />
-              </div>
+              </span>
             </div>
           </div>
         </Card>

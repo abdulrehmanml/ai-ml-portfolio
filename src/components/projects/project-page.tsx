@@ -84,7 +84,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                         alt={`${project.title} project preview`}
                         width={800}
                         height={500}
-                        sizes="(min-width: 1024px) 28vw, (min-width: 560px) 70vw, 100vw"
+                        sizes="(min-width: 448px) 400px, calc(100vw - 2rem)"
                         className="aspect-[1.6] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                         priority
                       />
@@ -111,7 +111,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                   Problem & Solution
                 </p>
 
-                <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
+                <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   From a defined problem{" "}
                   <span className="text-primary">to a practical solution.</span>
                 </h2>
@@ -130,7 +130,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                       What was the objective?
                     </h3>
 
-                    <p className="mt-4 text-justify text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                    <p className="mt-4 min-w-0 text-left text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                       {project.problem}
                     </p>
                   </div>
@@ -173,7 +173,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                   Approach / Workflow
                 </p>
 
-                <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
+                <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   How the project moves{" "}
                   <span className="text-primary">from input to outcome.</span>
                 </h2>
@@ -273,7 +273,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                   Tools & Technologies
                 </p>
 
-                <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
+                <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Technologies used to{" "}
                   <span className="text-primary">build the project.</span>
                 </h2>
@@ -311,7 +311,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                   Key Work
                 </p>
 
-                <h2 className="mt-4 max-w-5xl text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
+                <h2 className="mt-4 w-full min-w-0 max-w-5xl text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   What went into{" "}
                   <span className="text-primary">building the project.</span>
                 </h2>
@@ -351,7 +351,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                   Project Preview
                 </p>
 
-                <h2 className="mt-4 max-w-5xl text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
+                <h2 className="mt-4 w-full min-w-0 max-w-5xl text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   A closer look{" "}
                   <span className="text-primary">at the application.</span>
                 </h2>
@@ -392,7 +392,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                   Project Links
                 </p>
 
-                <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
+                <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   {project.projectLinksDescription}
                 </h2>
               </div>
@@ -498,12 +498,12 @@ export function ProjectPage({ project }: ProjectPageProps) {
                     HAVE A PROJECT?
                   </p>
 
-                  <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
+                  <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                     Let&apos;s build{" "}
                     <span className="text-primary">something useful.</span>
                   </h2>
 
-                  <p className="mt-4 max-w-3xl text-justify text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                  <p className="mt-4 w-full min-w-0 max-w-3xl text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
                     Have a problem, dataset, or application idea? Let&apos;s
                     discuss the right approach.
                   </p>

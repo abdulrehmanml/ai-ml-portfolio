@@ -91,7 +91,7 @@ export function Hero() {
   return (
     <Section className="relative flex min-h-0 items-center overflow-hidden border-b border-accent/30 pt-24 pb-14 min-[390px]:pt-26 min-[560px]:pt-28 min-[560px]:pb-16 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20 lg:pt-24 lg:pb-16 xl:pt-28 xl:pb-20 2xl:pt-32 2xl:pb-24">
       <Container>
-        <div className="relative grid min-w-0 grid-cols-1 items-center gap-8 min-[560px]:gap-10 md:gap-12 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] xl:gap-10 min-[1366px]:grid-cols-[minmax(0,1fr)_580px] min-[1366px]:gap-8">
+        <div className="relative mx-auto grid w-full min-w-0 grid-cols-1 items-center gap-8 lg:max-w-[900px] xl:max-w-[1160px] xl:grid-cols-[minmax(0,1fr)_580px] xl:gap-6 2xl:max-w-[1320px] 2xl:gap-10 min-[1800px]:max-w-[1440px]">
           {/* Main content */}
           <div className="relative z-10 w-full min-w-0 max-w-3xl lg:max-w-none">
             <FadeIn>
@@ -101,10 +101,11 @@ export function Hero() {
             </FadeIn>
 
             <SlideUp>
-              <h1 className="w-full min-w-0 text-[30px] font-semibold leading-[1.08] tracking-tight text-left min-[390px]:text-[32px] min-[560px]:text-[40px] md:text-5xl xl:max-w-none xl:text-[clamp(48px,3.8vw,80px)]">
-                <span className="inline">Building AI/ML systems </span>
-
-                <span className="inline text-primary text-[0.94em]">
+              <h1 className="w-full min-w-0 text-[30px] font-semibold leading-[1.08] tracking-tight text-left min-[390px]:text-[32px] min-[560px]:text-[40px] md:text-5xl lg:text-[clamp(40px,3.8vw,48px)] xl:text-[clamp(44px,3.5vw,54px)] 2xl:text-[clamp(54px,3.7vw,68px)] min-[1800px]:text-[clamp(64px,3.8vw,72px)]">
+                <span className="inline 2xl:block 2xl:whitespace-nowrap">
+                  Building AI/ML systems
+                </span>{" "}
+                <span className="inline text-primary text-[0.94em] 2xl:block 2xl:whitespace-nowrap">
                   from data to deployment.
                 </span>
               </h1>
@@ -152,7 +153,7 @@ export function Hero() {
           {/* AI / ML engineering visual */}
           <div
             aria-hidden="true"
-            className="relative mx-auto hidden h-97.5 w-145 max-w-full overflow-visible min-[768px]:block xl:-translate-x-28 min-[1366px]:translate-x-0"
+            className="relative mx-auto hidden h-97.5 w-145 max-w-full overflow-hidden xl:block xl:scale-[0.9] xl:origin-center min-[1366px]:scale-100"
           >
             {/* Ambient glow */}
             <div className="absolute inset-[28%] rounded-full bg-primary/2 blur-2xl" />
@@ -190,7 +191,7 @@ export function Hero() {
 
             {/* Python — X only */}
             <Float
-              className="absolute left-0 top-[6%] z-20 min-[768px]:left-[6%]"
+              className="absolute left-0 top-[6%] z-20 min-[768px]:left-[6%] lg:hidden xl:block xl:left-[6%] xl:top-[6%]"
               delay={0.2}
               x={[0, 6, -5, 4, 0]}
               y={[0, 0, 0, 0, 0]}
@@ -200,7 +201,7 @@ export function Hero() {
 
             {/* Scikit-learn — Y only */}
             <Float
-              className="absolute right-0 top-[10%] z-20 min-[768px]:right-[2%]"
+              className="absolute right-0 top-[10%] z-20 min-[768px]:right-[4%] lg:right-[6px] lg:top-0 xl:right-[4%] xl:top-[10%]"
               delay={0.9}
               x={[0, 0, 0, 0, 0]}
               y={[0, -5, 6, -4, 0]}
@@ -213,7 +214,7 @@ export function Hero() {
 
             {/* RAG — 2D */}
             <Float
-              className="absolute left-0 top-[48%] z-20 min-[768px]:left-[10%]"
+              className="absolute left-0 top-[48%] z-20 min-[768px]:left-[10%] lg:left-[calc(50%-40px)] lg:top-0 xl:left-[10%] xl:top-[48%]"
               delay={1.2}
               x={[0, 5, -4, 3, 0]}
               y={[0, -5, 6, -4, 0]}
@@ -227,7 +228,7 @@ export function Hero() {
 
             {/* API — X only */}
             <Float
-              className="absolute right-0 top-[46%] z-20 min-[768px]:right-[6%]"
+              className="absolute right-0 top-[46%] z-20 min-[768px]:right-[6%] lg:left-[calc(50%-28px)] lg:right-auto lg:top-auto lg:bottom-[2%] xl:left-auto xl:right-[6%] xl:top-[46%] xl:bottom-auto"
               delay={1.7}
               x={[0, -5, 6, -4, 0]}
               y={[0, 0, 0, 0, 0]}
@@ -270,7 +271,7 @@ export function Hero() {
         </div>
 
         {/* Mobile / tablet AI / ML visual */}
-        <div className="mt-6 flex w-full justify-center min-[560px]:mt-8 min-[768px]:hidden">
+        <div className="mt-6 flex w-full justify-center min-[560px]:mt-8 xl:hidden">
           <div className="mx-auto w-full max-w-70 rounded-2xl border border-border bg-card p-5 shadow-[0_12px_30px_-20px_var(--primary)]">
             <div className="flex items-center gap-3">
               <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">

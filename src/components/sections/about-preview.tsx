@@ -68,7 +68,7 @@ export function AboutPreview() {
           </div>
 
           {/* Profile + Technical Skills */}
-          <div className="mt-6 grid min-w-0 grid-cols-1 gap-7 min-[560px]:mt-8 min-[560px]:gap-8 md:mx-auto md:w-fit md:grid-cols-[190px_auto] md:items-center md:gap-8 lg:mx-auto lg:w-fit lg:grid-cols-[190px_auto] lg:gap-8 xl:grid-cols-[210px_auto] xl:gap-12">
+          <div className="mt-6 grid min-w-0 grid-cols-1 gap-7 min-[560px]:mt-8 min-[560px]:gap-8 md:mx-auto md:w-fit md:grid-cols-[190px_auto] md:items-center md:gap-14 lg:mx-auto lg:w-fit lg:grid-cols-[190px_auto] lg:gap-18 xl:grid-cols-[210px_auto] xl:gap-22 2xl:gap-26">
             {/* Profile visual */}
             <SlideUp>
               <div className="mx-auto flex w-full min-w-0 max-w-[190px] flex-col justify-center lg:mx-0 lg:justify-self-center xl:max-w-[210px]">
@@ -141,22 +141,10 @@ export function AboutPreview() {
                                 : "border-border/90",
                             ].join(" ")}
                           >
-                            <Icon
-                              className={[
-                                "size-4 transition-colors duration-200",
-                                isActive
-                                  ? "text-primary"
-                                  : "text-muted-foreground",
-                              ].join(" ")}
-                            />
+                            <Icon className="size-4 text-primary" />
                           </span>
 
-                          <span
-                            className={[
-                              "min-w-0 text-sm font-medium transition-colors duration-200",
-                              isActive ? "text-primary" : "text-primary/90",
-                            ].join(" ")}
-                          >
+                          <span className="min-w-0 text-sm font-medium text-foreground">
                             {title}
                           </span>
                         </div>

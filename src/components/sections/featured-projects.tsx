@@ -21,7 +21,7 @@ export function FeaturedProjects() {
           {/* Section heading */}
           <FadeIn>
             <div className="flex min-w-0 flex-col gap-5 min-[560px]:gap-6 xl:flex-row xl:items-end xl:justify-between">
-              <div className="w-full min-w-0 max-w-none xl:w-[82%] xl:max-w-[1120px]">
+              <div className="w-full min-w-0 max-w-none xl:w-[82%] xl:max-w-280">
                 <p className="mb-4 text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:mb-5 min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   Featured Work
                 </p>
@@ -29,7 +29,7 @@ export function FeaturedProjects() {
                 <h2 className="w-full min-w-0 text-left text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:whitespace-nowrap xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Projects built with{" "}
                   <span className="text-primary">
-                    data, machine learning, and AI.
+                    data, machine learning, and AI
                   </span>
                 </h2>
 
@@ -62,7 +62,7 @@ export function FeaturedProjects() {
                 <SlideUp
                   key={project.slug}
                   className={[
-                    "w-full min-w-0 max-w-[360px]",
+                    "w-full min-w-0 max-w-90",
                     isThird
                       ? "md:col-span-2 md:w-1/2 lg:col-span-1 lg:w-full"
                       : "",

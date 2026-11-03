@@ -38,7 +38,7 @@
   --radius-surface: 18px;
 
   --container-max: 1200px;
-  --page-padding: clamp(1.25rem, 2.2vw, 3rem);
+  --page-padding: clamp(1.25rem, calc(2vw + 0.5rem), 3rem);
 }
 
 .dark {

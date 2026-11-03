@@ -127,7 +127,7 @@ export function ContactPreview() {
     >
       <Container>
         <FadeIn>
-          <div className="grid min-w-0 grid-cols-1 gap-8 min-[560px]:gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-12 xl:gap-16 2xl:gap-20 [&>*]:min-w-0">
+          <div className="grid min-w-0 grid-cols-1 gap-8 min-[560px]:gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-12 xl:gap-16 2xl:gap-20 *:min-w-0">
             {/* Contact introduction */}
             <div className="min-w-0">
               <p className="mb-4 text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:mb-5 min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
@@ -136,7 +136,7 @@ export function ContactPreview() {
 
               <h2 className="w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                 <span>Have a project?</span>{" "}
-                <span className="text-primary">Let&apos;s make it real.</span>
+                <span className="text-primary">Let&apos;s make it real</span>
               </h2>
 
               <p className="mt-3 w-full min-w-0 max-w-none text-left text-sm leading-6 text-muted-foreground min-[560px]:mt-4 min-[560px]:text-base min-[560px]:leading-7 lg:max-w-lg xl:text-[15px]">
@@ -166,7 +166,7 @@ export function ContactPreview() {
                         />
                       </span>
 
-                      <span className="min-w-0 [overflow-wrap:anywhere]">
+                      <span className="min-w-0 wrap-anywhere">
                         {value}
                       </span>
 

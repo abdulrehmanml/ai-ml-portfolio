@@ -41,7 +41,7 @@ export default function AboutPage() {
                   </p>
 
                   <h1 className="mt-4 whitespace-nowrap text-[clamp(24px,7.2vw,28px)] font-semibold leading-[1.08] tracking-tight min-[390px]:text-4xl min-[560px]:text-[48px] lg:text-[56px] lg:leading-[1.05]">
-                    I&apos;m Abdul Rehman.
+                    I&apos;m Abdul Rehman
                   </h1>
 
                   <p className="mt-6 text-left text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
@@ -130,7 +130,7 @@ export default function AboutPage() {
 
                 <h2 className="mt-4 w-full min-w-0 max-w-5xl text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   From problem to{" "}
-                  <span className="text-primary">deployable solution.</span>
+                  <span className="text-primary">deployable solution</span>
                 </h2>
 
                 <p className="mt-4 w-full text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
@@ -202,7 +202,7 @@ export default function AboutPage() {
                 <h2 className="mt-4 w-full min-w-0 max-w-5xl text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Technical capabilities for{" "}
                   <span className="text-primary">
-                    building AI/ML solutions.
+                    building AI/ML solutions
                   </span>
                 </h2>
 
@@ -308,13 +308,12 @@ export default function AboutPage() {
                 <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Tools I use to build{" "}
                   <span className="text-primary">
-                    and ship AI/ML solutions.
+                    and ship AI/ML solutions
                   </span>
                 </h2>
 
                 <p className="mt-4 w-full text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                  A focused set of technologies I use across data preparation,
-                  machine learning, AI applications, and deployment.
+                  A focused set of technologies I use across data preparation, machine learning, AI applications, and deployment.
                 </p>
               </div>
             </FadeIn>
@@ -393,19 +392,17 @@ export default function AboutPage() {
                 <h2 className="mt-4 w-full min-w-0 max-w-5xl text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Projects that turn{" "}
                   <span className="text-primary">
-                    ideas into working solutions.
+                    ideas into working solutions
                   </span>
                 </h2>
 
                 <p className="mt-4 w-full text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                  A selection of practical projects covering predictive machine
-                  learning, NLP, and retrieval-augmented generative AI
-                  applications.
+                  A selection of practical projects covering predictive machine learning, NLP, and retrieval-augmented generative AI applications.
                 </p>
               </div>
             </FadeIn>
 
-            <div className="mx-auto mt-12 grid w-full max-w-[1280px] grid-cols-1 justify-items-center gap-x-6 gap-y-7 min-[560px]:gap-x-7 min-[560px]:gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto mt-12 grid w-full max-w-7xl grid-cols-1 justify-items-center gap-x-6 gap-y-7 min-[560px]:gap-x-7 min-[560px]:gap-y-8 md:grid-cols-2 lg:grid-cols-3">
               {selectedProjects.map((project, index) => (
                 <SlideUp
                   key={project.slug}
@@ -440,7 +437,7 @@ export default function AboutPage() {
 
                   <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                     Expanding from models to{" "}
-                    <span className="text-primary">production AI systems.</span>
+                    <span className="text-primary">production AI systems</span>
                   </h2>
 
                   <p className="mt-4 text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
@@ -487,29 +484,27 @@ export default function AboutPage() {
         <Section id="about-cta">
           <Container>
             <FadeIn>
-              <div className="project-card-shadow mx-auto flex w-full max-w-[900px] lg:max-w-[950px] min-w-0 flex-col gap-5 rounded-2xl border border-border bg-card px-4 py-5 min-[390px]:px-5 min-[390px]:py-6 min-[560px]:gap-6 min-[560px]:px-6 lg:flex-row lg:items-center lg:gap-x-[22px] lg:px-8 lg:py-7">
-                <div className="min-w-0 flex-1">
+              <div className="project-card-shadow mx-auto flex w-full max-w-7xl min-w-0 flex-col gap-6 rounded-2xl border border-border bg-card p-6 min-[560px]:p-7 lg:w-fit lg:flex-row lg:items-center lg:gap-x-6 xl:gap-x-8 lg:px-8 lg:py-7">
+                <div className="min-w-0 lg:w-fit lg:flex-none">
                   <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                     Let&apos;s Work Together
                   </p>
 
-                  <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:whitespace-nowrap xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
+                  <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px] 2xl:whitespace-nowrap">
                     Have a project?{" "}
                     <span className="text-primary">
-                      Let&apos;s make it real.
+                      Let&apos;s make it real
                     </span>
                   </h2>
 
-                  <p className="mt-4 max-w-2xl text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
-                    Have a project in mind or looking for an AI/ML solution?
-                    Let&apos;s discuss the problem, explore the right approach,
-                    and see how I can help.
+                  <p className="mt-4 w-full max-w-2xl text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base lg:text-[15px]">
+                    Have a project in mind or looking for an AI/ML solution? Let&apos;s discuss the problem, explore the right approach, and see how I can help.
                   </p>
                 </div>
 
                 <Link
                   href="/#contact"
-                  className="group mx-auto inline-flex h-10 w-fit shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-[10px] bg-primary px-4 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 lg:mx-0"
+                  className="group mx-auto inline-flex h-11 w-fit shrink-0 items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 lg:mx-0"
                 >
                   Get in touch
                   <ArrowRight
@@ -521,7 +516,9 @@ export default function AboutPage() {
             </FadeIn>
           </Container>
         </Section>
+
       </main>
+
       <Footer />
     </>
   )

@@ -91,7 +91,7 @@ export function Hero() {
   return (
     <Section className="relative flex min-h-0 items-center overflow-hidden border-b border-accent/30 pt-24 pb-14 min-[390px]:pt-26 min-[560px]:pt-28 min-[560px]:pb-16 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20 lg:pt-24 lg:pb-16 xl:pt-28 xl:pb-20 2xl:pt-32 2xl:pb-24">
       <Container>
-        <div className="relative mx-auto grid w-full min-w-0 grid-cols-1 items-center gap-8 lg:max-w-[900px] xl:max-w-[1160px] xl:grid-cols-[minmax(0,1fr)_580px] xl:gap-6 2xl:max-w-[1320px] 2xl:gap-10 min-[1800px]:max-w-[1440px]">
+        <div className="relative mx-auto grid w-full min-w-0 grid-cols-1 items-center gap-8 lg:max-w-225 xl:max-w-290 xl:grid-cols-[minmax(0,1fr)_580px] xl:gap-6 2xl:max-w-330 2xl:gap-10 min-[1800px]:max-w-360">
           {/* Main content */}
           <div className="relative z-10 w-full min-w-0 max-w-3xl lg:max-w-none">
             <FadeIn>
@@ -106,7 +106,7 @@ export function Hero() {
                   Building AI/ML systems
                 </span>{" "}
                 <span className="inline text-primary text-[0.94em] 2xl:block 2xl:whitespace-nowrap">
-                  from data to deployment.
+                  from data to deployment
                 </span>
               </h1>
             </SlideUp>
@@ -201,7 +201,7 @@ export function Hero() {
 
             {/* Scikit-learn — Y only */}
             <Float
-              className="absolute right-0 top-[10%] z-20 min-[768px]:right-[4%] lg:right-[6px] lg:top-0 xl:right-[4%] xl:top-[10%]"
+              className="absolute right-0 top-[10%] z-20 min-[768px]:right-[4%] lg:right-1.5 lg:top-0 xl:right-[4%] xl:top-[10%]"
               delay={0.9}
               x={[0, 0, 0, 0, 0]}
               y={[0, -5, 6, -4, 0]}

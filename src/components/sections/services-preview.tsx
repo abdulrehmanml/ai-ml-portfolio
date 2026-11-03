@@ -63,7 +63,7 @@ export function ServicesPreview() {
 
               <h2 className="w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                 <span>AI/ML Solutions </span>
-                <span className="text-primary">built for practical use.</span>
+                <span className="text-primary">built for practical use</span>
               </h2>
 
               <p className="mt-4 w-full max-w-none text-left text-sm leading-6 text-muted-foreground min-[560px]:text-base min-[560px]:leading-7 xl:text-[15px]">

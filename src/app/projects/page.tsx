@@ -45,7 +45,7 @@ export default function ProjectsPage() {
 
             <div className="mt-6 min-[560px]:mt-8 lg:mt-4 lg:pt-12">
               <FadeIn>
-                <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   Projects
                 </p>
               </FadeIn>
@@ -61,7 +61,7 @@ export default function ProjectsPage() {
                 <h1 className="mt-5 w-full text-4xl font-semibold leading-[1.05] tracking-tight min-[560px]:text-[48px] lg:text-[60px]">
                   Practical projects across{" "}
                   <span className="text-primary">
-                    AI, machine learning, and data.
+                    AI, machine learning, and data
                   </span>
                 </h1>
               </SlideUp>
@@ -80,24 +80,66 @@ export default function ProjectsPage() {
           <Container>
             <FadeIn>
               <div className="w-full">
-                <p className="font-mono text-sm font-medium uppercase tracking-[0.14em] text-primary">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   All Projects
                 </p>
 
-                <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-tight min-[560px]:text-[40px] lg:text-[44px]">
+                <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Projects built from{" "}
-                  <span className="text-primary">problem to solution.</span>
+                  <span className="text-primary">problem to solution</span>
                 </h2>
               </div>
             </FadeIn>
 
-            <div className="mt-12 grid items-start gap-6 px-4 min-[560px]:grid-cols-2 min-[560px]:px-6 lg:grid-cols-3 lg:gap-7 lg:px-0">
-              {projects.map((project) => (
-                <SlideUp key={project.slug}>
-                  <ProjectCard project={project} compact />
-                </SlideUp>
-              ))}
-            </div>
+<div className="mx-auto mt-12 grid w-full max-w-7xl grid-cols-1 justify-items-center gap-x-6 gap-y-7 min-[560px]:grid-cols-4 min-[560px]:gap-x-7 min-[560px]:gap-y-8 lg:grid-cols-6">
+  {projects.map((project, index) => {
+    const isLastProject = index === projects.length - 1
+    const isPenultimateProject = index === projects.length - 2
+
+    const desktopRemainder = projects.length % 3
+
+    const centerLastTabletCard =
+      projects.length % 2 === 1 && isLastProject
+
+    const desktopSingleCard =
+      desktopRemainder === 1 && isLastProject
+
+    const desktopPairCard =
+      desktopRemainder === 2 &&
+      (isPenultimateProject || isLastProject)
+
+    let desktopPairPosition = ""
+
+    if (desktopPairCard) {
+      desktopPairPosition = isPenultimateProject
+        ? "lg:col-start-2"
+        : "lg:col-start-4"
+    }
+
+    let tabletPosition = ""
+
+    if (centerLastTabletCard) {
+      tabletPosition =
+        desktopRemainder === 0
+          ? "min-[560px]:col-start-2 lg:col-start-auto"
+          : "min-[560px]:col-start-2"
+    }
+
+    return (
+      <SlideUp
+        key={project.slug}
+        className={[
+          "col-span-1 w-full min-w-0 max-w-[384px] min-[560px]:col-span-2",
+          tabletPosition,
+          desktopSingleCard ? "lg:col-start-3" : "",
+          desktopPairPosition,
+        ].join(" ")}
+      >
+        <ProjectCard project={project} compact />
+      </SlideUp>
+    )
+  })}
+</div>
           </Container>
         </Section>
       </main>

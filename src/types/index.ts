@@ -13,5 +13,5 @@ export type Project = {
   githubUrl: string
   liveDemoUrl?: string
   documentationUrl?: string
-  projectLinksDescription?: string
+  projectLinksDescription: string
 }

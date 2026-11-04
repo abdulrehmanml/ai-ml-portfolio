@@ -38,7 +38,7 @@ export function ServicePage({ service }: ServicePageProps) {
         <Section id="service-hero" className="pt-24 min-[390px]:pt-26 min-[560px]:pt-24 lg:pt-28 xl:pt-32 2xl:pt-36">
           <Container>
             <FadeIn>
-              <div>
+              <div className="pt-0 min-[560px]:pt-10 lg:pt-0">
                 <Link
                   href="/#services"
                   className="group inline-flex w-fit items-center gap-2 rounded-md px-1 py-1 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"

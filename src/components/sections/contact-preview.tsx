@@ -28,7 +28,7 @@ function LinkedinIcon({ className }: { className?: string }) {
 const contactLinks = [
   {
     label: "Email",
-    value: "hello.arehmanmughal@gmail.com",
+    value: "Email",
     href: "mailto:hello.arehmanmughal@gmail.com",
     icon: Mail,
     iconClassName: "text-foreground",
@@ -123,7 +123,7 @@ export function ContactPreview() {
   return (
     <Section
       id="contact"
-      className="border-y border-accent/30 pt-14 pb-14 min-[390px]:pt-16 min-[390px]:pb-16 min-[560px]:pt-18 min-[560px]:pb-18 sm:pt-18 sm:pb-18 md:pt-20 md:pb-20 lg:pt-16 lg:pb-16 xl:pt-20 xl:pb-20 2xl:pt-24 2xl:pb-24"
+      className="pt-14 pb-14 min-[390px]:pt-16 min-[390px]:pb-16 min-[560px]:pt-18 min-[560px]:pb-18 sm:pt-18 sm:pb-18 md:pt-20 md:pb-20 lg:pt-16 lg:pb-16 xl:pt-20 xl:pb-20 2xl:pt-24 2xl:pb-24"
     >
       <Container>
         <FadeIn>
@@ -140,8 +140,7 @@ export function ContactPreview() {
               </h2>
 
               <p className="mt-3 w-full min-w-0 max-w-none text-left text-sm leading-6 text-muted-foreground min-[560px]:mt-4 min-[560px]:text-base min-[560px]:leading-7 lg:max-w-lg xl:text-[15px]">
-                Have an idea, project, or problem to solve? Share the details
-                and let&apos;s discuss how I can help.
+                Have an idea, project, or problem to solve? Share the details and let&apos;s discuss how I can help.
               </p>
 
               <div className="mt-6 flex min-w-0 flex-col gap-1 min-[560px]:mt-7">

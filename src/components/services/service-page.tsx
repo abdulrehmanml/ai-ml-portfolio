@@ -282,7 +282,7 @@ export function ServicePage({ service }: ServicePageProps) {
         <Section id="relevant-work">
           <Container>
             <FadeIn>
-              <div className="mx-auto w-full max-w-none text-left lg:text-center">
+              <div className="mx-auto w-full max-w-none text-left 2xl:text-center">
                 <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   Relevant Work
                 </p>

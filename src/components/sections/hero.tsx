@@ -89,7 +89,7 @@ function WorkflowItem({ icon: Icon, label }: WorkflowItemProps) {
 
 export function Hero() {
   return (
-    <Section className="relative flex min-h-0 items-center overflow-hidden border-b border-accent/30 pt-24 pb-14 min-[390px]:pt-26 min-[560px]:pt-28 min-[560px]:pb-16 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20 lg:pt-24 lg:pb-16 xl:pt-28 xl:pb-20 2xl:pt-32 2xl:pb-24">
+    <Section className="relative flex min-h-0 items-center overflow-hidden pt-24 pb-14 min-[390px]:pt-26 min-[560px]:pt-28 min-[560px]:pb-16 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20 lg:pt-24 lg:pb-16 xl:pt-28 xl:pb-20 2xl:pt-32 2xl:pb-24">
       <Container>
         <div className="relative mx-auto grid w-full min-w-0 grid-cols-1 items-center gap-8 lg:max-w-225 xl:max-w-290 xl:grid-cols-[minmax(0,1fr)_580px] xl:gap-6 2xl:max-w-330 2xl:gap-10 min-[1800px]:max-w-360">
           {/* Main content */}

@@ -105,7 +105,7 @@ export function Hero() {
                 <span className="inline 2xl:block 2xl:whitespace-nowrap">
                   Building AI/ML systems
                 </span>{" "}
-                <span className="inline text-primary text-[0.94em] 2xl:block 2xl:whitespace-nowrap">
+                <span className="inline text-primary 2xl:block 2xl:whitespace-nowrap">
                   from data to deployment
                 </span>
               </h1>

@@ -87,29 +87,17 @@ export function ProjectPage({ project }: ProjectPageProps) {
           
               {/* Project preview */}
               <FadeIn>
-                <div className="mx-auto w-full max-w-100 lg:mx-0 lg:ml-auto">
-                  <div className="project-card-shadow group relative w-full overflow-hidden rounded-2xl border border-border bg-card p-3 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_12px_32px_-16px_var(--primary)]">
-                    <div
-                      className="pointer-events-none absolute right-0 top-0 h-9 w-9 border-r border-t border-primary/40 transition-all duration-300 group-hover:h-11 group-hover:w-11 group-hover:border-primary/60"
-                      aria-hidden="true"
+                <div className="mx-auto w-full max-w-[320px] min-[560px]:max-w-90 lg:mx-0 lg:ml-auto lg:max-w-100">
+                  <div className="group relative w-full overflow-hidden rounded-xl border border-border shadow-[0_12px_32px_-20px_var(--primary)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_12px_32px_-10px_var(--primary)]">
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} project preview`}
+                      width={800}
+                      height={500}
+                      sizes="(min-width: 1024px) 400px, (min-width: 560px) 360px, 320px"
+                      className="block h-auto w-full rounded-xl object-contain"
+                      priority
                     />
-        
-                    <div
-                      className="pointer-events-none absolute bottom-0 left-0 h-9 w-9 border-b border-l border-accent/30 transition-all duration-300 group-hover:h-11 group-hover:w-11 group-hover:border-accent/50"
-                      aria-hidden="true"
-                    />
-        
-                    <div className="relative overflow-hidden rounded-xl border border-border/70">
-                      <Image
-                        src={project.image}
-                        alt={`${project.title} project preview`}
-                        width={800}
-                        height={500}
-                        sizes="(min-width: 448px) 400px, calc(100vw - 2rem)"
-                        className="aspect-[1.6] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-                        priority
-                      />
-                    </div>
                   </div>
                 </div>
               </FadeIn>
@@ -298,7 +286,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
               </div>
             </FadeIn>
             <div className="mx-auto mt-10 w-full max-w-3xl px-4 min-[560px]:px-6 lg:px-0">
-              <StaggerContainer className="flex flex-wrap justify-center gap-3">
+              <StaggerContainer className="flex flex-wrap justify-center gap-x-3 gap-y-6">
                 {project.technologies.map((technology) => (
                   <StaggerItem key={technology}>
                     <span className="rounded-lg border border-border bg-card px-4 py-2.5 font-mono text-xs text-muted-foreground shadow-[0_2px_8px_-6px_var(--primary)] transition-colors duration-200 hover:border-primary/40 hover:text-primary">
@@ -420,13 +408,13 @@ export function ProjectPage({ project }: ProjectPageProps) {
                 </h2>
               </div>
             </FadeIn>
-              <StaggerContainer className="mx-auto mt-8 grid w-fit max-w-full grid-cols-1 justify-items-center gap-x-6 gap-y-7 min-[560px]:grid-cols-2 min-[560px]:gap-x-7 min-[560px]:gap-y-8">
-                <StaggerItem>
+              <StaggerContainer className="mx-0 mt-8 grid w-full max-w-116 grid-cols-[repeat(auto-fit,minmax(min(100%,12rem),12rem))] justify-items-start gap-x-5 gap-y-5 px-4 min-[560px]:px-6">
+                <StaggerItem className="w-full max-w-48">
                 <a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block w-48 border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary"
+                  className="group block w-full border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary"
                 >
                   <div className="inline-flex items-center">
                     <div>
@@ -447,12 +435,12 @@ export function ProjectPage({ project }: ProjectPageProps) {
               </StaggerItem>
 
               {project.documentationUrl ? (
-                <StaggerItem>
+                <StaggerItem className="w-full max-w-48">
                   <a
                     href={project.documentationUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group block w-48 border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary"
+                    className="group block w-full border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary"
                   >
                     <div className="inline-flex items-center">
                       <div>
@@ -474,12 +462,12 @@ export function ProjectPage({ project }: ProjectPageProps) {
                   </a>
                 </StaggerItem>
               ) : project.liveDemoUrl ? (
-                <StaggerItem>
+                <StaggerItem className="w-full max-w-48">
                   <a
                     href={project.liveDemoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group block w-48 border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary"
+                    className="group block w-full border-t-2 border-border/80 py-4 pl-3 transition-colors duration-200 hover:border-primary"
                   >
                     <div className="inline-flex items-center">
                       <div>

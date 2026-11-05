@@ -152,12 +152,12 @@ export function Hero() {
             {/* Central engineering panel */}
             <div className="absolute left-1/2 top-1/2 z-10 w-70 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-card p-5 shadow-[0_12px_32px_-20px_var(--primary)]">
               {/* Header */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center gap-3">
                 <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <BrainCircuit className="size-5" aria-hidden="true" />
                 </div>
 
-                <div className="w-47.5">
+                <div className="w-47.5 text-center">
                   <p className="whitespace-nowrap text-[21px] font-semibold leading-5 tracking-tight text-foreground">
                     AI / ML Engineering
                   </p>
@@ -264,7 +264,7 @@ export function Hero() {
         {/* Mobile / tablet AI / ML visual */}
         <div className="mt-6 flex w-full justify-center min-[560px]:mt-8 xl:hidden">
           <div className="mx-auto w-full max-w-70 rounded-2xl border border-border bg-card p-5 shadow-[0_12px_30px_-20px_var(--primary)]">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center gap-3">
               <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <BrainCircuit className="size-5" aria-hidden="true" />
               </div>

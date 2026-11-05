@@ -279,14 +279,7 @@ export function Navbar() {
                 key={item.label}
                 href={item.href}
                 onClick={(event) => {
-                  event.preventDefault()
-
-                  if (item.href === "/#contact") {
-                    sendGAEvent("event", "contact_cta_click", {
-                      cta_location: "navbar",
-                    })
-                  }
-
+                  handleSectionClick(event, item.href)
                   setMenuOpen(false)
                 }}
                 className={cn(

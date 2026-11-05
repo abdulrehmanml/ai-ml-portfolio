@@ -69,7 +69,7 @@ export function ServicesPreview() {
             </div>
 
           {/* Service list */}
-          <StaggerContainer className="min-w-0 border-t border-border px-0 min-[560px]:px-2 xl:px-0">
+          <StaggerContainer className="mx-auto min-w-0 border-t border-border px-0 min-[560px]:w-160 min-[560px]:max-w-[calc(100%-2rem)] min-[560px]:px-2 xl:mx-0 xl:w-full xl:max-w-none xl:px-0">
             {services.map(
               ({ number, slug, icon: Icon, title, description }) => (
                 <StaggerItem key={number}>

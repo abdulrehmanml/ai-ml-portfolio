@@ -151,7 +151,7 @@ export function ServicePage({ service }: ServicePageProps) {
         <Section id="what-i-can-do">
           <Container>
             <FadeIn>
-              <div className="w-full max-w-none text-left 2xl:text-center">
+              <div className="w-full max-w-none text-left">
                 <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   What I Can Do
                 </p>
@@ -247,7 +247,7 @@ export function ServicePage({ service }: ServicePageProps) {
         <Section id="tools-technologies">
           <Container>
             <FadeIn>
-              <div className="w-full max-w-none text-left 2xl:text-center">
+              <div className="w-full max-w-none text-left">
                 <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   Tools & Technologies
                 </p>
@@ -282,7 +282,7 @@ export function ServicePage({ service }: ServicePageProps) {
         <Section id="relevant-work">
           <Container>
             <FadeIn>
-              <div className="mx-auto w-full max-w-none text-left 2xl:text-center">
+              <div className="mx-auto w-full max-w-none text-left">
                 <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   Relevant Work
                 </p>

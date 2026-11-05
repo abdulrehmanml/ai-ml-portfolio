@@ -9,12 +9,12 @@ import { ProjectCard } from "@/components/projects/project-card"
 import { projects } from "@/data/projects"
 
 export function FeaturedProjects() {
-  const featuredProjects = projects.slice(0, 4)
+  const featuredProjects = projects.slice(0, 3)
 
   return (
     <Section
       id="featured-work"
-      className="border-y border-accent/30 pt-14 pb-14 min-[390px]:pt-16 min-[390px]:pb-16 min-[560px]:pt-18 min-[560px]:pb-18 sm:pt-18 sm:pb-18 md:pt-20 md:pb-20 lg:pt-16 lg:pb-16 xl:pt-20 xl:pb-20 2xl:pt-24 2xl:pb-24"
+      className="pt-14 pb-14 min-[390px]:pt-16 min-[390px]:pb-16 min-[560px]:pt-18 min-[560px]:pb-18 sm:pt-18 sm:pb-18 md:pt-20 md:pb-20 lg:pt-16 lg:pb-16 xl:pt-20 xl:pb-20 2xl:pt-24 2xl:pb-24"
     >    
       <Container>
         <div className="flex min-w-0 flex-col gap-7 min-[560px]:gap-8 md:gap-10">
@@ -40,7 +40,7 @@ export function FeaturedProjects() {
 
               <Link
                 href="/projects"
-                className="group inline-flex h-11 w-fit shrink-0 whitespace-nowrap items-center justify-center gap-2 self-start rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 xl:self-end"
+                className="group inline-flex h-11 w-fit shrink-0 whitespace-nowrap items-center justify-center gap-2 self-start rounded-[10px] bg-primary px-4 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 active:bg-primary/80 min-[560px]:px-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 xl:self-end"
               >
                 View all projects
                 <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -49,34 +49,28 @@ export function FeaturedProjects() {
           </FadeIn>
 
           {/* Project grid */}
-          <StaggerContainer
-            className={`mx-auto grid w-full max-w-[1600px] grid-cols-1 justify-items-center gap-x-6 gap-y-7 min-[560px]:gap-x-7 min-[560px]:gap-y-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 ${
-              featuredProjects.length < 4 ? "2xl:grid-cols-3" : ""
-            }`}
-          >
+          <StaggerContainer className="mx-auto grid w-full max-w-7xl grid-cols-1 justify-items-center gap-x-6 gap-y-7 min-[560px]:gap-x-7 min-[560px]:gap-y-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3">
             {featuredProjects.map((project, index) => {
-              const isThird = index === 2
-              const isFourth = index === 3
+              const isThirdProject = index === 2
             
               return (
                 <StaggerItem
                   key={project.slug}
                   className={[
-                    "w-full min-w-0 max-w-90",
-                    isThird
+                    "w-full min-w-0 max-w-[384px]",
+                    isThirdProject
                       ? "md:col-span-2 md:w-1/2 lg:col-span-1 lg:w-full"
                       : "",
-                    isFourth ? "hidden 2xl:block" : "",
                   ].join(" ")}
                 >
-                <ProjectCard
-                  project={project}
-                  priority={index === 0}
-                  compact
-                />
-              </StaggerItem>
-            )
-          })}
+                  <ProjectCard
+                    project={project}
+                    priority={index === 0}
+                    compact
+                  />
+                </StaggerItem>
+              )
+            })}
           </StaggerContainer>
         </div>
       </Container>

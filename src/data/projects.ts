@@ -41,7 +41,7 @@ export const projects: Project[] = [
     href: "/projects/customer-churn-prediction",
     githubUrl: "https://github.com/abdulrehmanml/customer-churn-prediction-ml",
     liveDemoUrl: "https://customer-churn-prediction-engine.streamlit.app/",
-    projectLinksDescription: "Explore the source code and live application.",
+    projectLinksDescription: "Explore the source code and live application",
   },
 
   {
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     href: "/projects/sentiment-analysis",
     githubUrl: "https://github.com/abdulrehmanml/sentiment-analysis-system",
     liveDemoUrl: "https://sentiment-analysis-system-nlp.streamlit.app/",
-    projectLinksDescription: "Explore the source code and live application.",
+    projectLinksDescription: "Explore the source code and live application",
   },
 
   {
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     href: "/projects/agrofarm-ai",
     githubUrl: "https://github.com/abdulrehmanml/agrofarm-ai",
     liveDemoUrl: "https://agrofarm-ai.streamlit.app/",
-    projectLinksDescription: "Explore the source code and live application.",
+    projectLinksDescription: "Explore the source code and live application",
   },
 
   {
@@ -155,7 +155,7 @@ export const projects: Project[] = [
       "https://github.com/abdulrehman-02/ecommerce-sales-profitability-analysis",
     documentationUrl:
       "https://github.com/abdulrehmanml/aws-secure-web-hosting-infrastructure/blob/main/documentation/AWSProjectDocumentation.pdf",
-    projectLinksDescription: "Explore the source code and documentation.",
+    projectLinksDescription: "Explore the source code and documentation",
   },
 
   {
@@ -194,6 +194,6 @@ export const projects: Project[] = [
     documentationUrl:
       "https://github.com/abdulrehmanml/ecommerce-sales-profitability-analysis/blob/main/ecommerce-sales-analysis-report.pdf",
     projectLinksDescription:
-      "Explore the AWS implementation and documentation.",
+      "Explore the AWS implementation and documentation",
   },
 ]

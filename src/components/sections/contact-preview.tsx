@@ -123,28 +123,27 @@ export function ContactPreview() {
   return (
     <Section
       id="contact"
-      className="border-y border-accent/30 pt-14 pb-14 min-[390px]:pt-16 min-[390px]:pb-16 min-[560px]:pt-18 min-[560px]:pb-18 sm:pt-18 sm:pb-18 md:pt-20 md:pb-20 lg:pt-16 lg:pb-16 xl:pt-20 xl:pb-20 2xl:pt-24 2xl:pb-24"
+      className="pt-14 pb-14 min-[390px]:pt-16 min-[390px]:pb-16 min-[560px]:pt-18 min-[560px]:pb-18 sm:pt-18 sm:pb-18 md:pt-20 md:pb-20 lg:pt-16 lg:pb-16 xl:pt-20 xl:pb-20 2xl:pt-24 2xl:pb-24"
     >
       <Container>
-        <div className="grid min-w-0 grid-cols-1 gap-8 min-[560px]:gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-12 xl:gap-16 2xl:gap-20 *:min-w-0">
+        <div className="mx-auto grid w-full min-w-0 max-w-360 grid-cols-1 gap-8 min-[560px]:gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start lg:gap-12 xl:gap-16 2xl:gap-20 *:min-w-0">
           <FadeIn>
             {/* Contact introduction */}
             <div className="min-w-0">
               <p className="mb-4 text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:mb-5 min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                 Contact
               </p>
-
-              <h2 className="w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
+        
+              <h2 className="w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px] 2xl:whitespace-nowrap">
                 <span>Have a project?</span>{" "}
                 <span className="text-primary">Let&apos;s make it real</span>
               </h2>
-
-              <p className="mt-3 w-full min-w-0 max-w-none text-left text-sm leading-6 text-muted-foreground min-[560px]:mt-4 min-[560px]:text-base min-[560px]:leading-7 lg:max-w-lg xl:text-[15px]">
-                Have an idea, project, or problem to solve? Share the details
-                and let&apos;s discuss how I can help.
+        
+              <p className="mt-3 w-full min-w-0 text-left text-sm leading-6 text-muted-foreground min-[560px]:mt-4 min-[560px]:text-base min-[560px]:leading-7 xl:text-[15px]">
+                Have an idea, project, or problem to solve? Share the details and let&apos;s discuss how I can help.
               </p>
-
-              <div className="mt-6 flex min-w-0 flex-col gap-1 min-[560px]:mt-7">
+        
+              <div className="mt-6 flex min-w-0 flex-col gap-1 pl-3 min-[560px]:mt-7 min-[560px]:pl-4 lg:pl-6 2xl:pl-8">
                 {contactLinks.map(
                   ({ label, value, href, icon: Icon, iconClassName }) => (
                     <Link
@@ -165,11 +164,11 @@ export function ContactPreview() {
                           aria-hidden="true"
                         />
                       </span>
-
+                    
                       <span className="min-w-0 wrap-anywhere">
                         {value}
                       </span>
-
+                    
                       <ArrowUpRight
                         className="size-4 opacity-60 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
                         aria-hidden="true"
@@ -180,12 +179,12 @@ export function ContactPreview() {
               </div>
             </div>
           </FadeIn>
-
+              
           {/* Contact form */}
           <SlideUp>
             <div className="mx-auto w-full min-w-0">
               <form
-                className="mx-auto w-full min-w-0 max-w-md rounded-xl border border-border/70 bg-card/40 p-4 min-[390px]:p-5 min-[560px]:p-6 lg:mx-0 lg:max-w-none"
+                className="mx-auto w-full min-w-0 max-w-md rounded-xl border border-border/70 bg-card/40 p-4 min-[390px]:p-5 min-[560px]:p-6 lg:mx-0 xl:max-w-xl 2xl:max-w-2xl"
                 onSubmit={handleSubmit}
               >
                 <div className="hidden" aria-hidden="true">
@@ -198,15 +197,17 @@ export function ContactPreview() {
                     autoComplete="off"
                   />
                 </div>
+              
                 <div className="grid gap-5">
                   <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
-                    <div className="grid w-full max-w-[320px] gap-2">
+                    <div className="grid w-full min-w-0 gap-2">
                       <label
                         htmlFor="name"
                         className="text-sm font-medium text-foreground"
                       >
                         Name
                       </label>
+              
                       <input
                         id="name"
                         name="name"
@@ -216,13 +217,15 @@ export function ContactPreview() {
                         className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
                       />
                     </div>
-                    <div className="grid w-full max-w-[320px] gap-2">
+              
+                    <div className="grid w-full min-w-0 gap-2">
                       <label
                         htmlFor="email"
                         className="text-sm font-medium text-foreground"
                       >
                         Email
                       </label>
+              
                       <input
                         id="email"
                         name="email"
@@ -233,13 +236,15 @@ export function ContactPreview() {
                       />
                     </div>
                   </div>
-                  <div className="grid gap-2">
+              
+                  <div className="grid w-full min-w-0 gap-2">
                     <label
                       htmlFor="message"
                       className="text-sm font-medium text-foreground"
                     >
                       Message
                     </label>
+              
                     <textarea
                       id="message"
                       name="message"
@@ -249,14 +254,16 @@ export function ContactPreview() {
                       className="w-full resize-none rounded-lg border border-border bg-background px-3 py-3 text-sm leading-6 text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
                     />
                   </div>
+              
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] min-[560px]:w-fit disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    className="inline-flex h-11 w-fit items-center justify-self-start gap-2 rounded-[10px] bg-primary px-4 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] active:translate-y-0 active:bg-primary/80 min-[560px]:px-5 disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                     <Send className="size-4" aria-hidden="true" />
                   </button>
+              
                   {status && (
                     <p
                       role="status"

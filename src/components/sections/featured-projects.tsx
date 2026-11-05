@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 import { Container } from "@/components/layout/container"
 import { Section } from "@/components/layout/section"
 import { FadeIn } from "@/components/animations/fade-in"
-import { SlideUp } from "@/components/animations/slide-up"
+import { StaggerContainer, StaggerItem } from "@/components/animations/stagger"
 import { ProjectCard } from "@/components/projects/project-card"
 import { projects } from "@/data/projects"
 
@@ -49,7 +49,7 @@ export function FeaturedProjects() {
           </FadeIn>
 
           {/* Project grid */}
-          <div
+          <StaggerContainer
             className={`mx-auto grid w-full max-w-[1600px] grid-cols-1 justify-items-center gap-x-6 gap-y-7 min-[560px]:gap-x-7 min-[560px]:gap-y-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 ${
               featuredProjects.length < 4 ? "2xl:grid-cols-3" : ""
             }`}
@@ -59,7 +59,7 @@ export function FeaturedProjects() {
               const isFourth = index === 3
             
               return (
-                <SlideUp
+                <StaggerItem
                   key={project.slug}
                   className={[
                     "w-full min-w-0 max-w-90",
@@ -74,10 +74,10 @@ export function FeaturedProjects() {
                   priority={index === 0}
                   compact
                 />
-              </SlideUp>
+              </StaggerItem>
             )
           })}
-          </div>
+          </StaggerContainer>
         </div>
       </Container>
     </Section>

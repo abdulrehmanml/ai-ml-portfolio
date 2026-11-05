@@ -9,7 +9,7 @@ import { Navbar } from "@/components/layout/navbar"
 import { Section } from "@/components/layout/section"
 import { projects } from "@/data/projects"
 import { ProjectCard } from "@/components/projects/project-card"
-
+import { StaggerContainer, StaggerItem } from "@/components/animations/stagger"
 import type { Project } from "@/types"
 import type { Service } from "@/data/services"
 import { ContactCtaLink } from "@/components/analytics/cta-link-projects-services"
@@ -164,9 +164,10 @@ export function ServicePage({ service }: ServicePageProps) {
                 </h2>
               </div>
             </FadeIn>
-            <div className="mx-auto mt-10 grid w-fit max-w-full grid-cols-1 gap-x-12 gap-y-8 min-[560px]:grid-cols-2 lg:grid-cols-3">
+
+            <StaggerContainer className="mx-auto mt-10 grid w-fit max-w-full grid-cols-1 gap-x-12 gap-y-8 min-[560px]:grid-cols-2 lg:grid-cols-3">
               {service.capabilities.map((capability, index) => (
-                <SlideUp key={capability}>
+                <StaggerItem key={capability}>
                   <div className="group relative mx-auto h-full w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary lg:w-auto lg:px-4">
                     <span
                       className="invisible block h-0 overflow-hidden whitespace-nowrap text-base font-semibold tracking-tight"
@@ -183,9 +184,9 @@ export function ServicePage({ service }: ServicePageProps) {
                       </h3>
                     </div>
                   </div>
-                </SlideUp>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </Container>
         </Section>
 
@@ -216,9 +217,9 @@ export function ServicePage({ service }: ServicePageProps) {
               </FadeIn>
 
               <div className="w-full min-w-0">
-                <div className="mx-auto grid w-fit min-w-0 max-w-full gap-0 xl:mx-0">
+                <StaggerContainer className="mx-auto grid w-fit min-w-0 max-w-full gap-0 xl:mx-0">
                   {service.process.map((step, index) => (
-                    <SlideUp key={step}>
+                    <StaggerItem key={step}>
                       <div className="group relative grid min-w-0 gap-3 py-5 before:absolute before:inset-x-4 before:top-0 before:border-t-2 before:border-border/80 min-[560px]:before:inset-x-0 min-[560px]:grid-cols-[56px_max-content] min-[560px]:items-center min-[560px]:gap-5">
                         <span className="px-6 font-mono text-xs font-medium text-primary min-[560px]:pl-8 min-[560px]:pr-0">
                           {String(index + 1).padStart(2, "0")}
@@ -228,9 +229,9 @@ export function ServicePage({ service }: ServicePageProps) {
                           {step}
                         </p>
                       </div>
-                    </SlideUp>
+                    </StaggerItem>
                   ))}
-                </div>
+                </StaggerContainer>
               </div>
             </div>
           </Container>
@@ -258,16 +259,15 @@ export function ServicePage({ service }: ServicePageProps) {
             </FadeIn>
 
             <div className="mx-auto mt-10 w-full max-w-3xl px-4 min-[560px]:px-6 lg:px-0">
-              <div className="flex flex-wrap justify-center gap-3">
+              <StaggerContainer className="flex flex-wrap justify-center gap-3">
                 {service.technologies.map((technology) => (
-                  <span
-                    key={technology}
-                    className="rounded-lg border border-border bg-card px-4 py-2.5 font-mono text-xs text-muted-foreground shadow-[0_2px_8px_-6px_var(--primary)] transition-colors duration-200 hover:border-primary/40 hover:text-primary"
-                  >
-                    {technology}
-                  </span>
+                  <StaggerItem key={technology}>
+                    <span className="rounded-lg border border-border bg-card px-4 py-2.5 font-mono text-xs text-muted-foreground shadow-[0_2px_8px_-6px_var(--primary)] transition-colors duration-200 hover:border-primary/40 hover:text-primary">
+                      {technology}
+                    </span>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerContainer>
             </div>
           </Container>
         </Section>
@@ -294,9 +294,9 @@ export function ServicePage({ service }: ServicePageProps) {
               </div>
             </FadeIn>
             {relatedProjects.length > 0 ? (
-              <div className="mx-auto mt-10 flex w-full max-w-6xl flex-wrap justify-center gap-4 px-4 min-[560px]:px-0">
+              <StaggerContainer className="mx-auto mt-10 flex w-full max-w-6xl flex-wrap justify-center gap-4 px-4 min-[560px]:px-0">
                 {relatedProjects.map((project) => (
-                  <SlideUp
+                  <StaggerItem
                     key={project.slug}
                     className={[
                       "w-full min-w-0 max-w-105",
@@ -309,9 +309,9 @@ export function ServicePage({ service }: ServicePageProps) {
                     ].join(" ")}
                   >
                     <ProjectCard project={project} showImage={false} />
-                  </SlideUp>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerContainer>
             ) : (
               <div className="mt-10 max-w-2xl border-t border-border pt-6">
                 <p className="text-sm leading-6 text-muted-foreground">

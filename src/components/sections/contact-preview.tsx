@@ -28,7 +28,7 @@ function LinkedinIcon({ className }: { className?: string }) {
 const contactLinks = [
   {
     label: "Email",
-    value: "hello.arehmanmughal@gmail.com",
+    value: "Email",
     href: "mailto:hello.arehmanmughal@gmail.com",
     icon: Mail,
     iconClassName: "text-foreground",
@@ -126,8 +126,8 @@ export function ContactPreview() {
       className="border-y border-accent/30 pt-14 pb-14 min-[390px]:pt-16 min-[390px]:pb-16 min-[560px]:pt-18 min-[560px]:pb-18 sm:pt-18 sm:pb-18 md:pt-20 md:pb-20 lg:pt-16 lg:pb-16 xl:pt-20 xl:pb-20 2xl:pt-24 2xl:pb-24"
     >
       <Container>
-        <FadeIn>
-          <div className="grid min-w-0 grid-cols-1 gap-8 min-[560px]:gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-12 xl:gap-16 2xl:gap-20 *:min-w-0">
+        <div className="grid min-w-0 grid-cols-1 gap-8 min-[560px]:gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-12 xl:gap-16 2xl:gap-20 *:min-w-0">
+          <FadeIn>
             {/* Contact introduction */}
             <div className="min-w-0">
               <p className="mb-4 text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:mb-5 min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
@@ -179,110 +179,103 @@ export function ContactPreview() {
                 )}
               </div>
             </div>
+          </FadeIn>
 
-            {/* Contact form */}
-            <SlideUp>
-              <div className="mx-auto w-full min-w-0">
-                <form
-                  className="mx-auto w-full min-w-0 max-w-md rounded-xl border border-border/70 bg-card/40 p-4 min-[390px]:p-5 min-[560px]:p-6 lg:mx-0 lg:max-w-none"
-                  onSubmit={handleSubmit}
-                >
-                  <div className="hidden" aria-hidden="true">
-                    <label htmlFor="website">Website</label>
-                    <input
-                      id="website"
-                      name="website"
-                      type="text"
-                      tabIndex={-1}
-                      autoComplete="off"
-                    />
-                  </div>
-                  <div className="grid gap-5">
-                    <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
-                      <div className="grid w-full max-w-[320px] gap-2">
-                        <label
-                          htmlFor="name"
-                          className="text-sm font-medium text-foreground"
-                        >
-                          Name
-                        </label>
-
-                        <input
-                          id="name"
-                          name="name"
-                          type="text"
-                          placeholder="Your name"
-                          required
-                          className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
-                        />
-                      </div>
-
-                      <div className="grid w-full max-w-[320px] gap-2">
-                        <label
-                          htmlFor="email"
-                          className="text-sm font-medium text-foreground"
-                        >
-                          Email
-                        </label>
-
-                        <input
-                          id="email"
-                          name="email"
-                          type="email"
-                          placeholder="you@example.com"
-                          required
-                          className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid gap-2">
+          {/* Contact form */}
+          <SlideUp>
+            <div className="mx-auto w-full min-w-0">
+              <form
+                className="mx-auto w-full min-w-0 max-w-md rounded-xl border border-border/70 bg-card/40 p-4 min-[390px]:p-5 min-[560px]:p-6 lg:mx-0 lg:max-w-none"
+                onSubmit={handleSubmit}
+              >
+                <div className="hidden" aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input
+                    id="website"
+                    name="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+                <div className="grid gap-5">
+                  <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
+                    <div className="grid w-full max-w-[320px] gap-2">
                       <label
-                        htmlFor="message"
+                        htmlFor="name"
                         className="text-sm font-medium text-foreground"
                       >
-                        Message
+                        Name
                       </label>
-
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows={5}
-                        placeholder="Tell me about the project..."
+                      <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        placeholder="Your name"
                         required
-                        className="w-full resize-none rounded-lg border border-border bg-background px-3 py-3 text-sm leading-6 text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
+                        className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
                       />
                     </div>
-
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] min-[560px]:w-fit disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                      <Send className="size-4" aria-hidden="true" />
-                    </button>
-
-                    {status && (
-                      <p
-                        role="status"
-                        aria-live="polite"
-                        className={cn(
-                          "text-sm",
-                          status.type === "success"
-                            ? "text-green-600 dark:text-green-400"
-                            : "text-destructive",
-                        )}
+                    <div className="grid w-full max-w-[320px] gap-2">
+                      <label
+                        htmlFor="email"
+                        className="text-sm font-medium text-foreground"
                       >
-                        {status.message}
-                      </p>
-                    )}
+                        Email
+                      </label>
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="you@example.com"
+                        required
+                        className="h-11 w-full rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
+                      />
+                    </div>
                   </div>
-                </form>
-              </div>
-            </SlideUp>
-          </div>
-        </FadeIn>
+                  <div className="grid gap-2">
+                    <label
+                      htmlFor="message"
+                      className="text-sm font-medium text-foreground"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={5}
+                      placeholder="Tell me about the project..."
+                      required
+                      className="w-full resize-none rounded-lg border border-border bg-background px-3 py-3 text-sm leading-6 text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/60 focus:ring-2 focus:ring-primary/10"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-[10px] bg-primary px-5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary/80 hover:shadow-[0_8px_24px_-8px_var(--primary)] min-[560px]:w-fit disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                    <Send className="size-4" aria-hidden="true" />
+                  </button>
+                  {status && (
+                    <p
+                      role="status"
+                      aria-live="polite"
+                      className={cn(
+                        "text-sm",
+                        status.type === "success"
+                          ? "text-green-600 dark:text-green-400"
+                          : "text-destructive",
+                      )}
+                    >
+                      {status.message}
+                    </p>
+                  )}
+                </div>
+              </form>
+            </div>
+          </SlideUp>
+        </div>
       </Container>
     </Section>
   )

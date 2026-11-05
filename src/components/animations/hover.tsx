@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react"
 import { cn } from "@/lib/utils"
+import { motionDuration, motionEase } from "@/lib/motion"
 
 type HoverProps = {
   children: React.ReactNode
@@ -25,8 +26,8 @@ export function Hover({ children, className }: HoverProps) {
         scale: 0.99,
       }}
       transition={{
-        duration: 0.18,
-        ease: "easeOut",
+        duration: motionDuration.fast,
+        ease: motionEase,
       }}
     >
       {children}

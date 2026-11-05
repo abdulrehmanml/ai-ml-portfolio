@@ -1,15 +1,14 @@
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
-
 import { ArrowLeft, ArrowUpRight, MoveRight } from "lucide-react"
-
 import { FadeIn } from "@/components/animations/fade-in"
 import { SlideUp } from "@/components/animations/slide-up"
 import { Container } from "@/components/layout/container"
 import { Footer } from "@/components/layout/footer"
 import { Navbar } from "@/components/layout/navbar"
 import { Section } from "@/components/layout/section"
+import { StaggerContainer, StaggerItem } from "@/components/animations/stagger"
 import type { Project } from "@/types"
 import { ContactCtaLink } from "@/components/analytics/cta-link-projects-services"
 
@@ -118,8 +117,8 @@ export function ProjectPage({ project }: ProjectPageProps) {
               </div>
             </FadeIn>
 
-            <div className="mx-auto mt-10 grid w-full max-w-2xl grid-cols-1 gap-10 min-[560px]:px-6 lg:max-w-none lg:grid-cols-2 lg:gap-16 lg:px-8">
-              <SlideUp>
+            <StaggerContainer className="mx-auto mt-10 grid w-full max-w-2xl grid-cols-1 gap-10 min-[560px]:px-6 lg:max-w-none lg:grid-cols-2 lg:gap-16 lg:px-8">
+              <StaggerItem>
                 <article className="group h-full w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary">
                   <div className="px-4 min-[560px]:px-5 lg:px-6">
                     <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
@@ -135,9 +134,9 @@ export function ProjectPage({ project }: ProjectPageProps) {
                     </p>
                   </div>
                 </article>
-              </SlideUp>
+              </StaggerItem>
 
-              <SlideUp>
+              <StaggerItem>
                 <article className="group h-full w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary">
                   <div className="px-4 min-[560px]:px-5 lg:px-6">
                     <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
@@ -153,8 +152,8 @@ export function ProjectPage({ project }: ProjectPageProps) {
                     </p>
                   </div>
                 </article>
-              </SlideUp>
-            </div>
+              </StaggerItem>
+            </StaggerContainer>
           </Container>
         </Section>
 
@@ -181,27 +180,24 @@ export function ProjectPage({ project }: ProjectPageProps) {
             </FadeIn>
 
             {/* Desktop workflow */}
-            <div className="mx-auto mt-14 hidden w-full max-w-6xl lg:flex lg:items-start lg:gap-4">
+            <StaggerContainer className="mx-auto mt-14 hidden w-full max-w-6xl lg:flex lg:items-start lg:gap-4">
               {project.workflow.map((step, index) => (
                 <React.Fragment key={`${step}-${index}`}>
                   {/* Workflow step */}
-                  <div className="min-w-0 flex-1">
-                    <SlideUp>
-                      <div className="group w-full text-center transition-transform duration-300 hover:-translate-y-1">
-                        {/* Node */}
-                        <div className="flex justify-center">
-                          <div className="flex size-12 items-center justify-center rounded-full border border-border bg-background font-mono text-xs font-medium text-primary transition-all duration-300 group-hover:border-primary group-hover:bg-primary/10 group-hover:shadow-[0_0_20px_-8px_var(--primary)]">
-                            {String(index + 1).padStart(2, "0")}
-                          </div>
+                  <StaggerItem className="min-w-0 flex-1">
+                    <div className="group w-full text-center transition-transform duration-300 hover:-translate-y-1">
+                      {/* Node */}
+                      <div className="flex justify-center">
+                        <div className="flex size-12 items-center justify-center rounded-full border border-border bg-background font-mono text-xs font-medium text-primary transition-all duration-300 group-hover:border-primary group-hover:bg-primary/10 group-hover:shadow-[0_0_20px_-8px_var(--primary)]">
+                          {String(index + 1).padStart(2, "0")}
                         </div>
-
-                        {/* Step */}
-                        <h3 className="mt-6 px-2 text-base font-semibold leading-6 tracking-tight transition-colors duration-300 group-hover:text-primary">
-                          {step}
-                        </h3>
                       </div>
-                    </SlideUp>
-                  </div>
+                      {/* Step */}
+                      <h3 className="mt-6 px-2 text-base font-semibold leading-6 tracking-tight transition-colors duration-300 group-hover:text-primary">
+                        {step}
+                      </h3>
+                    </div>
+                  </StaggerItem>
 
                   {/* Desktop arrow */}
                   {index < project.workflow.length - 1 && (
@@ -217,15 +213,15 @@ export function ProjectPage({ project }: ProjectPageProps) {
                   )}
                 </React.Fragment>
               ))}
-            </div>
+            </StaggerContainer>
 
             {/* Mobile / Tablet workflow */}
             <div className="mt-12 lg:hidden">
-              <div className="flex flex-col items-center">
+              <StaggerContainer className="flex flex-col items-center">
                 {project.workflow.map((step, index) => (
                   <React.Fragment key={step}>
                     {/* Workflow step */}
-                    <SlideUp>
+                    <StaggerItem>
                       <div className="group flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-1">
                         {/* Node */}
                         <div className="flex size-12 items-center justify-center rounded-full border border-border bg-background font-mono text-xs font-medium text-primary transition-all duration-300 group-hover:border-primary group-hover:bg-primary/10 group-hover:shadow-[0_0_20px_-8px_var(--primary)]">
@@ -237,7 +233,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                           {step}
                         </h3>
                       </div>
-                    </SlideUp>
+                    </StaggerItem>
 
                     {/* Mobile arrow */}
                     {index < project.workflow.length - 1 && (
@@ -253,7 +249,7 @@ export function ProjectPage({ project }: ProjectPageProps) {
                     )}
                   </React.Fragment>
                 ))}
-              </div>
+              </StaggerContainer>
             </div>
           </Container>
         </Section>
@@ -279,20 +275,17 @@ export function ProjectPage({ project }: ProjectPageProps) {
                 </h2>
               </div>
             </FadeIn>
-            <SlideUp>
-              <div className="mx-auto mt-10 w-full max-w-3xl px-4 min-[560px]:px-6 lg:px-0">
-                <div className="flex flex-wrap justify-center gap-3">
-                  {project.technologies.map((technology) => (
-                    <span
-                      key={technology}
-                      className="rounded-lg border border-border bg-card px-4 py-2.5 font-mono text-xs text-muted-foreground shadow-[0_2px_8px_-6px_var(--primary)] transition-colors duration-200 hover:border-primary/40 hover:text-primary"
-                    >
+            <div className="mx-auto mt-10 w-full max-w-3xl px-4 min-[560px]:px-6 lg:px-0">
+              <StaggerContainer className="flex flex-wrap justify-center gap-3">
+                {project.technologies.map((technology) => (
+                  <StaggerItem key={technology}>
+                    <span className="rounded-lg border border-border bg-card px-4 py-2.5 font-mono text-xs text-muted-foreground shadow-[0_2px_8px_-6px_var(--primary)] transition-colors duration-200 hover:border-primary/40 hover:text-primary">
                       {technology}
                     </span>
-                  ))}
-                </div>
-              </div>
-            </SlideUp>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+            </div>
           </Container>
         </Section>
 
@@ -318,9 +311,9 @@ export function ProjectPage({ project }: ProjectPageProps) {
               </div>
             </FadeIn>
 
-            <div className="mx-auto mt-10 grid w-full max-w-2xl gap-x-10 gap-y-8 px-4 min-[560px]:grid-cols-2 min-[560px]:px-6 lg:max-w-none lg:px-8 lg:grid-cols-4">
+            <StaggerContainer className="mx-auto mt-10 grid w-full max-w-2xl gap-x-10 gap-y-8 px-4 min-[560px]:grid-cols-2 min-[560px]:px-6 lg:max-w-none lg:px-8 lg:grid-cols-4">
               {project.keyWork.map((item, index) => (
-                <SlideUp key={`${item}-${index}`}>
+                <StaggerItem key={`${item}-${index}`}>
                   <div className="group border-t-2 border-border/80 px-3 pt-5 transition-colors duration-200 hover:border-primary">
                     <span className="font-mono text-xs font-medium tracking-[0.12em] text-primary">
                       {String(index + 1).padStart(2, "0")}
@@ -330,9 +323,9 @@ export function ProjectPage({ project }: ProjectPageProps) {
                       {item}
                     </h3>
                   </div>
-                </SlideUp>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </Container>
         </Section>
 
@@ -397,8 +390,9 @@ export function ProjectPage({ project }: ProjectPageProps) {
                 </h2>
               </div>
             </FadeIn>
-            <div className="mt-8 grid w-fit gap-x-4 gap-y-6 min-[560px]:grid-cols-2">
-              <SlideUp>
+
+            <StaggerContainer className="mt-8 grid w-fit gap-x-4 gap-y-6 min-[560px]:grid-cols-2">
+              <StaggerItem>
                 <a
                   href={project.githubUrl}
                   target="_blank"
@@ -421,10 +415,10 @@ export function ProjectPage({ project }: ProjectPageProps) {
                     />
                   </div>
                 </a>
-              </SlideUp>
+              </StaggerItem>
 
               {project.documentationUrl ? (
-                <SlideUp>
+                <StaggerItem>
                   <a
                     href={project.documentationUrl}
                     target="_blank"
@@ -449,9 +443,9 @@ export function ProjectPage({ project }: ProjectPageProps) {
                       />
                     </div>
                   </a>
-                </SlideUp>
+                </StaggerItem>
               ) : project.liveDemoUrl ? (
-                <SlideUp>
+                <StaggerItem>
                   <a
                     href={project.liveDemoUrl}
                     target="_blank"
@@ -476,9 +470,9 @@ export function ProjectPage({ project }: ProjectPageProps) {
                       />
                     </div>
                   </a>
-                </SlideUp>
+                </StaggerItem>
               ) : null}
-            </div>
+            </StaggerContainer>
           </Container>
         </Section>
 

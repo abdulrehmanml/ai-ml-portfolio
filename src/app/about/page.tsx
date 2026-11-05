@@ -8,7 +8,7 @@ import { Navbar } from "@/components/layout/navbar"
 import { Section } from "@/components/layout/section"
 import { projects } from "@/data/projects"
 import { ProjectCard } from "@/components/projects/project-card"
-
+import { StaggerContainer, StaggerItem } from "@/components/animations/stagger"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
@@ -139,7 +139,7 @@ export default function AboutPage() {
               </div>
             </FadeIn>
 
-            <div className="mt-12 grid gap-8 min-[560px]:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+            <StaggerContainer className="mt-12 grid gap-8 min-[560px]:grid-cols-2 lg:grid-cols-4 lg:gap-6">
               {[
                 {
                   number: "01",
@@ -166,7 +166,7 @@ export default function AboutPage() {
                     "Turn the final solution into a usable application through APIs, interfaces, and deployment workflows.",
                 },
               ].map((step) => (
-                <SlideUp key={step.number}>
+                <StaggerItem key={step.number}>
                   <div className="group relative h-full border-t-2 border-border/80 px-4 pt-5 transition-colors duration-200 hover:border-primary">
                     <span className="font-mono text-xs font-medium tracking-[0.12em] text-primary">
                       {step.number}
@@ -178,9 +178,9 @@ export default function AboutPage() {
                       {step.description}
                     </p>
                   </div>
-                </SlideUp>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </Container>
         </Section>
 
@@ -212,7 +212,7 @@ export default function AboutPage() {
               </div>
             </FadeIn>
 
-            <div className="mx-auto mt-12 grid w-full max-w-md grid-cols-1 gap-6 lg:max-w-5xl lg:grid-cols-2 lg:gap-7">
+            <StaggerContainer className="mx-auto mt-12 grid w-full max-w-md grid-cols-1 gap-6 lg:max-w-5xl lg:grid-cols-2 lg:gap-7">
               {[
                 {
                   number: "01",
@@ -254,7 +254,7 @@ export default function AboutPage() {
                   ],
                 },
               ].map((item) => (
-                <SlideUp key={item.number} className="min-w-0">
+                <StaggerItem key={item.number} className="min-w-0">
                   <div className="project-card-shadow min-w-0 h-full rounded-2xl">
                     <div className="group relative h-full rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-card hover:shadow-[0_12px_32px_-16px_var(--primary)] min-[560px]:p-7">
                       <div className="flex items-start justify-between gap-4">
@@ -284,9 +284,9 @@ export default function AboutPage() {
                       </div>
                     </div>
                   </div>
-                </SlideUp>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </Container>
         </Section>
 
@@ -318,7 +318,7 @@ export default function AboutPage() {
               </div>
             </FadeIn>
 
-            <div className="mx-auto mt-12 w-fit max-w-full">
+            <StaggerContainer className="mx-auto mt-12 w-fit max-w-full">
               {[
                 {
                   category: "Programming",
@@ -345,7 +345,7 @@ export default function AboutPage() {
                   tools: ["Git · GitHub · VS Code · AWS"],
                 },
               ].map((item) => (
-                <SlideUp key={item.category}>
+                <StaggerItem key={item.category}>
                   <div className="group relative border-t border-border px-4 py-5 transition-colors duration-200 last:border-b min-[560px]:grid min-[560px]:min-h-18 min-[560px]:grid-cols-[160px_1fr] min-[560px]:items-center min-[560px]:gap-6 min-[560px]:px-5 min-[560px]:hover:border-primary/40 lg:grid-cols-[180px_1fr] lg:gap-8">
                     {/* Desktop / Tablet hover accent */}
                     <span
@@ -368,9 +368,9 @@ export default function AboutPage() {
                       ))}
                     </div>
                   </div>
-                </SlideUp>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </Container>
         </Section>
 
@@ -402,9 +402,9 @@ export default function AboutPage() {
               </div>
             </FadeIn>
 
-            <div className="mx-auto mt-12 grid w-full max-w-7xl grid-cols-1 justify-items-center gap-x-6 gap-y-7 min-[560px]:gap-x-7 min-[560px]:gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+            <StaggerContainer className="mx-auto mt-12 grid w-full max-w-7xl grid-cols-1 justify-items-center gap-x-6 gap-y-7 min-[560px]:gap-x-7 min-[560px]:gap-y-8 md:grid-cols-2 lg:grid-cols-3">
               {selectedProjects.map((project, index) => (
-                <SlideUp
+                <StaggerItem
                   key={project.slug}
                   className={`w-full min-w-0 max-w-[384px] ${
                     selectedProjects.length === 3 && index === 2
@@ -413,9 +413,9 @@ export default function AboutPage() {
                   }`}
                 >
                   <ProjectCard project={project} showImage={false} />
-                </SlideUp>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </Container>
         </Section>
 
@@ -447,7 +447,7 @@ export default function AboutPage() {
               </FadeIn>
 
               <div className="mx-auto w-fit max-w-full px-4">
-                <div className="grid w-fit grid-cols-1 min-[560px]:grid-cols-2 min-[560px]:gap-x-10">
+                <StaggerContainer className="grid w-fit grid-cols-1 min-[560px]:grid-cols-2 min-[560px]:gap-x-10">
                   {[
                     "Production ML",
                     "AI Applications",
@@ -456,7 +456,7 @@ export default function AboutPage() {
                     "Agentic AI",
                     "MLOps Workflows",
                   ].map((focus, index) => (
-                    <SlideUp key={focus}>
+                    <StaggerItem key={focus}>
                       <div className="group flex w-full items-center justify-start gap-4 border-t-2 border-border/80 px-4 py-5 transition-colors duration-200 hover:border-primary">
                         <span className="font-mono text-xs text-primary">
                           {String(index + 1).padStart(2, "0")}
@@ -466,9 +466,9 @@ export default function AboutPage() {
                           {focus}
                         </span>
                       </div>
-                    </SlideUp>
+                    </StaggerItem>
                   ))}
-                </div>
+                </StaggerContainer>
               </div>
             </div>
           </Container>

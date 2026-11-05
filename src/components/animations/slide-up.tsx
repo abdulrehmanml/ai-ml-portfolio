@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useReducedMotion } from "motion/react"
-import { motionEase } from "@/lib/motion"
+import { motionDistance, motionDuration, motionEase, motionViewport, } from "@/lib/motion"
 
 type SlideUpProps = {
   children: React.ReactNode
@@ -16,15 +16,15 @@ export function SlideUp({ children, className }: SlideUpProps) {
       className={className}
       initial={{
         opacity: shouldReduceMotion ? 1 : 0,
-        y: shouldReduceMotion ? 0 : 18,
+        y: shouldReduceMotion ? 0 : motionDistance.enter,
       }}
       whileInView={{
         opacity: 1,
         y: 0,
       }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={motionViewport}
       transition={{
-        duration: shouldReduceMotion ? 0 : 0.6,
+        duration: shouldReduceMotion ? 0 : motionDuration.enter,
         ease: motionEase,
       }}
     >

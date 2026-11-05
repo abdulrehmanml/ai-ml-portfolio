@@ -1,6 +1,7 @@
 "use client"
 
 import { motion, useReducedMotion } from "motion/react"
+import { motionDuration } from "@/lib/motion"
 
 type FloatProps = {
   children: React.ReactNode
@@ -14,7 +15,7 @@ type FloatProps = {
 export function Float({
   children,
   className,
-  duration = 7.5,
+  duration = motionDuration.float,
   delay = 0,
   x = [0, 6, -5, 4, 0],
   y = [0, -5, 6, -4, 0],

@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
-
 import { FadeIn } from "@/components/animations/fade-in"
 import { SlideUp } from "@/components/animations/slide-up"
 import { Container } from "@/components/layout/container"
@@ -11,6 +10,7 @@ import { Navbar } from "@/components/layout/navbar"
 import { Section } from "@/components/layout/section"
 import { ProjectCard } from "@/components/projects/project-card"
 import { projects } from "@/data/projects"
+import { StaggerContainer, StaggerItem } from "@/components/animations/stagger"
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -91,13 +91,13 @@ export default function ProjectsPage() {
               </div>
             </FadeIn>
 
-            <div className="mt-12 grid items-start gap-6 px-4 min-[560px]:grid-cols-2 min-[560px]:px-6 lg:grid-cols-3 lg:gap-7 lg:px-0">
+            <StaggerContainer className="mt-12 grid items-start gap-6 px-4 min-[560px]:grid-cols-2 min-[560px]:px-6 lg:grid-cols-3 lg:gap-7 lg:px-0">
               {projects.map((project) => (
-                <SlideUp key={project.slug}>
+                <StaggerItem key={project.slug}>
                   <ProjectCard project={project} compact />
-                </SlideUp>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </Container>
         </Section>
       </main>

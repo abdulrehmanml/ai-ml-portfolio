@@ -199,7 +199,7 @@ export default function AboutPage() {
                   Core Expertise
                 </p>
 
-                <h2 className="mt-4 w-full min-w-0 max-w-5xl text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
+                <h2 className="mt-4 w-full min-w-0 max-w-none text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px] 2xl:whitespace-nowrap">
                   Technical capabilities for{" "}
                   <span className="text-primary">
                     building AI/ML solutions

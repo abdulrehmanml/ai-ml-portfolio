@@ -200,7 +200,7 @@ export function ContactPreview() {
               
                 <div className="grid gap-5">
                   <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
-                    <div className="grid w-full min-w-0 gap-2">
+                    <div className="grid w-65 max-w-full min-w-0 gap-2">
                       <label
                         htmlFor="name"
                         className="text-sm font-medium text-foreground"
@@ -218,7 +218,7 @@ export function ContactPreview() {
                       />
                     </div>
               
-                    <div className="grid w-full min-w-0 gap-2">
+                    <div className="grid w-65 max-w-full min-w-0 gap-2">
                       <label
                         htmlFor="email"
                         className="text-sm font-medium text-foreground"

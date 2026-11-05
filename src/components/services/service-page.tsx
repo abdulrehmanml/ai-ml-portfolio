@@ -156,7 +156,7 @@ export function ServicePage({ service }: ServicePageProps) {
                   What I Can Do
                 </p>
 
-                <h2 className="mt-4 w-full min-w-0 max-w-none text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:whitespace-nowrap xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
+                <h2 className="mt-4 w-full min-w-0 text-left text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Practical capabilities for{" "}
                   <span className="text-primary">
                     real project requirements
@@ -251,7 +251,7 @@ export function ServicePage({ service }: ServicePageProps) {
                 <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   Tools & Technologies
                 </p>
-                <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
+                <h2 className="mt-4 w-full min-w-0 text-left text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Technologies used{" "}
                   <span className="text-primary">across the workflow</span>
                 </h2>
@@ -287,7 +287,7 @@ export function ServicePage({ service }: ServicePageProps) {
                   Relevant Work
                 </p>
 
-                <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
+                <h2 className="mt-4 w-full min-w-0 text-left text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Related projects{" "}
                   <span className="text-primary">from my portfolio</span>
                 </h2>

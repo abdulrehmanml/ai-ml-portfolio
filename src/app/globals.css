@@ -186,3 +186,12 @@ body {
     --container-max: max(1200px, min(96vw, 2200px));
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reduced-motion="visible"] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

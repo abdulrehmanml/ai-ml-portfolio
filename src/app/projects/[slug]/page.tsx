@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { ProjectPage } from "@/components/projects/project-page"
+import { ProjectDetail } from "@/components/projects/project-detail"
 import { projects } from "@/data/projects"
 
 type ProjectRouteProps = {
@@ -42,5 +42,5 @@ export default async function ProjectRoute({ params }: ProjectRouteProps) {
     notFound()
   }
 
-  return <ProjectPage project={project} />
+  return <ProjectDetail project={project} />
 }

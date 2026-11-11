@@ -11,6 +11,7 @@ import { Section } from "@/components/layout/section"
 import { ProjectCard } from "@/components/projects/project-card"
 import { projects } from "@/data/projects"
 import { StaggerContainer, StaggerItem } from "@/components/animations/stagger"
+import { SectionDivider } from "@/components/ui/section-divider"
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -70,10 +71,7 @@ export default function ProjectsPage() {
         </Section>
 
         {/* Divider */}
-        <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
-          aria-hidden="true"
-        />
+        <SectionDivider />
 
         {/* All Projects */}
         <Section id="all-projects">

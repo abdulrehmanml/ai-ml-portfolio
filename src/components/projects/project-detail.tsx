@@ -12,12 +12,21 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/stagger"
 import type { Project } from "@/types"
 import { ContactCtaLink } from "@/components/analytics/cta-link-projects-services"
 
-type ProjectPageProps = {
+type ProjectDetailProps = {
   project: Project
 }
 
-export function ProjectPage({ project }: ProjectPageProps) {
+export function ProjectDetail({ project }: ProjectDetailProps) {
   const longestKeyWork = project.keyWork.reduce(
+    (longest, item) =>
+      item.length > longest.length ? item : longest,
+    "",
+  )
+
+  const longestProblemSolution = [
+    project.problem,
+    project.solution,
+  ].reduce(
     (longest, item) =>
       item.length > longest.length ? item : longest,
     "",
@@ -129,8 +138,14 @@ export function ProjectPage({ project }: ProjectPageProps) {
 
             <StaggerContainer className="mx-auto mt-10 grid w-full max-w-2xl grid-cols-1 gap-10 min-[560px]:px-6 lg:max-w-none lg:grid-cols-2 lg:gap-16 lg:px-8">
               <StaggerItem>
-                <article className="group h-full w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary">
+                <article className="group h-full w-fit max-w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary">
                   <div className="px-4 min-[560px]:px-5 lg:px-6">
+                    <span
+                      className="invisible block h-0 overflow-hidden whitespace-nowrap text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]"
+                      aria-hidden="true"
+                    >
+                      {longestProblemSolution}
+                    </span>
                     <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
                       01 — Problem
                     </p>
@@ -147,8 +162,14 @@ export function ProjectPage({ project }: ProjectPageProps) {
               </StaggerItem>
 
               <StaggerItem>
-                <article className="group h-full w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary">
+                <article className="group h-full w-fit max-w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary">
                   <div className="px-4 min-[560px]:px-5 lg:px-6">
+                    <span
+                      className="invisible block h-0 overflow-hidden whitespace-nowrap text-sm leading-7 text-muted-foreground min-[560px]:text-base lg:text-[15px]"
+                      aria-hidden="true"
+                    >
+                      {longestProblemSolution}
+                    </span>
                     <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-primary">
                       02 — Solution
                     </p>

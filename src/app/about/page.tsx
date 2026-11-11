@@ -9,6 +9,7 @@ import { Section } from "@/components/layout/section"
 import { projects } from "@/data/projects"
 import { ProjectCard } from "@/components/projects/project-card"
 import { StaggerContainer, StaggerItem } from "@/components/animations/stagger"
+import { SectionDivider } from "@/components/ui/section-divider"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
@@ -114,10 +115,7 @@ export default function AboutPage() {
         </Section>
 
         {/* Section Divider */}
-        <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
-          aria-hidden="true"
-        />
+          <SectionDivider />
 
         {/* My Approach */}
         <Section id="my-approach">
@@ -185,10 +183,7 @@ export default function AboutPage() {
         </Section>
 
         {/* Section Divider */}
-        <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
-          aria-hidden="true"
-        />
+        <SectionDivider />
 
         {/* Core Expertise */}
         <Section id="core-expertise">
@@ -291,10 +286,7 @@ export default function AboutPage() {
         </Section>
 
         {/* Section Divider */}
-        <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
-          aria-hidden="true"
-        />
+        <SectionDivider />
 
         {/* Technical Toolkit */}
         <Section id="technical-toolkit">
@@ -375,10 +367,7 @@ export default function AboutPage() {
         </Section>
 
         {/* Section Divider */}
-        <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
-          aria-hidden="true"
-        />
+        <SectionDivider />
 
         {/* Selected Work */}
         <Section id="selected-work">
@@ -420,10 +409,7 @@ export default function AboutPage() {
         </Section>
 
         {/* Section Divider */}
-        <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
-          aria-hidden="true"
-        />
+        <SectionDivider />
 
         {/* Current Focus */}
         <Section id="current-focus">
@@ -475,10 +461,7 @@ export default function AboutPage() {
         </Section>
 
         {/* Section Divider */}
-        <div
-          className="mx-auto h-px w-3/4 bg-linear-to-r from-transparent via-accent/35 to-transparent dark:via-[#70C9C2]/70"
-          aria-hidden="true"
-        />
+        <SectionDivider />
 
         {/* CTA */}
         <Section id="about-cta">

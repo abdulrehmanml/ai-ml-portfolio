@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { ServicePage } from "@/components/services/service-page"
+import { ServiceDetail } from "@/components/services/service-detail"
 import { services } from "@/data/services"
 
 type ServiceRouteProps = {
@@ -41,5 +41,5 @@ export default async function ServiceRoute({ params }: ServiceRouteProps) {
     notFound()
   }
 
-  return <ServicePage service={service} />
+  return <ServiceDetail service={service} />
 }

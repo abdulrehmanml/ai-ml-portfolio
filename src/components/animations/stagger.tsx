@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useReducedMotion } from "motion/react"
+import { motion } from "motion/react"
 import { motionDistance, motionDuration, motionEase, motionStagger, motionViewport, } from "@/lib/motion"
 
 type StaggerProps = {
@@ -36,12 +36,6 @@ export function StaggerContainer({
   children,
   className,
 }: StaggerProps) {
-  const shouldReduceMotion = useReducedMotion()
-
-  if (shouldReduceMotion) {
-    return <div className={className}>{children}</div>
-  }
-
   return (
     <motion.div
       className={className}
@@ -59,14 +53,9 @@ export function StaggerItem({
   children,
   className,
 }: StaggerProps) {
-  const shouldReduceMotion = useReducedMotion()
-
-  if (shouldReduceMotion) {
-    return <div className={className}>{children}</div>
-  }
-
   return (
     <motion.div
+      data-reduced-motion="visible"
       className={className}
       variants={itemVariants}
     >

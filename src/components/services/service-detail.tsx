@@ -247,19 +247,20 @@ export function ServiceDetail({ service }: ServiceDetailProps) {
         <Section id="tools-technologies">
           <Container>
             <FadeIn>
-              <div className="w-full max-w-none text-left">
+              <div className="w-full">
                 <p className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary min-[560px]:text-sm min-[560px]:tracking-[0.16em]">
                   Tools & Technologies
                 </p>
-                <h2 className="mt-4 w-full min-w-0 text-left text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
+                        
+                <h2 className="mt-4 w-full min-w-0 text-[28px] font-semibold leading-[1.1] tracking-tight min-[390px]:text-3xl min-[560px]:text-4xl md:text-[42px] xl:text-[clamp(36px,3vw,44px)] 2xl:text-[48px]">
                   Technologies used{" "}
                   <span className="text-primary">across the workflow</span>
                 </h2>
               </div>
             </FadeIn>
-
+                        
             <div className="mx-auto mt-10 w-full max-w-3xl px-4 min-[560px]:px-6 lg:px-0">
-              <StaggerContainer className="flex flex-wrap justify-center gap-3">
+              <StaggerContainer className="flex flex-wrap justify-center gap-x-3 gap-y-6">
                 {service.technologies.map((technology) => (
                   <StaggerItem key={technology}>
                     <span className="rounded-lg border border-border bg-card px-4 py-2.5 font-mono text-xs text-muted-foreground shadow-[0_2px_8px_-6px_var(--primary)] transition-colors duration-200 hover:border-primary/40 hover:text-primary">

@@ -1,7 +1,6 @@
 "use client"
 
-import { motion, useReducedMotion } from "motion/react"
-import { motionDuration } from "@/lib/motion"
+import { motion } from "motion/react"
 
 type FloatProps = {
   children: React.ReactNode
@@ -15,27 +14,21 @@ type FloatProps = {
 export function Float({
   children,
   className,
-  duration = motionDuration.float,
+  duration = 7.5,
   delay = 0,
   x = [0, 6, -5, 4, 0],
   y = [0, -5, 6, -4, 0],
 }: FloatProps) {
-  const shouldReduceMotion = useReducedMotion()
-
   return (
     <motion.div
       className={className}
-      animate={shouldReduceMotion ? { x: 0, y: 0 } : { x, y }}
-      transition={
-        shouldReduceMotion
-          ? { duration: 0 }
-          : {
-              duration,
-              delay,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }
-      }
+      animate={{ x, y }}
+      transition={{
+        duration,
+        delay,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
     >
       {children}
     </motion.div>

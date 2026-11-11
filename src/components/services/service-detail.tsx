@@ -14,9 +14,9 @@ import type { Project } from "@/types"
 import type { Service } from "@/data/services"
 import { ContactCtaLink } from "@/components/analytics/cta-link-projects-services"
 
-type ServicePageProps = { service: Service }
+type ServiceDetailProps = { service: Service }
 
-export function ServicePage({ service }: ServicePageProps) {
+export function ServiceDetail({ service }: ServiceDetailProps) {
   const Icon = service.icon
 
   const longestCapability = service.capabilities.reduce(
@@ -168,7 +168,7 @@ export function ServicePage({ service }: ServicePageProps) {
             <StaggerContainer className="mx-auto mt-10 grid w-fit max-w-full grid-cols-1 gap-x-12 gap-y-8 min-[560px]:grid-cols-2 lg:grid-cols-3">
               {service.capabilities.map((capability, index) => (
                 <StaggerItem key={capability}>
-                  <div className="group relative mx-auto h-full w-full border-t-2 border-border/80 pt-5 transition-colors duration-200 hover:border-primary lg:w-auto lg:px-4">
+                  <div className="group relative mx-auto h-full w-full border-t-2 border-border/80 px-3 pt-5 transition-colors duration-200 hover:border-primary lg:w-auto lg:px-4">
                     <span
                       className="invisible block h-0 overflow-hidden whitespace-nowrap text-base font-semibold tracking-tight"
                       aria-hidden="true"
@@ -220,7 +220,7 @@ export function ServicePage({ service }: ServicePageProps) {
                 <StaggerContainer className="mx-auto grid w-fit min-w-0 max-w-full gap-0 xl:mx-0">
                   {service.process.map((step, index) => (
                     <StaggerItem key={step}>
-                      <div className="group relative grid min-w-0 gap-3 py-5 before:absolute before:inset-x-4 before:top-0 before:border-t-2 before:border-border/80 min-[560px]:before:inset-x-0 min-[560px]:grid-cols-[56px_max-content] min-[560px]:items-center min-[560px]:gap-5">
+                      <div className="group relative grid min-w-0 gap-3 px-3 py-5 before:absolute before:inset-x-4 before:top-0 before:border-t-2 before:border-border/80 min-[560px]:before:inset-x-0 min-[560px]:grid-cols-[56px_max-content] min-[560px]:items-center min-[560px]:gap-5">
                         <span className="px-6 font-mono text-xs font-medium text-primary min-[560px]:pl-8 min-[560px]:pr-0">
                           {String(index + 1).padStart(2, "0")}
                         </span>

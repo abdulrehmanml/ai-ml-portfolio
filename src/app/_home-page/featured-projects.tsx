@@ -5,7 +5,7 @@ import { Container } from "@/components/layout/container"
 import { Section } from "@/components/layout/section"
 import { FadeIn } from "@/components/animations/fade-in"
 import { StaggerContainer, StaggerItem } from "@/components/animations/stagger"
-import { ProjectCard } from "@/components/projects/project-card"
+import { ProjectCard } from "@/components/project-card/project-card"
 import { projects } from "@/data/projects"
 
 export function FeaturedProjects() {

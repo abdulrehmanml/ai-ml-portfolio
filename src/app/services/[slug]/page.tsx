@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { ServiceDetail } from "@/components/services/service-detail"
+import { ServiceDetail } from "./_views/service-detail"
 import { services } from "@/data/services"
 
 type ServiceRouteProps = {

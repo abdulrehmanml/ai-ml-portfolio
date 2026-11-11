@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
-import { ProjectDetail } from "@/components/projects/project-detail"
+import { ProjectDetail } from "./_views/project-detail"
 import { projects } from "@/data/projects"
 
 type ProjectRouteProps = {
